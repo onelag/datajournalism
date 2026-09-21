@@ -129,35 +129,38 @@
           </aside>
         </section>
 
-        <!-- 1.4: Tipos de Armazenamento de Dados (Duplicado) -->
+        <!-- 1.4: Tipos de Conteúdo dos Dados -->
         <section>
           <span class="badge">Capítulo 1 • Slide 4/8</span>
-          <h2>Dados podem ser classificados por <span class="gradient-text-warm">tipo de armazenamento</span></h2>
-          <p class="subtitle">Todos os dias, bilhões de registros públicos são gerados. Quem lhes dará sentido?</p>
+          <h2>Dados podem ser classificados por <span class="gradient-text-warm">tipo de conteúdo</span></h2>
+          <p class="subtitle">A natureza da variável define quais perguntas, cálculos e gráficos são adequados</p>
 
-          <div class="card-grid">
-            <div class="card fragment fade-up">
-              <div class="icon">📄</div>
-              <h4>Dados Não Estruturados</h4>
-              <p>Textos livres, e-mails, imagens, gravações de áudio e PDFs digitalizados. Não possuem formato tabular rígido e demandam técnicas como OCR e NLP para extração.</p>
+          <div class="card-grid-2">
+            <div class="card fragment fade-right">
+              <div class="icon">🏷️</div>
+              <h4>Qualitativos / Categóricos</h4>
+              <p style="margin-bottom: 0.6rem;">Descrevem atributos, qualidades ou categorias não métricas:</p>
+              <ul style="font-size: 0.82em; color: var(--text-muted); padding-left: 1.2rem; line-height: 1.6;">
+                <li><strong style="color: var(--accent-cyan);">Nominais:</strong> Categorias sem ordem intrínseca (ex: partido político, gênero, tipo de crime, UF).</li>
+                <li><strong style="color: var(--accent-purple);">Ordinais:</strong> Categorias com hierarquia ou ordenação (ex: escolaridade, faixa etária, patente militar).</li>
+              </ul>
             </div>
-            <div class="card fragment fade-up">
-              <div class="icon">📦</div>
-              <h4>Dados Semiestruturados</h4>
-              <p>Formatos como JSON, XML e páginas HTML. Contêm marcadores, tags e hierarquias que organizam o conteúdo, mas sem a rigidez de um esquema de tabela relacional.</p>
-            </div>
-            <div class="card fragment fade-up">
-              <div class="icon">📊</div>
-              <h4>Dados Estruturados</h4>
-              <p>Planilhas em CSV, Excel e tabelas em bancos SQL. Registros perfeitamente organizados em linhas e colunas com tipos definidos, prontos para filtragem e análise.</p>
+            <div class="card fragment fade-left">
+              <div class="icon">🔢</div>
+              <h4>Quantitativos / Numéricos</h4>
+              <p style="margin-bottom: 0.6rem;">Expressam quantidades e grandezas matemáticas mensuráveis:</p>
+              <ul style="font-size: 0.82em; color: var(--text-muted); padding-left: 1.2rem; line-height: 1.6;">
+                <li><strong style="color: var(--accent-amber);">Discretos:</strong> Contagens em valores inteiros (ex: número de leitos, total de funcionários, votos).</li>
+                <li><strong style="color: var(--accent-emerald);">Contínuos:</strong> Medidas em escala contínua com decimais (ex: salário em R$, inflação %, área em km²).</li>
+              </ul>
             </div>
           </div>
 
           <aside class="notes">
-            Explique a diferença fundamental:
-            - Não estruturados: maior volume na internet (áudios, PDFs escaneados, textos).
-            - Semiestruturados: respostas de APIs da web, JSON, feeds RSS.
-            - Estruturados: tabelas limpas prontas para análise quantitativa.
+            Destaque para a turma:
+            - Qualitativos (categóricos): servem para agrupar e contar frequências.
+            - Quantitativos (numéricos): permitem calcular médias, medianas e desvios.
+            - Alerta de pegadinha: CPF, CEP e telefone são compostos por números, mas são dados qualitativos nominais (não faz sentido somar ou tirar média de CEPs).
           </aside>
         </section>
 
