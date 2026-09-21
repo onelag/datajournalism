@@ -283,6 +283,39 @@
   text-decoration: underline;
 }
 
+/* Hockey Stick Graph Slide */
+.hockey-wrapper {
+  margin-top: 0.6rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: 16px;
+  padding: 0.6rem 0.8rem;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+  transition: all 0.3s ease;
+  position: relative;
+  text-align: center;
+  max-width: 680px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hockey-wrapper:hover {
+  border-color: var(--accent-cyan);
+  box-shadow: 0 16px 40px rgba(56, 189, 248, 0.25);
+  transform: translateY(-2px);
+}
+
+.hockey-img {
+  width: 100%;
+  max-height: 205px;
+  object-fit: contain;
+  border-radius: 10px;
+  display: block;
+  margin: 0 auto;
+  background: #ffffff;
+  padding: 0.25rem;
+}
+
 /* Split Map Layout (John Snow Slide) */
 .split-map-container {
   display: grid;
