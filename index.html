@@ -326,8 +326,7 @@
           </div>
 
           <p style="text-align: center; color: var(--accent-cyan); margin-top: 1.5rem; font-size: 0.85em;">
-            👉 Pressione a tecla <strong>DIREITA (➡️)</strong> para iniciar o <strong>Capítulo 2: Legislação & Fontes
-              Públicas</strong>
+            👉 Pressione a tecla <strong>DIREITA (➡️)</strong> para iniciar o <strong>Capítulo 2: Visualização de Dados & Storytelling Visual</strong>
           </p>
 
           <aside class="notes">
@@ -338,12 +337,205 @@
       </section>
 
       <!-- ========================================================= -->
-      <!-- CAPÍTULO 2: Legislação, Acesso à Informação & Fontes      -->
+      <!-- CAPÍTULO 2: Visualização de Dados & Storytelling Visual   -->
       <!-- ========================================================= -->
       <section>
         <!-- 2.1: Abertura Cap. 2 -->
+        <section data-background-gradient="radial-gradient(circle at 50% 30%, #14532d 0%, #0a0e1a 100%)">
+          <span class="badge badge-emerald">Capítulo 2/7</span>
+          <h1>Visualização de Dados & <span class="gradient-text-emerald">Storytelling Visual</span></h1>
+          <p class="subtitle">Como transformar descobertas numéricas em narrativas visuais claras e inesquecíveis</p>
+
+          <div class="pill-list" style="justify-content: center; margin-top: 2rem;">
+            <div class="pill">📈 Escolha de Gráficos</div>
+            <div class="pill">🗺️ Jornalismo Geoespacial</div>
+            <div class="pill">📜 Scrollytelling</div>
+            <div class="pill">♿ Acessibilidade Visual</div>
+          </div>
+
+          <aside class="notes">
+            A visualização é a ponte entre a complexidade do banco de dados e a compreensão imediata do público.
+          </aside>
+        </section>
+
+        <!-- 2.2: Escolhendo o Gráfico Correto -->
+        <section>
+          <span class="badge">Capítulo 2 • Slide 2/7</span>
+          <h2>Escolhendo o Gráfico Correto</h2>
+          <p class="subtitle">A forma visual deve sempre seguir a função informativa dos dados</p>
+
+          <div class="card-grid">
+            <div class="card fragment fade-up">
+              <div class="icon">📊</div>
+              <h4>Gráfico de Barras</h4>
+              <p>Ideal para <strong>comparações discretas</strong> entre categorias ou rankings. Sempre inicie o eixo
+                numérico em zero.</p>
+            </div>
+            <div class="card fragment fade-up">
+              <div class="icon">📈</div>
+              <h4>Gráfico de Linhas</h4>
+              <p>Perfeito para <strong>evolução no tempo</strong> (séries temporais, tendências contínuas ao longo de
+                meses/anos).</p>
+            </div>
+            <div class="card fragment fade-up">
+              <div class="icon">🫧</div>
+              <h4>Dispersão & Treemap</h4>
+              <p>Dispersão para <strong>correlações</strong> entre duas variáveis; Treemap para <strong>proporções
+                  hierárquicas</strong> de orçamento.</p>
+            </div>
+          </div>
+
+          <aside class="notes">
+            Alerta importante: Evite gráficos de pizza com mais de 3 fatias e nunca use gráficos em 3D.
+          </aside>
+        </section>
+
+        <!-- 2.3: Gráfico Interativo Live Chart.js -->
+        <section>
+          <span class="badge badge-emerald">Capítulo 2 • Slide 3/7</span>
+          <h2>Gráficos Interativos Dinâmicos</h2>
+          <p class="subtitle">Demonstração de visualização viva integrada diretamente na apresentação</p>
+
+          <div class="chart-wrapper">
+            <canvas id="dataChart"></canvas>
+          </div>
+          <p style="font-size: 0.7em; color: var(--text-muted); margin-top: 0.6rem; text-align: center;">
+            Fonte: Global Investigative Journalism Network (GIJN) & Benchmarks Editoriais
+          </p>
+
+          <aside class="notes">
+            Mostre aos estudantes que no Reveal.js os gráficos são elementos HTML/JS interativos ao vivo (passe o mouse
+            para ver tooltips).
+          </aside>
+        </section>
+
+        <!-- 2.4: Jornalismo Geoespacial & Mapas -->
+        <section>
+          <span class="badge">Capítulo 2 • Slide 4/7</span>
+          <h2>Jornalismo Geoespacial & Mapas</h2>
+          <p class="subtitle">Quando a localização geográfica é o coração da investigação</p>
+
+          <div class="card-grid-2">
+            <div class="card fragment">
+              <h4 style="color: var(--accent-cyan);">🗺️ QGIS & Análise Espacial</h4>
+              <p>Cruzamento de polígonos de terras indígenas, desmatamento (DETER/INPE) e embargos ambientais do IBAMA.
+              </p>
+            </div>
+            <div class="card fragment">
+              <h4 style="color: var(--accent-purple);">🌐 Mapas Interativos Web (Datawrapper / Mapbox)</h4>
+              <p>Mapas coropléticos que permitem ao leitor digitar seu CEP e verificar o investimento em saúde no seu
+                próprio bairro.</p>
+            </div>
+            <div class="card fragment">
+              <h4 style="color: var(--accent-amber);">⚠️ A Armadilha dos Mapas</h4>
+              <p>"Terra não vota": mapas por área territorial distorcem a realidade porque municípios gigantes na
+                Amazônia têm poucos habitantes.</p>
+            </div>
+            <div class="card fragment">
+              <h4 style="color: var(--accent-emerald);">🎯 Cartogramas</h4>
+              <p>Redimensione as regiões geográficas pelo tamanho da população para refletir o peso humano real.</p>
+            </div>
+          </div>
+
+          <aside class="notes">
+            Sempre pergunte: "Esta matéria realmente precisa de um mapa ou uma tabela ordenada seria mais clara?".
+          </aside>
+        </section>
+
+        <!-- 2.5: Scrollytelling e Narrativas Digitais -->
+        <section>
+          <span class="badge">Capítulo 2 • Slide 5/7</span>
+          <h2>Scrollytelling: A Arte de Narrar com a Rolagem</h2>
+          <p class="subtitle">Conduzindo o leitor passo a passo por gráficos complexos</p>
+
+          <div class="card-grid">
+            <div class="card fragment fade-up">
+              <div class="icon">🖱️</div>
+              <h4>Rolagem como Controle</h4>
+              <p>À medida que o leitor rola o texto, o gráfico ao fundo se transforma, destaca pontos e dá zoom em
+                detalhes.</p>
+            </div>
+            <div class="card fragment fade-up">
+              <div class="icon">✨</div>
+              <h4>The Pudding & NYT</h4>
+              <p>Casos clássicos de jornalismo visual que transformam dados densos em experiências imersivas premiadas.
+              </p>
+            </div>
+            <div class="card fragment fade-up">
+              <div class="icon">📱</div>
+              <h4>Mobile-First</h4>
+              <p>Mais de 70% dos seus leitores acessarão pelo smartphone. O design deve ser vertical, leve e responsivo.
+              </p>
+            </div>
+          </div>
+
+          <aside class="notes">
+            O scrollytelling evita que o leitor se sinta sobrecarregado com um gráfico cheio de dados de uma só vez.
+          </aside>
+        </section>
+
+        <!-- 2.6: Acessibilidade e Inclusão -->
+        <section>
+          <span class="badge">Capítulo 2 • Slide 6/7</span>
+          <h2>Design Inclusivo & Acessibilidade</h2>
+          <p class="subtitle">Garantindo que todos os públicos possam compreender suas reportagens</p>
+
+          <div class="card-grid-2">
+            <div class="card fragment">
+              <h4 style="color: var(--accent-cyan);">👁️ Paletas para Daltonismo</h4>
+              <p>Nunca dependa apenas de verde/vermelho para indicar positivo/negativo. Use paletas testadas como
+                Viridis ou ColorBrewer.</p>
+            </div>
+            <div class="card fragment">
+              <h4 style="color: var(--accent-purple);">🔊 Textos Alternativos (Alt Text)</h4>
+              <p>Descreva o insight central do gráfico no atributo <code>alt</code> para permitir a leitura por pessoas
+                com deficiência visual.</p>
+            </div>
+            <div class="card fragment">
+              <h4 style="color: var(--accent-amber);">🏷️ Rotulagem Direta</h4>
+              <p>Coloque rótulos diretamente nas linhas em vez de forçar o leitor a olhar uma legenda distante
+                repetidamente.</p>
+            </div>
+            <div class="card fragment">
+              <h4 style="color: var(--accent-emerald);">📥 Acesso à Tabela Bruta</h4>
+              <p>Sempre disponibilize um botão para baixar a tabela original usada na construção daquele gráfico.</p>
+            </div>
+          </div>
+
+          <aside class="notes">
+            Acessibilidade não é apenas bondade; é compromisso ético e legal do jornalismo democrático.
+          </aside>
+        </section>
+
+        <!-- 2.7: Conclusão Cap. 2 -->
+        <section data-background-gradient="radial-gradient(circle at 50% 50%, #14532d 0%, #0a0e1a 100%)">
+          <span class="badge badge-emerald">Capítulo 2 • Conclusão</span>
+          <h2>Síntese do Storytelling Visual</h2>
+
+          <div class="card" style="margin-top: 1.5rem;">
+            <h4>🎨 Princípio de Alberto Cairo:</h4>
+            <p style="font-size: 0.95em;">"Um bom gráfico de dados não é aquele que é apenas bonito, mas aquele que
+              torna visível a estrutura invisível da verdade."</p>
+          </div>
+
+          <p style="text-align: center; color: var(--accent-cyan); margin-top: 1.8rem; font-size: 0.85em;">
+            👉 Pressione a tecla <strong>DIREITA (➡️)</strong> para iniciar o <strong>Capítulo 3: Legislação, LAI & Fontes Públicas</strong>
+          </p>
+
+          <aside class="notes">
+            Finalize o Capítulo 2 citando Alberto Cairo, uma das maiores referências mundiais em infografia e jornalismo
+            visual.
+          </aside>
+        </section>
+      </section>
+
+      <!-- ========================================================= -->
+      <!-- CAPÍTULO 3: Legislação, Acesso à Informação & Fontes      -->
+      <!-- ========================================================= -->
+      <section>
+        <!-- 3.1: Abertura Cap. 3 -->
         <section data-background-gradient="radial-gradient(circle at 50% 30%, #312e81 0%, #0a0e1a 100%)">
-          <span class="badge">Capítulo 2/7</span>
+          <span class="badge">Capítulo 3/7</span>
           <h1>Legislação, LAI & <span class="gradient-text">Fontes Públicas</span></h1>
           <p class="subtitle">O arcabouço jurídico e as minas de dados abertos no Brasil</p>
 
@@ -359,9 +551,9 @@
           </aside>
         </section>
 
-        <!-- 2.2: A Lei de Acesso à Informação -->
+        <!-- 3.2: A Lei de Acesso à Informação -->
         <section>
-          <span class="badge">Capítulo 2 • Slide 2/7</span>
+          <span class="badge">Capítulo 3 • Slide 2/7</span>
           <h2>A Lei de Acesso à Informação <span class="gradient-text">(LAI - 12.527/11)</span></h2>
           <p class="subtitle">Um dos instrumentos democráticos mais poderosos à disposição do repórter</p>
 
@@ -392,9 +584,9 @@
           </aside>
         </section>
 
-        <!-- 2.3: Como Fazer Pedidos Eficazes -->
+        <!-- 3.3: Como Fazer Pedidos Eficazes -->
         <section>
-          <span class="badge">Capítulo 2 • Slide 3/7</span>
+          <span class="badge">Capítulo 3 • Slide 3/7</span>
           <h2>Como Construir um Pedido de LAI <span class="gradient-text-emerald">Irrecusável</span></h2>
           <p class="subtitle">Evitando negativas genéricas ("trabalho desproporcional" ou "informação sigilosa")</p>
 
@@ -427,9 +619,9 @@
           </aside>
         </section>
 
-        <!-- 2.4: Portais da Transparência -->
+        <!-- 3.4: Portais da Transparência -->
         <section>
-          <span class="badge">Capítulo 2 • Slide 4/7</span>
+          <span class="badge">Capítulo 3 • Slide 4/7</span>
           <h2>Transparência Ativa: Onde os Dados Já Estão</h2>
           <p class="subtitle">Antes de abrir um pedido de LAI, verifique se a informação já foi publicada</p>
 
@@ -458,9 +650,9 @@
           </aside>
         </section>
 
-        <!-- 2.5: Grandes Repositórios Públicos -->
+        <!-- 3.5: Grandes Repositórios Públicos -->
         <section>
-          <span class="badge">Capítulo 2 • Slide 5/7</span>
+          <span class="badge">Capítulo 3 • Slide 5/7</span>
           <h2>Principais Fontes de Dados no Brasil</h2>
 
           <div class="pill-list" style="margin-top: 1.5rem;">
@@ -484,9 +676,9 @@
           </aside>
         </section>
 
-        <!-- 2.6: Os 5 Níveis de Dados Abertos -->
+        <!-- 3.6: Os 5 Níveis de Dados Abertos -->
         <section>
-          <span class="badge">Capítulo 2 • Slide 6/7</span>
+          <span class="badge">Capítulo 3 • Slide 6/7</span>
           <h2>A Escala dos Dados Abertos (Tim Berners-Lee)</h2>
           <p class="subtitle">Qualidade e facilidade de reutilização da informação pública</p>
 
@@ -515,9 +707,9 @@
           </aside>
         </section>
 
-        <!-- 2.7: Check-list Cap. 2 -->
+        <!-- 3.7: Check-list Cap. 3 -->
         <section data-background-gradient="radial-gradient(circle at 50% 50%, #312e81 0%, #0a0e1a 100%)">
-          <span class="badge badge-emerald">Capítulo 2 • Conclusão</span>
+          <span class="badge badge-emerald">Capítulo 3 • Conclusão</span>
           <h2>Checklist do Repórter de Dados</h2>
 
           <div class="card-grid-2" style="margin-top: 1.5rem;">
@@ -540,8 +732,7 @@
           </div>
 
           <p style="text-align: center; color: var(--accent-cyan); margin-top: 1.2rem; font-size: 0.85em;">
-            👉 Pressione a tecla <strong>DIREITA (➡️)</strong> para iniciar o <strong>Capítulo 3: Coleta & Raspagem de
-              Dados</strong>
+            👉 Pressione a tecla <strong>DIREITA (➡️)</strong> para iniciar o <strong>Capítulo 4: Coleta, Raspagem & Estruturação de Dados</strong>
           </p>
 
           <aside class="notes">
@@ -551,12 +742,12 @@
       </section>
 
       <!-- ========================================================= -->
-      <!-- CAPÍTULO 3: Coleta, Raspagem & Estruturação de Dados      -->
+      <!-- CAPÍTULO 4: Coleta, Raspagem & Estruturação de Dados      -->
       <!-- ========================================================= -->
       <section>
-        <!-- 3.1: Abertura Cap. 3 -->
+        <!-- 4.1: Abertura Cap. 4 -->
         <section data-background-gradient="radial-gradient(circle at 50% 30%, #064e3b 0%, #0a0e1a 100%)">
-          <span class="badge badge-emerald">Capítulo 3/7</span>
+          <span class="badge badge-emerald">Capítulo 4/7</span>
           <h1>Coleta, Raspagem & <span class="gradient-text-emerald">Extração de Dados</span></h1>
           <p class="subtitle">Como capturar, desbloquear e estruturar informações espalhadas na web</p>
 
@@ -573,9 +764,9 @@
           </aside>
         </section>
 
-        <!-- 3.2: O Desafio dos PDFs -->
+        <!-- 4.2: O Desafio dos PDFs -->
         <section>
-          <span class="badge">Capítulo 3 • Slide 2/7</span>
+          <span class="badge">Capítulo 4 • Slide 2/7</span>
           <h2>O Purgatório dos PDFs: <span class="gradient-text-warm">Como Libertar Tabelas</span></h2>
           <p class="subtitle">O PDF foi criado para impressão no papel, não para análise de dados</p>
 
@@ -605,9 +796,9 @@
           </aside>
         </section>
 
-        <!-- 3.3: O que é Web Scraping -->
+        <!-- 4.3: O que é Web Scraping -->
         <section>
-          <span class="badge">Capítulo 3 • Slide 3/7</span>
+          <span class="badge">Capítulo 4 • Slide 3/7</span>
           <h2>O que é <span class="gradient-text">Web Scraping</span> (Raspagem de Dados)?</h2>
           <p class="subtitle">Escrever um script que navega em páginas da web e coleta dados automaticamente</p>
 
@@ -636,9 +827,9 @@
           </aside>
         </section>
 
-        <!-- 3.4: Exemplo de Código Python Scraping -->
+        <!-- 4.4: Exemplo de Código Python Scraping -->
         <section>
-          <span class="badge">Capítulo 3 • Slide 4/7</span>
+          <span class="badge">Capítulo 4 • Slide 4/7</span>
           <h2>Código Prático de Raspagem em Python</h2>
           <p class="subtitle">Coletando contratos públicos com poucas linhas de código</p>
 
@@ -669,9 +860,9 @@ df.to_csv("contratos_prefeitura_2026.csv", index=False)
           </aside>
         </section>
 
-        <!-- 3.5: Consumo de APIs -->
+        <!-- 4.5: Consumo de APIs -->
         <section>
-          <span class="badge">Capítulo 3 • Slide 5/7</span>
+          <span class="badge">Capítulo 4 • Slide 5/7</span>
           <h2>O Poder das <span class="gradient-text-emerald">APIs REST</span></h2>
           <p class="subtitle">Quando o próprio órgão público oferece uma porta de entrada direta para dados</p>
 
@@ -698,9 +889,9 @@ df.to_csv("contratos_prefeitura_2026.csv", index=False)
           </aside>
         </section>
 
-        <!-- 3.6: Ética na Raspagem -->
+        <!-- 4.6: Ética na Raspagem -->
         <section>
-          <span class="badge">Capítulo 3 • Slide 6/7</span>
+          <span class="badge">Capítulo 4 • Slide 6/7</span>
           <h2>Ética & Boas Práticas do Web Scraping</h2>
           <p class="subtitle">Como investigar sem derrubar servidores públicos ou violar leis</p>
 
@@ -731,9 +922,9 @@ df.to_csv("contratos_prefeitura_2026.csv", index=False)
           </aside>
         </section>
 
-        <!-- 3.7: Conclusão Cap. 3 -->
+        <!-- 4.7: Conclusão Cap. 4 -->
         <section data-background-gradient="radial-gradient(circle at 50% 50%, #064e3b 0%, #0a0e1a 100%)">
-          <span class="badge badge-emerald">Capítulo 3 • Conclusão</span>
+          <span class="badge badge-emerald">Capítulo 4 • Conclusão</span>
           <h2>Resumo da Coleta de Dados</h2>
           <p class="subtitle">Agora que temos a base em mãos, começa o maior desafio: o tratamento</p>
 
@@ -744,23 +935,22 @@ df.to_csv("contratos_prefeitura_2026.csv", index=False)
           </div>
 
           <p style="text-align: center; color: var(--accent-cyan); margin-top: 1.8rem; font-size: 0.85em;">
-            👉 Pressione a tecla <strong>DIREITA (➡️)</strong> para iniciar o <strong>Capítulo 4: Limpeza & Auditoria de
-              Dados</strong>
+            👉 Pressione a tecla <strong>DIREITA (➡️)</strong> para iniciar o <strong>Capítulo 5: Limpeza, Tratamento & Auditoria de Dados</strong>
           </p>
 
           <aside class="notes">
-            Prepare o público para o Capítulo 4, onde ocorre a parte mais técnica e rigorosa da reportagem.
+            Prepare o público para o Capítulo 5, onde ocorre a parte mais técnica e rigorosa da reportagem.
           </aside>
         </section>
       </section>
 
       <!-- ========================================================= -->
-      <!-- CAPÍTULO 4: Limpeza, Tratamento & Auditoria de Dados       -->
+      <!-- CAPÍTULO 5: Limpeza, Tratamento & Auditoria de Dados       -->
       <!-- ========================================================= -->
       <section>
-        <!-- 4.1: Abertura Cap. 4 -->
+        <!-- 5.1: Abertura Cap. 5 -->
         <section data-background-gradient="radial-gradient(circle at 50% 30%, #701a75 0%, #0a0e1a 100%)">
-          <span class="badge" style="color: #f472b6; border-color: rgba(244, 114, 182, 0.4);">Capítulo 4/7</span>
+          <span class="badge" style="color: #f472b6; border-color: rgba(244, 114, 182, 0.4);">Capítulo 5/7</span>
           <h1>Limpeza, Tratamento & <span class="gradient-text-warm">Auditoria de Dados</span></h1>
           <p class="subtitle">Onde 80% do trabalho investigativo acontece: da sujeira à verdade auditável</p>
 
@@ -776,9 +966,9 @@ df.to_csv("contratos_prefeitura_2026.csv", index=False)
           </aside>
         </section>
 
-        <!-- 4.2: Armadilhas em Dados Reais -->
+        <!-- 5.2: Armadilhas em Dados Reais -->
         <section>
-          <span class="badge">Capítulo 4 • Slide 2/7</span>
+          <span class="badge">Capítulo 5 • Slide 2/7</span>
           <h2>As Maiores Armadilhas em Bases Públicas</h2>
           <p class="subtitle">O que pode arruinar uma manchete se o repórter não verificar</p>
 
@@ -807,9 +997,9 @@ df.to_csv("contratos_prefeitura_2026.csv", index=False)
           </aside>
         </section>
 
-        <!-- 4.3: OpenRefine -->
+        <!-- 5.3: OpenRefine -->
         <section>
-          <span class="badge">Capítulo 4 • Slide 3/7</span>
+          <span class="badge">Capítulo 5 • Slide 3/7</span>
           <h2>OpenRefine: O Canivete Suíço da Limpeza</h2>
           <p class="subtitle">A ferramenta visual mais eficiente para higienização e agrupamento de dados</p>
 
@@ -842,9 +1032,9 @@ df.to_csv("contratos_prefeitura_2026.csv", index=False)
           </aside>
         </section>
 
-        <!-- 4.4: Pandas & Python para Limpeza -->
+        <!-- 5.4: Pandas & Python para Limpeza -->
         <section>
-          <span class="badge">Capítulo 4 • Slide 4/7</span>
+          <span class="badge">Capítulo 5 • Slide 4/7</span>
           <h2>Tratamento Avançado com Python & Pandas</h2>
           <p class="subtitle">Automatizando a limpeza de milhões de registros em frações de segundo</p>
 
@@ -871,9 +1061,9 @@ print(f"Total auditado: R$ {df['valor'].sum():,.2f}")
           </aside>
         </section>
 
-        <!-- 4.5: Cruzamento de Bases (Joins) -->
+        <!-- 5.5: Cruzamento de Bases (Joins) -->
         <section>
-          <span class="badge">Capítulo 4 • Slide 5/7</span>
+          <span class="badge">Capítulo 5 • Slide 5/7</span>
           <h2>Cruzamento de Bases: Onde Surgem os Furos</h2>
           <p class="subtitle">Conectando bases que as autoridades nunca imaginaram ver juntas</p>
 
@@ -903,9 +1093,9 @@ print(f"Total auditado: R$ {df['valor'].sum():,.2f}")
           </aside>
         </section>
 
-        <!-- 4.6: Outliers & Anomalias -->
+        <!-- 5.6: Outliers & Anomalias -->
         <section>
-          <span class="badge">Capítulo 4 • Slide 6/7</span>
+          <span class="badge">Capítulo 5 • Slide 6/7</span>
           <h2>Caçando Outliers (Valores Fora da Curva)</h2>
           <p class="subtitle">Como identificar desvios estatísticos que apontam para suspeitas reais</p>
 
@@ -936,9 +1126,9 @@ print(f"Total auditado: R$ {df['valor'].sum():,.2f}")
           </aside>
         </section>
 
-        <!-- 4.7: Conclusão Cap. 4 -->
+        <!-- 5.7: Conclusão Cap. 5 -->
         <section data-background-gradient="radial-gradient(circle at 50% 50%, #701a75 0%, #0a0e1a 100%)">
-          <span class="badge badge-emerald">Capítulo 4 • Conclusão</span>
+          <span class="badge badge-emerald">Capítulo 5 • Conclusão</span>
           <h2>Auditoria & Reprodutibilidade</h2>
 
           <div class="card" style="margin-top: 1.5rem;">
@@ -948,8 +1138,7 @@ print(f"Total auditado: R$ {df['valor'].sum():,.2f}")
           </div>
 
           <p style="text-align: center; color: var(--accent-cyan); margin-top: 1.8rem; font-size: 0.85em;">
-            👉 Pressione a tecla <strong>DIREITA (➡️)</strong> para iniciar o <strong>Capítulo 5: Análise Estatística &
-              BI</strong>
+            👉 Pressione a tecla <strong>DIREITA (➡️)</strong> para iniciar o <strong>Capítulo 6: Análise Estatística, Investigação & BI</strong>
           </p>
 
           <aside class="notes">
@@ -959,12 +1148,12 @@ print(f"Total auditado: R$ {df['valor'].sum():,.2f}")
       </section>
 
       <!-- ========================================================= -->
-      <!-- CAPÍTULO 5: Análise Estatística, Investigação & BI         -->
+      <!-- CAPÍTULO 6: Análise Estatística, Investigação & BI         -->
       <!-- ========================================================= -->
       <section>
-        <!-- 5.1: Abertura Cap. 5 -->
+        <!-- 6.1: Abertura Cap. 6 -->
         <section data-background-gradient="radial-gradient(circle at 50% 30%, #831843 0%, #0a0e1a 100%)">
-          <span class="badge" style="color: #f43f5e; border-color: rgba(244, 63, 94, 0.4);">Capítulo 5/7</span>
+          <span class="badge" style="color: #f43f5e; border-color: rgba(244, 63, 94, 0.4);">Capítulo 6/7</span>
           <h1>Análise Estatística, <span class="gradient-text-warm">Investigação & BI</span></h1>
           <p class="subtitle">Fazendo as perguntas certas aos dados e extraindo inteligência editorial</p>
 
@@ -981,9 +1170,9 @@ print(f"Total auditado: R$ {df['valor'].sum():,.2f}")
           </aside>
         </section>
 
-        <!-- 5.2: Estatística Básica para Repórteres -->
+        <!-- 6.2: Estatística Básica para Repórteres -->
         <section>
-          <span class="badge">Capítulo 5 • Slide 2/7</span>
+          <span class="badge">Capítulo 6 • Slide 2/7</span>
           <h2>Estatística Essencial para Jornalistas</h2>
           <p class="subtitle">Conceitos fundamentais que todo comunicador precisa dominar</p>
 
@@ -1015,9 +1204,9 @@ print(f"Total auditado: R$ {df['valor'].sum():,.2f}")
           </aside>
         </section>
 
-        <!-- 5.3: Correlação vs Causalidade -->
+        <!-- 6.3: Correlação vs Causalidade -->
         <section>
-          <span class="badge">Capítulo 5 • Slide 3/7</span>
+          <span class="badge">Capítulo 6 • Slide 3/7</span>
           <h2>Correlação Não Implica Causalidade</h2>
           <p class="subtitle">O maior gerador de desinformação involuntária no jornalismo</p>
 
@@ -1039,9 +1228,9 @@ print(f"Total auditado: R$ {df['valor'].sum():,.2f}")
           </aside>
         </section>
 
-        <!-- 5.4: Business Intelligence no Jornalismo -->
+        <!-- 6.4: Business Intelligence no Jornalismo -->
         <section>
-          <span class="badge">Capítulo 5 • Slide 4/7</span>
+          <span class="badge">Capítulo 6 • Slide 4/7</span>
           <h2>Business Intelligence (BI) na Redação</h2>
           <p class="subtitle">Utilizando ferramentas corporativas para monitorar o poder público continuamente</p>
 
@@ -1071,9 +1260,9 @@ print(f"Total auditado: R$ {df['valor'].sum():,.2f}")
           </aside>
         </section>
 
-        <!-- 5.5: Social Listening -->
+        <!-- 6.5: Social Listening -->
         <section>
-          <span class="badge">Capítulo 5 • Slide 5/7</span>
+          <span class="badge">Capítulo 6 • Slide 5/7</span>
           <h2>Social Listening & Monitoramento de Redes</h2>
           <p class="subtitle">Entendendo o ecossistema digital, narrativas e fluxos de opinião pública</p>
 
@@ -1105,9 +1294,9 @@ print(f"Total auditado: R$ {df['valor'].sum():,.2f}")
           </aside>
         </section>
 
-        <!-- 5.6: Da Análise à Entrevista -->
+        <!-- 6.6: Da Análise à Entrevista -->
         <section>
-          <span class="badge">Capítulo 5 • Slide 6/7</span>
+          <span class="badge">Capítulo 6 • Slide 6/7</span>
           <h2>O Fechamento: Da Planilha ao Confronto Ético</h2>
           <p class="subtitle">O que fazer após encontrar a anomalia estatística?</p>
 
@@ -1137,9 +1326,9 @@ print(f"Total auditado: R$ {df['valor'].sum():,.2f}")
           </aside>
         </section>
 
-        <!-- 5.7: Conclusão Cap. 5 -->
+        <!-- 6.7: Conclusão Cap. 6 -->
         <section data-background-gradient="radial-gradient(circle at 50% 50%, #831843 0%, #0a0e1a 100%)">
-          <span class="badge badge-emerald">Capítulo 5 • Conclusão</span>
+          <span class="badge badge-emerald">Capítulo 6 • Conclusão</span>
           <h2>Resumo da Análise de Dados</h2>
 
           <div class="quote-container" style="margin-top: 1.5rem;">
@@ -1152,206 +1341,11 @@ print(f"Total auditado: R$ {df['valor'].sum():,.2f}")
           </div>
 
           <p style="text-align: center; color: var(--accent-cyan); margin-top: 1.5rem; font-size: 0.85em;">
-            👉 Pressione a tecla <strong>DIREITA (➡️)</strong> para iniciar o <strong>Capítulo 6: Visualização &
-              Storytelling</strong>
+            👉 Pressione a tecla <strong>DIREITA (➡️)</strong> para iniciar o <strong>Capítulo 7: Ética, Futuro com IA & Próximos Passos</strong>
           </p>
 
           <aside class="notes">
             Enfatize a honestidade intelectual do repórter ao analisar dados.
-          </aside>
-        </section>
-      </section>
-
-      <!-- ========================================================= -->
-      <!-- CAPÍTULO 6: Visualização de Dados & Storytelling Visual   -->
-      <!-- ========================================================= -->
-      <section>
-        <!-- 6.1: Abertura Cap. 6 -->
-        <section data-background-gradient="radial-gradient(circle at 50% 30%, #14532d 0%, #0a0e1a 100%)">
-          <span class="badge badge-emerald">Capítulo 6/7</span>
-          <h1>Visualização de Dados & <span class="gradient-text-emerald">Storytelling Visual</span></h1>
-          <p class="subtitle">Como transformar descobertas numéricas em narrativas visuais claras e inesquecíveis</p>
-
-          <div class="pill-list" style="justify-content: center; margin-top: 2rem;">
-            <div class="pill">📈 Escolha de Gráficos</div>
-            <div class="pill">🗺️ Jornalismo Geoespacial</div>
-            <div class="pill">📜 Scrollytelling</div>
-            <div class="pill">♿ Acessibilidade Visual</div>
-          </div>
-
-          <aside class="notes">
-            A visualização é a ponte entre a complexidade do banco de dados e a compreensão imediata do público.
-          </aside>
-        </section>
-
-        <!-- 6.2: Escolhendo o Gráfico Correto -->
-        <section>
-          <span class="badge">Capítulo 6 • Slide 2/7</span>
-          <h2>Escolhendo o Gráfico Correto</h2>
-          <p class="subtitle">A forma visual deve sempre seguir a função informativa dos dados</p>
-
-          <div class="card-grid">
-            <div class="card fragment fade-up">
-              <div class="icon">📊</div>
-              <h4>Gráfico de Barras</h4>
-              <p>Ideal para <strong>comparações discretas</strong> entre categorias ou rankings. Sempre inicie o eixo
-                numérico em zero.</p>
-            </div>
-            <div class="card fragment fade-up">
-              <div class="icon">📈</div>
-              <h4>Gráfico de Linhas</h4>
-              <p>Perfeito para <strong>evolução no tempo</strong> (séries temporais, tendências contínuas ao longo de
-                meses/anos).</p>
-            </div>
-            <div class="card fragment fade-up">
-              <div class="icon">🫧</div>
-              <h4>Dispersão & Treemap</h4>
-              <p>Dispersão para <strong>correlações</strong> entre duas variáveis; Treemap para <strong>proporções
-                  hierárquicas</strong> de orçamento.</p>
-            </div>
-          </div>
-
-          <aside class="notes">
-            Alerta importante: Evite gráficos de pizza com mais de 3 fatias e nunca use gráficos em 3D.
-          </aside>
-        </section>
-
-        <!-- 6.3: Gráfico Interativo Live Chart.js -->
-        <section>
-          <span class="badge badge-emerald">Capítulo 6 • Slide 3/7</span>
-          <h2>Gráficos Interativos Dinâmicos</h2>
-          <p class="subtitle">Demonstração de visualização viva integrada diretamente na apresentação</p>
-
-          <div class="chart-wrapper">
-            <canvas id="dataChart"></canvas>
-          </div>
-          <p style="font-size: 0.7em; color: var(--text-muted); margin-top: 0.6rem; text-align: center;">
-            Fonte: Global Investigative Journalism Network (GIJN) & Benchmarks Editoriais
-          </p>
-
-          <aside class="notes">
-            Mostre aos estudantes que no Reveal.js os gráficos são elementos HTML/JS interativos ao vivo (passe o mouse
-            para ver tooltips).
-          </aside>
-        </section>
-
-        <!-- 6.4: Jornalismo Geoespacial & Mapas -->
-        <section>
-          <span class="badge">Capítulo 6 • Slide 4/7</span>
-          <h2>Jornalismo Geoespacial & Mapas</h2>
-          <p class="subtitle">Quando a localização geográfica é o coração da investigação</p>
-
-          <div class="card-grid-2">
-            <div class="card fragment">
-              <h4 style="color: var(--accent-cyan);">🗺️ QGIS & Análise Espacial</h4>
-              <p>Cruzamento de polígonos de terras indígenas, desmatamento (DETER/INPE) e embargos ambientais do IBAMA.
-              </p>
-            </div>
-            <div class="card fragment">
-              <h4 style="color: var(--accent-purple);">🌐 Mapas Interativos Web (Datawrapper / Mapbox)</h4>
-              <p>Mapas coropléticos que permitem ao leitor digitar seu CEP e verificar o investimento em saúde no seu
-                próprio bairro.</p>
-            </div>
-            <div class="card fragment">
-              <h4 style="color: var(--accent-amber);">⚠️ A Armadilha dos Mapas</h4>
-              <p>"Terra não vota": mapas por área territorial distorcem a realidade porque municípios gigantes na
-                Amazônia têm poucos habitantes.</p>
-            </div>
-            <div class="card fragment">
-              <h4 style="color: var(--accent-emerald);">🎯 Cartogramas</h4>
-              <p>Redimensione as regiões geográficas pelo tamanho da população para refletir o peso humano real.</p>
-            </div>
-          </div>
-
-          <aside class="notes">
-            Sempre pergunte: "Esta matéria realmente precisa de um mapa ou uma tabela ordenada seria mais clara?".
-          </aside>
-        </section>
-
-        <!-- 6.5: Scrollytelling e Narrativas Digitais -->
-        <section>
-          <span class="badge">Capítulo 6 • Slide 5/7</span>
-          <h2>Scrollytelling: A Arte de Narrar com a Rolagem</h2>
-          <p class="subtitle">Conduzindo o leitor passo a passo por gráficos complexos</p>
-
-          <div class="card-grid">
-            <div class="card fragment fade-up">
-              <div class="icon">🖱️</div>
-              <h4>Rolagem como Controle</h4>
-              <p>À medida que o leitor rola o texto, o gráfico ao fundo se transforma, destaca pontos e dá zoom em
-                detalhes.</p>
-            </div>
-            <div class="card fragment fade-up">
-              <div class="icon">✨</div>
-              <h4>The Pudding & NYT</h4>
-              <p>Casos clássicos de jornalismo visual que transformam dados densos em experiências imersivas premiadas.
-              </p>
-            </div>
-            <div class="card fragment fade-up">
-              <div class="icon">📱</div>
-              <h4>Mobile-First</h4>
-              <p>Mais de 70% dos seus leitores acessarão pelo smartphone. O design deve ser vertical, leve e responsivo.
-              </p>
-            </div>
-          </div>
-
-          <aside class="notes">
-            O scrollytelling evita que o leitor se sinta sobrecarregado com um gráfico cheio de dados de uma só vez.
-          </aside>
-        </section>
-
-        <!-- 6.6: Acessibilidade e Inclusão -->
-        <section>
-          <span class="badge">Capítulo 6 • Slide 6/7</span>
-          <h2>Design Inclusivo & Acessibilidade</h2>
-          <p class="subtitle">Garantindo que todos os públicos possam compreender suas reportagens</p>
-
-          <div class="card-grid-2">
-            <div class="card fragment">
-              <h4 style="color: var(--accent-cyan);">👁️ Paletas para Daltonismo</h4>
-              <p>Nunca dependa apenas de verde/vermelho para indicar positivo/negativo. Use paletas testadas como
-                Viridis ou ColorBrewer.</p>
-            </div>
-            <div class="card fragment">
-              <h4 style="color: var(--accent-purple);">🔊 Textos Alternativos (Alt Text)</h4>
-              <p>Descreva o insight central do gráfico no atributo <code>alt</code> para permitir a leitura por pessoas
-                com deficiência visual.</p>
-            </div>
-            <div class="card fragment">
-              <h4 style="color: var(--accent-amber);">🏷️ Rotulagem Direta</h4>
-              <p>Coloque rótulos diretamente nas linhas em vez de forçar o leitor a olhar uma legenda distante
-                repetidamente.</p>
-            </div>
-            <div class="card fragment">
-              <h4 style="color: var(--accent-emerald);">📥 Acesso à Tabela Bruta</h4>
-              <p>Sempre disponibilize um botão para baixar a tabela original usada na construção daquele gráfico.</p>
-            </div>
-          </div>
-
-          <aside class="notes">
-            Acessibilidade não é apenas bondade; é compromisso ético e legal do jornalismo democrático.
-          </aside>
-        </section>
-
-        <!-- 6.7: Conclusão Cap. 6 -->
-        <section data-background-gradient="radial-gradient(circle at 50% 50%, #14532d 0%, #0a0e1a 100%)">
-          <span class="badge badge-emerald">Capítulo 6 • Conclusão</span>
-          <h2>Síntese do Storytelling Visual</h2>
-
-          <div class="card" style="margin-top: 1.5rem;">
-            <h4>🎨 Princípio de Alberto Cairo:</h4>
-            <p style="font-size: 0.95em;">"Um bom gráfico de dados não é aquele que é apenas bonito, mas aquele que
-              torna visível a estrutura invisível da verdade."</p>
-          </div>
-
-          <p style="text-align: center; color: var(--accent-cyan); margin-top: 1.8rem; font-size: 0.85em;">
-            👉 Pressione a tecla <strong>DIREITA (➡️)</strong> para iniciar o <strong>Capítulo 7: Ética, Futuro com IA &
-              Carreira</strong>
-          </p>
-
-          <aside class="notes">
-            Finalize o capítulo 6 citando Alberto Cairo, uma das maiores referências mundiais em infografia e jornalismo
-            visual.
           </aside>
         </section>
       </section>
@@ -1557,7 +1551,7 @@ print(f"Total auditado: R$ {df['valor'].sum():,.2f}")
         </section>
       </section>
 
-    </div>
+        </div>
   </div>
 
   <!-- Keyboard Helper Hint at bottom -->
