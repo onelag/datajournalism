@@ -1252,22 +1252,37 @@
           <p class="subtitle">Conexões diretas que devolvem dados limpos e atualizados em JSON sem telas visuais</p>
 
           <div class="card-grid-2">
-            <div class="card fragment">
-              <h4 style="color: var(--accent-cyan);">🏛️ Câmara dos Deputados & Senado</h4>
-              <p>Endpoints com gastos parlamentares (Cota CEAP), votações nominais de cada deputado, discursos em plenário e tramitação de projetos em tempo real.</p>
-            </div>
-            <div class="card fragment">
-              <h4 style="color: var(--accent-emerald);">🏦 Banco Central do Brasil (SGS)</h4>
-              <p>Milhares de séries temporais: taxa Selic histórica, inflação (IPCA), cotações de moedas e operações de crédito disponibilizadas em JSON.</p>
-            </div>
-            <div class="card fragment">
-              <h4 style="color: var(--accent-amber);">🗳️ TSE (DivulgaCandContas)</h4>
-              <p>Base com patrimônio declarado de candidatos, receitas e despesas de campanhas, limites de gastos e apuração de urnas.</p>
-            </div>
-            <div class="card fragment">
-              <h4 style="color: var(--accent-purple);">📈 IBGE (API do SIDRA & Agregados)</h4>
-              <p>Consultas parametrizadas para extrair PIB, desemprego (PNAD), inflação e dados censitários sem precisar baixar arquivos manuais.</p>
-            </div>
+            <a href="https://dadosabertos.camara.leg.br/" target="_blank" rel="noopener noreferrer" class="card fragment fade-up" style="text-decoration: none; color: inherit; display: flex; flex-direction: column; justify-content: space-between; text-align: left; cursor: pointer;">
+              <div>
+                <h4 style="color: var(--accent-cyan);">🏛️ Câmara dos Deputados (API) <span style="font-size: 0.8em; color: var(--accent-cyan);">↗</span></h4>
+                <p>Endpoints com gastos parlamentares (Cota CEAP), votações nominais de cada deputado, discursos em plenário e tramitação de projetos em tempo real.</p>
+              </div>
+              <div style="font-size: 0.72em; color: var(--accent-cyan); margin-top: 0.6rem; font-weight: 600;">🔗 dadosabertos.camara.leg.br ↗</div>
+            </a>
+
+            <a href="https://dadosabertos.bcb.gov.br/" target="_blank" rel="noopener noreferrer" class="card fragment fade-up" style="text-decoration: none; color: inherit; display: flex; flex-direction: column; justify-content: space-between; text-align: left; cursor: pointer;">
+              <div>
+                <h4 style="color: var(--accent-emerald);">🏦 Banco Central do Brasil (SGS) <span style="font-size: 0.8em; color: var(--accent-emerald);">↗</span></h4>
+                <p>Milhares de séries temporais: taxa Selic histórica, inflação (IPCA), cotações de moedas e operações de crédito disponibilizadas em JSON.</p>
+              </div>
+              <div style="font-size: 0.72em; color: var(--accent-emerald); margin-top: 0.6rem; font-weight: 600;">🔗 dadosabertos.bcb.gov.br ↗</div>
+            </a>
+
+            <a href="https://divulgacandcontas.tse.jus.br/" target="_blank" rel="noopener noreferrer" class="card fragment fade-up" style="text-decoration: none; color: inherit; display: flex; flex-direction: column; justify-content: space-between; text-align: left; cursor: pointer;">
+              <div>
+                <h4 style="color: var(--accent-amber);">🗳️ TSE (DivulgaCandContas) <span style="font-size: 0.8em; color: var(--accent-amber);">↗</span></h4>
+                <p>Base com patrimônio declarado de candidatos, receitas e despesas de campanhas, limites de gastos e apuração de urnas.</p>
+              </div>
+              <div style="font-size: 0.72em; color: var(--accent-amber); margin-top: 0.6rem; font-weight: 600;">🔗 divulgacandcontas.tse.jus.br ↗</div>
+            </a>
+
+            <a href="https://servicodados.ibge.gov.br/api/docs/agregados?versao=3" target="_blank" rel="noopener noreferrer" class="card fragment fade-up" style="text-decoration: none; color: inherit; display: flex; flex-direction: column; justify-content: space-between; text-align: left; cursor: pointer;">
+              <div>
+                <h4 style="color: var(--accent-purple);">📈 IBGE (API do SIDRA & Agregados) <span style="font-size: 0.8em; color: var(--accent-purple);">↗</span></h4>
+                <p>Consultas parametrizadas para extrair PIB, desemprego (PNAD), inflação e dados censitários sem precisar baixar arquivos manuais.</p>
+              </div>
+              <div style="font-size: 0.72em; color: var(--accent-purple); margin-top: 0.6rem; font-weight: 600;">🔗 servicodados.ibge.gov.br ↗</div>
+            </a>
           </div>
 
           <aside class="notes">
@@ -1282,14 +1297,21 @@
           <p class="subtitle">Não é obrigatório começar programando: explore endpoints com softwares no-code</p>
 
           <div class="card-grid-2">
-            <div class="card fragment">
-              <h4 style="color: var(--accent-amber);">📮 Postman & Insomnia</h4>
-              <p>Interfaces visuais onde você cola o link da API, adiciona parâmetros de busca (ex: datas, paginação) e inspeciona a resposta em JSON formatada e legível antes de qualquer apuração.</p>
-            </div>
-            <div class="card fragment">
-              <h4 style="color: var(--accent-cyan);">📊 Power BI & Power Query</h4>
-              <p>O conector nativo "Da Web" do Power Query permite colar a URL da API, expandir o JSON em colunas com poucos cliques e criar painéis que se atualizam automaticamente.</p>
-            </div>
+            <a href="https://www.postman.com/" target="_blank" rel="noopener noreferrer" class="card fragment fade-up" style="text-decoration: none; color: inherit; display: flex; flex-direction: column; justify-content: space-between; text-align: left; cursor: pointer;">
+              <div>
+                <h4 style="color: var(--accent-amber);">📮 Postman <span style="font-size: 0.8em; color: var(--accent-amber);">↗</span></h4>
+                <p>Interface visual onde você cola o link da API, adiciona parâmetros de busca (ex: datas, paginação) e inspeciona a resposta em JSON formatada e legível antes de qualquer apuração.</p>
+              </div>
+              <div style="font-size: 0.72em; color: var(--accent-amber); margin-top: 0.6rem; font-weight: 600;">🔗 postman.com ↗</div>
+            </a>
+
+            <a href="https://powerbi.microsoft.com/" target="_blank" rel="noopener noreferrer" class="card fragment fade-up" style="text-decoration: none; color: inherit; display: flex; flex-direction: column; justify-content: space-between; text-align: left; cursor: pointer;">
+              <div>
+                <h4 style="color: var(--accent-cyan);">📊 Power BI & Power Query <span style="font-size: 0.8em; color: var(--accent-cyan);">↗</span></h4>
+                <p>O conector nativo "Da Web" do Power Query permite colar a URL da API, expandir o JSON em colunas com poucos cliques e criar painéis que se atualizam automaticamente.</p>
+              </div>
+              <div style="font-size: 0.72em; color: var(--accent-cyan); margin-top: 0.6rem; font-weight: 600;">🔗 powerbi.microsoft.com ↗</div>
+            </a>
           </div>
 
           <div class="card fragment fade-up" style="margin-top: 1.2rem; background: rgba(30, 41, 59, 0.7);">
