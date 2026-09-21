@@ -261,9 +261,15 @@
 }
 
 .presenter-info h4 {
-  font-size: 1em;
+  font-size: 1.05em;
   margin: 0;
+  color: #cbd5e1;
+  font-weight: 400;
+}
+
+.presenter-info h4 strong {
   color: #fff;
+  font-weight: 800;
 }
 
 .presenter-info p {
