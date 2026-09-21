@@ -2,11 +2,11 @@
 let chartInstance = null;
 
 Reveal.initialize({
-  // Configurações visuais dos slides
-  width: 1200,
-  height: 700,
-  margin: 0.08,
-  minScale: 0.2,
+  // Configurações visuais dos slides otimizadas para 16:9 sem cortes
+  width: 1280,
+  height: 720,
+  margin: 0.04,
+  minScale: 0.1,
   maxScale: 2.0,
 
   // Setas e controles de navegação
