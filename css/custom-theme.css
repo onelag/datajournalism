@@ -227,6 +227,62 @@
   transition: opacity 0.15s ease;
 }
 
+/* Minard Historical Map Visualization */
+.minard-wrapper {
+  margin-top: 1rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: 16px;
+  padding: 0.75rem;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+  transition: all 0.3s ease;
+  position: relative;
+  text-align: center;
+}
+
+.minard-wrapper:hover {
+  border-color: var(--accent-cyan);
+  box-shadow: 0 16px 40px rgba(56, 189, 248, 0.25);
+  transform: translateY(-2px);
+}
+
+.minard-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.minard-img {
+  width: 100%;
+  max-height: 295px;
+  object-fit: contain;
+  border-radius: 10px;
+  display: block;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  background: #f4ecd8;
+}
+
+.minard-wrapper:hover .minard-img {
+  filter: brightness(1.03);
+}
+
+.minard-caption {
+  font-size: 0.76em;
+  color: var(--accent-cyan);
+  margin-top: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  font-weight: 600;
+}
+
+.minard-caption:hover {
+  color: #7dd3fc;
+  text-decoration: underline;
+}
+
 .card {
   background: var(--bg-card);
   backdrop-filter: blur(12px);
