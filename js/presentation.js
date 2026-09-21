@@ -204,6 +204,51 @@ function initChart() {
 })();
 
 // =========================================================
+// Execução interativa do script R (Mapa IDHM Sul) (Slide 5.7)
+// =========================================================
+function executeRScript() {
+  const codeContainer = document.getElementById('rCodeContainer');
+  const resultContainer = document.getElementById('rResultContainer');
+  const statusEl = document.getElementById('rTerminalStatus');
+  const btnRun = document.getElementById('btnRunRScript');
+  const btnReset = document.getElementById('btnResetRScript');
+
+  if (!resultContainer || !btnRun) return;
+
+  btnRun.disabled = true;
+  btnRun.innerHTML = '⏳ Executando geobr & ggplot2...';
+
+  if (codeContainer) codeContainer.style.display = 'none';
+  resultContainer.style.display = 'block';
+
+  if (statusEl) {
+    statusEl.innerHTML = '⚡ [R 4.4.0] Carregando <code>geobr</code> e <code>ggplot2</code>... Baixando malhas dos 1.191 municípios da Região Sul (PR, SC, RS)... Cruzando com Atlas do IDHM... Renderizando com <code>scale_fill_viridis_c()</code>:';
+  }
+
+  setTimeout(() => {
+    btnRun.disabled = false;
+    btnRun.innerHTML = '▶️ Reexecutar Script R';
+    if (btnReset) btnReset.style.display = 'inline-flex';
+  }, 350);
+}
+
+function resetRScript() {
+  const codeContainer = document.getElementById('rCodeContainer');
+  const resultContainer = document.getElementById('rResultContainer');
+  const btnReset = document.getElementById('btnResetRScript');
+  const btnRun = document.getElementById('btnRunRScript');
+
+  if (codeContainer) codeContainer.style.display = 'block';
+  if (resultContainer) resultContainer.style.display = 'none';
+  if (btnReset) btnReset.style.display = 'none';
+  if (btnRun) {
+    btnRun.innerHTML = '▶️ Executar Script R & Gerar Mapa';
+    btnRun.disabled = false;
+  }
+}
+
+
+// =========================================================
 // Execução interativa do script Python da Selic (Slide 5.5)
 // =========================================================
 let selicChartInstance = null;

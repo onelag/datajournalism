@@ -1247,7 +1247,7 @@
 
         <!-- 5.2: O que são APIs e Principais Fontes no Brasil -->
         <section>
-          <span class="badge">Capítulo 5 • Slide 2/8</span>
+          <span class="badge">Capítulo 5 • Slide 2/9</span>
           <h2>O Poder das <span class="gradient-text-emerald">APIs Públicas</span></h2>
           <p class="subtitle">Conexões diretas que devolvem dados limpos e atualizados em JSON sem telas visuais</p>
 
@@ -1277,7 +1277,7 @@
 
         <!-- 5.3: Como Consumir APIs: De Ferramentas Visuais a Código -->
         <section>
-          <span class="badge">Capítulo 5 • Slide 3/8</span>
+          <span class="badge">Capítulo 5 • Slide 3/9</span>
           <h2>Como Extrair de APIs: <span class="gradient-text">Ferramentas Visuais</span></h2>
           <p class="subtitle">Não é obrigatório começar programando: explore endpoints com softwares no-code</p>
 
@@ -1305,7 +1305,7 @@
 
         <!-- 5.4: Caso Prático: API do Banco Central (SGS) -->
         <section>
-          <span class="badge">Capítulo 5 • Slide 4/8</span>
+          <span class="badge">Capítulo 5 • Slide 4/9</span>
           <h2>Caso Prático: <span class="gradient-text-warm">API do Banco Central</span></h2>
           <p class="subtitle">Anatomia de uma requisição real para extrair a Taxa Selic</p>
 
@@ -1333,7 +1333,7 @@
 
         <!-- 5.5: Script Python: Da API ao Gráfico de Barras -->
         <section>
-          <span class="badge">Capítulo 5 • Slide 5/8</span>
+          <span class="badge">Capítulo 5 • Slide 5/9</span>
           <h2>Script Python: <span class="gradient-text-emerald">Da API ao Gráfico da Selic</span></h2>
           <p class="subtitle">Código completo para extrair os dados e gerar um gráfico de barras da taxa anualizada (% a.a.)</p>
 
@@ -1396,7 +1396,7 @@ plt.show()
 
         <!-- 5.6: A Linguagem R no Jornalismo de Dados -->
         <section>
-          <span class="badge">Capítulo 5 • Slide 6/8</span>
+          <span class="badge">Capítulo 5 • Slide 6/9</span>
           <h2>A Linguagem R & <span class="gradient-text">Pacotes para o Brasil</span></h2>
           <p class="subtitle">Uma das ferramentas mais populares em redações para análise estatística e gráficos (ggplot2)</p>
 
@@ -1424,9 +1424,176 @@ plt.show()
           </aside>
         </section>
 
-        <!-- 5.7: SQL para Grandes Bases de Dados -->
+                <!-- 5.7: Script R: Mapa Coroplético do IDHM da Região Sul -->
         <section>
-          <span class="badge">Capítulo 5 • Slide 7/8</span>
+          <span class="badge">Capítulo 5 • Slide 7/9</span>
+          <h2>Script R: <span class="gradient-text">Mapa Coroplético do IDHM</span></h2>
+          <p class="subtitle">Baixando malhas com <code>geobr</code> e mapeando o desenvolvimento humano dos 1.191 municípios do Sul</p>
+
+          <!-- Código R -->
+          <div id="rCodeContainer">
+            <pre style="font-size: 0.52em; margin-top: 0.5rem;"><code class="language-r" data-trim data-line-numbers="1-4|6-7|9-12|14-15|17-27">
+# 1. Carregar pacotes essenciais
+library(geobr)      # Baixa geometrias oficiais do IBGE
+library(ggplot2)    # Gramática visual de mapas e gráficos
+library(dplyr)      # Tratamento de dados e junções (left_join)
+library(abjData)    # Indicadores do Atlas do Desenvolvimento Humano
+
+# 2. Baixar malhas dos 1.191 municípios da Região Sul (PR, SC, RS)
+mapa_sul <- read_municipality(code_muni = "sul", year = 2020, showProgress = FALSE)
+
+# 3. Filtrar e preparar os dados de IDHM municipal
+dados_idhm <- pnud_min %>%
+  filter(ano == 2010, uf %in% c("PR", "SC", "RS")) %>%
+  select(code_muni = codmun7, idhm, muni_nm = munic_nm, uf)
+
+# 4. Unir os limites geográficos aos indicadores socioeconômicos
+mapa_completo <- left_join(mapa_sul, dados_idhm, by = "code_muni")
+
+# 5. Gerar o mapa coroplético com a paleta contínua Viridis
+ggplot(data = mapa_completo) +
+  geom_sf(aes(fill = idhm), color = "#ffffff", size = 0.04) +
+  scale_fill_viridis_c(
+    option = "viridis",
+    name = "IDHM Municipal",
+    direction = 1,
+    breaks = c(0.65, 0.70, 0.75, 0.80, 0.85),
+    labels = c("0.65 (Médio)", "0.70 (Alto)", "0.75", "0.80 (Muito Alto)", "0.85+")
+  ) +
+  labs(
+    title = "Distribuição Espacial do IDHM nos Municípios do Sul",
+    subtitle = "Fonte: IPEA / PNUD / FJP processados com geobr no R",
+    caption = "Elaboração própria com ggplot2"
+  ) +
+  theme_void() +
+  theme(legend.position = "right")
+            </code></pre>
+          </div>
+
+          <!-- Container do Mapa Coroplético Gerado -->
+          <div id="rResultContainer" style="display: none; margin-top: 0.5rem;">
+            <div id="rTerminalStatus" style="font-size: 0.72em; color: #34d399; background: rgba(15, 23, 42, 0.85); padding: 0.4rem 0.8rem; border-radius: 8px; border-left: 3px solid #10b981; margin-bottom: 0.5rem; text-align: left;">
+              ⚡ [R 4.4.0] Carregando <code>geobr</code> e <code>ggplot2</code>... Baixando malhas dos 1.191 municípios da Região Sul (PR, SC, RS)... Cruzando com Atlas do IDHM... Renderizando com <code>scale_fill_viridis_c()</code>:
+            </div>
+            <div style="background: rgba(15, 23, 42, 0.75); border: 1px solid rgba(56, 189, 248, 0.25); border-radius: 12px; padding: 0.6rem 1rem; display: grid; grid-template-columns: 1.25fr 1fr; gap: 1rem; align-items: center; min-height: 270px;">
+              <!-- SVG do Mapa Coroplético da Região Sul -->
+              <div style="position: relative; height: 260px; display: flex; justify-content: center; align-items: center;">
+                <svg viewBox="0 0 380 300" style="max-height: 255px; width: 100%; filter: drop-shadow(0 4px 12px rgba(0,0,0,0.5));">
+                  <!-- PARANÁ (PR) -->
+                  <g id="pr-group">
+                    <!-- Noroeste PR (Maringá) -->
+                    <polygon class="map-poly" points="140,20 200,18 215,50 165,65 125,50" fill="#5ec962" stroke="#0f172a" stroke-width="0.8" data-tooltip="📍 Noroeste do PR (Maringá, Paranavaí) | IDHM Médio: 0.808 (Muito Alto)" />
+                    <!-- Norte Pioneiro / Londrina -->
+                    <polygon class="map-poly" points="200,18 270,25 285,60 215,50" fill="#5ec962" stroke="#0f172a" stroke-width="0.8" data-tooltip="📍 Norte Central e Pioneiro (Londrina, Apucarana) | IDHM Médio: 0.778 (Alto)" />
+                    <!-- Oeste PR (Cascavel, Toledo, Foz do Iguaçu) -->
+                    <polygon class="map-poly" points="95,45 140,40 165,65 140,98 90,85" fill="#21918c" stroke="#0f172a" stroke-width="0.8" data-tooltip="📍 Oeste do PR (Cascavel, Toledo, Foz do Iguaçu) | IDHM Médio: 0.774 (Alto)" />
+                    <!-- Centro-Sul PR (Guarapuava) -->
+                    <polygon class="map-poly" points="165,65 215,50 230,85 180,105 140,98" fill="#3b528b" stroke="#0f172a" stroke-width="0.8" data-tooltip="📍 Centro-Sul Paranaense (Guarapuava, Irati) | IDHM Médio: 0.731 (Alto)" />
+                    <!-- Campos Gerais (Ponta Grossa) -->
+                    <polygon class="map-poly" points="215,50 285,60 290,95 230,85" fill="#21918c" stroke="#0f172a" stroke-width="0.8" data-tooltip="📍 Campos Gerais (Ponta Grossa, Castro) | IDHM Médio: 0.763 (Alto)" />
+                    <!-- Região Metropolitana de Curitiba -->
+                    <polygon class="map-poly" points="230,85 290,95 305,115 255,120 220,105" fill="#fde725" stroke="#0f172a" stroke-width="0.8" data-tooltip="📍 Grande Curitiba (Curitiba, S.J. dos Pinhais) | IDHM: 0.823 (Muito Alto - Top 10 BR)" />
+                    <!-- Litoral PR / Vale do Ribeira -->
+                    <polygon class="map-poly" points="290,95 330,85 340,110 305,115" fill="#440154" stroke="#0f172a" stroke-width="0.8" data-tooltip="📍 Litoral do PR / Vale do Ribeira (Paranaguá, Guaraqueçaba) | IDHM Médio: 0.697 (Médio)" />
+                    <!-- Sudoeste PR (Pato Branco, Beltrão) -->
+                    <polygon class="map-poly" points="90,85 140,98 150,118 100,118" fill="#3b528b" stroke="#0f172a" stroke-width="0.8" data-tooltip="📍 Sudoeste do PR (Pato Branco, Francisco Beltrão) | IDHM Médio: 0.762 (Alto)" />
+                    <text x="195" y="42" fill="#ffffff" font-size="9" font-weight="bold" letter-spacing="1" opacity="0.9" pointer-events="none">PARANÁ (PR)</text>
+                  </g>
+
+                  <!-- SANTA CATARINA (SC) -->
+                  <g id="sc-group">
+                    <!-- Oeste Catarinense (Chapecó, Concórdia) -->
+                    <polygon class="map-poly" points="90,118 150,118 160,150 95,150" fill="#5ec962" stroke="#0f172a" stroke-width="0.8" data-tooltip="📍 Grande Oeste Catarinense (Chapecó, Concórdia) | IDHM Médio: 0.790 (Muito Alto)" />
+                    <!-- Meio-Oeste SC (Joaçaba, Videira) -->
+                    <polygon class="map-poly" points="150,118 205,115 210,150 160,150" fill="#fde725" stroke="#0f172a" stroke-width="0.8" data-tooltip="📍 Meio-Oeste Catarinense (Joaçaba, Videira) | IDHM Médio: 0.804 (Muito Alto)" />
+                    <!-- Planalto Serrano (Lages, São Joaquim) -->
+                    <polygon class="map-poly" points="205,115 245,120 250,165 195,165 210,150" fill="#3b528b" stroke="#0f172a" stroke-width="0.8" data-tooltip="📍 Planalto Serrano (Lages, São Joaquim) | IDHM Médio: 0.730 (Alto)" />
+                    <!-- Norte Catarinense (Joinville, Jaraguá) -->
+                    <polygon class="map-poly" points="245,120 305,115 320,135 265,140" fill="#fde725" stroke="#0f172a" stroke-width="0.8" data-tooltip="📍 Norte de SC (Joinville, Jaraguá do Sul) | IDHM: 0.809 (Muito Alto)" />
+                    <!-- Vale do Itajaí & Litoral Norte (Blumenau, Balneário Camboriú) -->
+                    <polygon class="map-poly" points="265,140 320,135 330,160 270,165" fill="#fde725" stroke="#0f172a" stroke-width="0.8" data-tooltip="📍 Vale do Itajaí e Litoral Norte (Balneário Camboriú 0.845, Blumenau 0.806) | IDHM: Muito Alto" />
+                    <!-- Grande Florianópolis -->
+                    <polygon class="map-poly" points="270,165 330,160 335,185 275,185" fill="#fde725" stroke="#0f172a" stroke-width="0.8" data-tooltip="⭐ Grande Florianópolis (Florianópolis, São José) | IDHM: 0.847 (3º Maior do Brasil)" />
+                    <!-- Sul Catarinense (Criciúma, Tubarão) -->
+                    <polygon class="map-poly" points="230,165 275,185 260,205 210,195" fill="#21918c" stroke="#0f172a" stroke-width="0.8" data-tooltip="📍 Sul de SC (Criciúma, Tubarão) | IDHM Médio: 0.778 (Alto)" />
+                    <text x="200" y="142" fill="#ffffff" font-size="9" font-weight="bold" letter-spacing="1" opacity="0.9" pointer-events="none">SANTA CATARINA (SC)</text>
+                  </g>
+
+                  <!-- RIO GRANDE DO SUL (RS) -->
+                  <g id="rs-group">
+                    <!-- Noroeste Gaúcho (Passo Fundo, Erechim) -->
+                    <polygon class="map-poly" points="90,155 180,160 185,195 105,195" fill="#21918c" stroke="#0f172a" stroke-width="0.8" data-tooltip="📍 Noroeste e Alto Jacuí (Passo Fundo, Erechim) | IDHM Médio: 0.772 (Alto)" />
+                    <!-- Serra Gaúcha (Caxias do Sul, Bento Gonçalves) -->
+                    <polygon class="map-poly" points="180,160 235,170 240,205 185,195" fill="#fde725" stroke="#0f172a" stroke-width="0.8" data-tooltip="📍 Serra Gaúcha (Caxias do Sul, Bento Gonçalves, Gramado) | IDHM Médio: 0.821 (Muito Alto)" />
+                    <!-- Centro Gaúcho (Santa Maria, Santa Cruz do Sul) -->
+                    <polygon class="map-poly" points="105,195 185,195 190,230 110,230" fill="#21918c" stroke="#0f172a" stroke-width="0.8" data-tooltip="📍 Centro Gaúcho (Santa Maria 0.784, Santa Cruz do Sul) | IDHM: Alto" />
+                    <!-- Metropolitana de Porto Alegre -->
+                    <polygon class="map-poly" points="185,195 240,205 255,240 195,240 190,230" fill="#5ec962" stroke="#0f172a" stroke-width="0.8" data-tooltip="📍 Região Metropolitana (Porto Alegre 0.805, Canoas, Novo Hamburgo) | IDHM: Muito Alto" />
+                    <!-- Fronteira Oeste e Pampa (Uruguaiana, Santana do Livramento, Bagé) -->
+                    <polygon class="map-poly" points="40,210 105,195 110,230 120,270 55,270" fill="#440154" stroke="#0f172a" stroke-width="0.8" data-tooltip="📍 Fronteira Oeste & Campanha (Uruguaiana, Bagé, Santana do Livramento) | IDHM Médio: 0.695 (Médio)" />
+                    <!-- Sul / Litoral Sul Gaúcho (Pelotas, Rio Grande) -->
+                    <polygon class="map-poly" points="110,230 195,240 215,285 130,285 120,270" fill="#3b528b" stroke="#0f172a" stroke-width="0.8" data-tooltip="📍 Sul e Costa Doce (Pelotas 0.739, Rio Grande 0.744) | IDHM Médio: 0.740 (Alto)" />
+                    <!-- Extremo Sul (Chuí, Santa Vitória do Palmar) -->
+                    <polygon class="map-poly" points="130,285 215,285 185,305 145,305" fill="#3b528b" stroke="#0f172a" stroke-width="0.8" data-tooltip="📍 Extremo Sul (Santa Vitória do Palmar, Chuí) | IDHM: 0.710 (Alto)" />
+                    <text x="145" y="215" fill="#ffffff" font-size="9" font-weight="bold" letter-spacing="1" opacity="0.9" pointer-events="none">RIO GRANDE DO SUL (RS)</text>
+                  </g>
+                </svg>
+              </div>
+
+              <!-- Painel de Legenda & Destaques -->
+              <div style="text-align: left; font-size: 0.73em; display: flex; flex-direction: column; gap: 0.5rem;">
+                <div style="background: rgba(30, 41, 59, 0.6); padding: 0.5rem 0.75rem; border-radius: 8px; border-left: 3px solid #38bdf8;">
+                  <div style="font-weight: 700; color: #f8fafc; margin-bottom: 0.3rem;">🎨 Escala Viridis (IDHM)</div>
+                  <div style="display: flex; height: 11px; border-radius: 4px; overflow: hidden; margin-bottom: 0.3rem; box-shadow: 0 1px 4px rgba(0,0,0,0.4);">
+                    <div style="flex: 1; background: #440154;" data-tooltip="0.550 - 0.699: Médio"></div>
+                    <div style="flex: 1; background: #3b528b;" data-tooltip="0.700 - 0.749: Alto"></div>
+                    <div style="flex: 1; background: #21918c;" data-tooltip="0.750 - 0.779: Alto+"></div>
+                    <div style="flex: 1; background: #5ec962;" data-tooltip="0.780 - 0.819: Muito Alto"></div>
+                    <div style="flex: 1; background: #fde725;" data-tooltip="0.820+: Muito Alto (Top BR)"></div>
+                  </div>
+                  <div style="display: flex; justify-content: space-between; font-size: 0.82em; color: #94a3b8; font-family: var(--font-mono);">
+                    <span>0.65 (Médio)</span>
+                    <span>0.75</span>
+                    <span style="color: #fde725; font-weight: bold;">0.847 (Top)</span>
+                  </div>
+                </div>
+
+                <div style="background: rgba(30, 41, 59, 0.6); padding: 0.5rem 0.75rem; border-radius: 8px; border-left: 3px solid #10b981;">
+                  <div style="font-weight: 700; color: #34d399; margin-bottom: 0.2rem;">🏆 Destaques da Região Sul:</div>
+                  <ul style="margin: 0; padding-left: 1.1rem; color: #cbd5e1; font-size: 0.88em; line-height: 1.35;">
+                    <li><strong>Florianópolis (SC):</strong> 0.847 (3º no Brasil)</li>
+                    <li><strong>Balneário Camboriú (SC):</strong> 0.845 (4º no Brasil)</li>
+                    <li><strong>Curitiba (PR):</strong> 0.823 (10º no Brasil)</li>
+                    <li><strong>Caxias do Sul (RS):</strong> 0.821 (Serra Gaúcha)</li>
+                    <li><strong>Porto Alegre (RS):</strong> 0.805 (Metropolitana)</li>
+                  </ul>
+                </div>
+
+                <div style="font-size: 0.8em; color: #94a3b8; line-height: 1.3;">
+                  ✨ <em>1.191 municípios processados no R com pacotes <code>geobr</code> e <code>ggplot2</code>. Passe o mouse sobre o mapa para inspecionar os indicadores.</em>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Botões de Ação Interativa -->
+          <div style="display: flex; gap: 0.8rem; justify-content: center; margin-top: 0.7rem;">
+            <button id="btnRunRScript" onclick="executeRScript()" style="background: linear-gradient(135deg, #0ea5e9 0%, #2563eb 100%); color: #fff; font-family: inherit; font-size: 0.82em; font-weight: 700; padding: 0.55rem 1.3rem; border: 1px solid rgba(56, 189, 248, 0.4); border-radius: 10px; cursor: pointer; display: inline-flex; align-items: center; gap: 0.5rem; box-shadow: 0 4px 15px rgba(14, 165, 233, 0.35); transition: all 0.25s ease;">
+              ▶️ Executar Script R & Gerar Mapa
+            </button>
+            <button id="btnResetRScript" onclick="resetRScript()" style="background: rgba(30, 41, 59, 0.85); color: #cbd5e1; font-family: inherit; font-size: 0.82em; font-weight: 600; padding: 0.55rem 1rem; border: 1px solid rgba(148, 163, 184, 0.3); border-radius: 10px; cursor: pointer; display: none; align-items: center; gap: 0.4rem;">
+              🔄 Ver Código R
+            </button>
+          </div>
+
+          <aside class="notes">
+            O pacote geobr do IPEA revolucionou a cartografia jornalística em R no Brasil ao eliminar a necessidade de baixar e descompactar shapefiles manualmente do IBGE.
+          </aside>
+        </section>
+
+        <!-- 5.8: SQL para Grandes Bases de Dados -->
+        <section>
+          <span class="badge">Capítulo 5 • Slide 8/9</span>
           <h2>SQL: A Chave para <span class="gradient-text-warm">Grandes Bases de Dados</span></h2>
           <p class="subtitle">Quando a planilha trava com milhões de linhas, o SQL entra em ação</p>
 

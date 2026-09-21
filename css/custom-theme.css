@@ -717,3 +717,15 @@
   padding: 2px 6px;
   color: #cbd5e1;
 }
+
+/* Polígonos interativos do Mapa Coroplético (geobr / R) */
+.map-poly {
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.map-poly:hover {
+  filter: brightness(1.35) drop-shadow(0 0 8px rgba(255, 255, 255, 0.7));
+  stroke: #ffffff !important;
+  stroke-width: 2px !important;
+}
