@@ -1,497 +1,557 @@
 <!doctype html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-    <title>Introdução ao Jornalismo de Dados | Galeno Lima</title>
-    <meta name="description" content="Apresentação keynote completa em 7 capítulos sobre Jornalismo de Dados, investigação pública, BI, raspagem, análise e visualização para estudantes de jornalismo da UFSC.">
-    <meta name="author" content="Galeno Lima">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-    <!-- Reveal.js Core & Themes from CDN -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/reveal.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/theme/black.min.css">
-    
-    <!-- Code Syntax Highlighting Theme -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+  <title>Introdução ao Jornalismo de Dados | Galeno Lima</title>
+  <meta name="description"
+    content="Apresentação keynote completa em 7 capítulos sobre Jornalismo de Dados, investigação pública, BI, raspagem, análise e visualização para estudantes de jornalismo da UFSC.">
+  <meta name="author" content="Galeno Lima">
 
-    <!-- Custom Theme & Typography -->
-    <link rel="stylesheet" href="css/custom-theme.css">
-  </head>
-  <body>
-    <div class="reveal">
-      <div class="slides">
+  <!-- Reveal.js Core & Themes from CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/reveal.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/theme/black.min.css">
 
-        <!-- ========================================================= -->
-        <!-- CAPÍTULO 1: Fundamentos & O Panorama do Jornalismo de Dados -->
-        <!-- ========================================================= -->
+  <!-- Code Syntax Highlighting Theme -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+
+  <!-- Custom Theme & Typography -->
+  <link rel="stylesheet" href="css/custom-theme.css">
+</head>
+
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+      <!-- ========================================================= -->
+      <!-- CAPÍTULO 1: Fundamentos & O Panorama do Jornalismo de Dados -->
+      <!-- ========================================================= -->
+      <section>
+        <!-- 1.1: Capa Inicial -->
+        <section data-background-gradient="radial-gradient(circle at 50% 30%, #1e1b4b 0%, #0a0e1a 100%)">
+          <span class="badge">21 e 22/Set/2026</span>
+          <h1>Introdução ao <span class="gradient-text">Jornalismo de Dados</span></h1>
+          <p class="subtitle">Aos alunos do curso de graduação em Jornalismo da UFSC</p>
+
+          <div class="presenter-meta">
+            <img src="img/galeno-lima.png" alt="Galeno Lima" class="presenter-avatar">
+            <div class="presenter-info">
+              <h4><strong>Galeno Lima</strong>, Jornalista (UFSC)</h4>
+              <p><a href="https://onelag.com" target="_blank" rel="noopener noreferrer">@OneLag</a> • Analista de Dados,
+                Business Intelligence e Social Listening.<br><br>Foi trainee na Folha (2014), Editora Abril (2016) e
+                Estadão (2017). Trabalhou no Estadão entre 2018 e 2021, como Analista de BI e dados de audiência, e na
+                TV Record em 2022/2023 como Especialista em Web Analytics. Já trabalhou com Social Listening (Vale, HBO
+                Max) e desde 2023 como Analista de Dados (Colgate, Itaú, BMW).</p>
+            </div>
+          </div>
+
+          <aside class="notes">
+            Olá a todos! Sejam muito bem-vindos. É uma honra imensa estar com vocês, estudantes de Jornalismo da UFSC.
+            Esta apresentação possui estrutura 2D:
+            - Use a seta para a DIREITA (➡️) para pular de capítulo.
+            - Use a seta para BAIXO (⬇️) para descer pelos slides de cada capítulo.
+            - Pressione 'S' para abrir a janela do apresentador com cronômetro e anotações.
+          </aside>
+        </section>
+
+        <!-- 1.2: Quando começou o Jornalismo de Dados -->
         <section>
-          <!-- 1.1: Capa Inicial -->
-          <section data-background-gradient="radial-gradient(circle at 50% 30%, #1e1b4b 0%, #0a0e1a 100%)">
-            <span class="badge">21 e 22/Set/2026</span>
-            <h1>Introdução ao <span class="gradient-text">Jornalismo de Dados</span></h1>
-            <p class="subtitle">Aos alunos do curso de graduação em Jornalismo da UFSC</p>
-            
-            <div class="presenter-meta">
-              <img src="img/galeno-lima.png" alt="Galeno Lima" class="presenter-avatar">
-              <div class="presenter-info">
-                <h4><strong>Galeno Lima</strong>, Jornalista (UFSC)</h4>
-                <p><a href="https://onelag.com" target="_blank" rel="noopener noreferrer">@OneLag</a> • Analista de Dados, Business Intelligence e Social Listening.<br>Foi trainee na Folha (2014), Editora Abril (2016) e Estadão (2017). Trabalhou no Estadão entre 2018 e 2021, como Analista de BI e dados de audiência, e na TV Record em 2022/2023 como Especialista em Web Analytics. Já trabalhou com Social Listening (Vale, HBO Max) e desde 2023 como Analista de Dados (Colgate, Itaú, BMW).</p>
-              </div>
+          <span class="badge">Capítulo 1 • Slide 2/7</span>
+          <h2>Quando começou o <span class="gradient-text">Jornalismo de Dados</span>?</h2>
+          <p class="subtitle">A primeira matéria de dados, sobre Educação, foi publicada pelo The Guardian <a
+              href="https://www.theguardian.com/news/datablog/2011/sep/26/data-journalism-guardian" target="_blank"
+              rel="noopener noreferrer" style="color: var(--accent-cyan);">em 5 de maio de 1821</a></p>
+
+          <div class="card-grid">
+            <div class="card fragment fade-up">
+              <div class="icon">💻</div>
+              <h4>Reportagem assistida por computador</h4>
+              <p>O primeiro uso de RAC foi feito pela televisão CBS nos EUA <a
+                  href="https://web.archive.org/web/20110928144238/http://com.miami.edu/car/cox00.pdf" target="_blank"
+                  rel="noopener noreferrer" style="color: var(--accent-cyan);">em 1952</a>, para prever o vencedor nas
+                eleições presidenciais.</p>
             </div>
-
-            <aside class="notes">
-              Olá a todos! Sejam muito bem-vindos. É uma honra imensa estar com vocês, estudantes de Jornalismo da UFSC.
-              Esta apresentação possui estrutura 2D:
-              - Use a seta para a DIREITA (➡️) para pular de capítulo.
-              - Use a seta para BAIXO (⬇️) para descer pelos slides de cada capítulo.
-              - Pressione 'S' para abrir a janela do apresentador com cronômetro e anotações.
-            </aside>
-          </section>
-
-          <!-- 1.2: Quando começou o Jornalismo de Dados -->
-          <section>
-            <span class="badge">Capítulo 1 • Slide 2/7</span>
-            <h2>Quando começou o <span class="gradient-text">Jornalismo de Dados</span>?</h2>
-            <p class="subtitle">A primeira matéria de dados, sobre Educação, foi publicada pelo The Guardian <a href="https://www.theguardian.com/news/datablog/2011/sep/26/data-journalism-guardian" target="_blank" rel="noopener noreferrer" style="color: var(--accent-cyan);">em 5 de maio de 1821</a></p>
-
-            <div class="card-grid">
-              <div class="card fragment fade-up">
-                <div class="icon">💻</div>
-                <h4>Reportagem assistida por computador</h4>
-                <p>O primeiro uso de RAC foi feito pela televisão CBS nos EUA <a href="https://web.archive.org/web/20110928144238/http://com.miami.edu/car/cox00.pdf" target="_blank" rel="noopener noreferrer" style="color: var(--accent-cyan);">em 1952</a>, para prever o vencedor nas eleições presidenciais.</p>
-              </div>
-              <div class="card fragment fade-up">
-                <div class="icon">📰</div>
-                <h4>Jornalismo de Precisão</h4>
-                <p>Livros publicados em 1973 e 1991 por <a href="https://lagomdata.com.br/phil/" target="_blank" rel="noopener noreferrer" style="color: var(--accent-cyan);">Philip Meyer</a>, reúnem <a href="https://www1.folha.uol.com.br/mercado/2023/11/morre-philip-meyer-que-pensou-a-sobrevivencia-do-jornalismo-aos-93.shtml" target="_blank" rel="noopener noreferrer" style="color: var(--accent-cyan);">métodos das ciências sociais aplicados ao jornalismo</a> a partir da perspectiva de um repórter.</p>
-              </div>
-              <div class="card fragment fade-up">
-                <div class="icon">📐</div>
-                <h4>Jornalismo de Dados</h4>
-                <p>Banda larga, alto poder computacional, grandes bases de dados, reportagens multimídia, equipes multidisciplinares e núcleos especializados.</p>
-              </div>
+            <div class="card fragment fade-up">
+              <div class="icon">📰</div>
+              <h4>Jornalismo de Precisão</h4>
+              <p>Livros publicados em 1973 e 1991 por <a href="https://lagomdata.com.br/phil/" target="_blank"
+                  rel="noopener noreferrer" style="color: var(--accent-cyan);">Philip Meyer</a>, reúnem <a
+                  href="https://www1.folha.uol.com.br/mercado/2023/11/morre-philip-meyer-que-pensou-a-sobrevivencia-do-jornalismo-aos-93.shtml"
+                  target="_blank" rel="noopener noreferrer" style="color: var(--accent-cyan);">métodos das ciências
+                  sociais aplicados ao jornalismo</a> a partir da perspectiva de um repórter.</p>
             </div>
-
-            <aside class="notes">
-              Enfatize: O jornalismo de dados não é uma disciplina separada, mas uma evolução das ferramentas de reportagem.
-              Ele une o faro investigativo clássico à precisão computacional.
-            </aside>
-          </section>
-
-          <!-- 1.3: O Dilúvio de Informações -->
-          <section>
-            <span class="badge">Capítulo 1 • Slide 3/7</span>
-            <h2>Estamos nos afogando em dados, mas <span class="gradient-text-warm">famintos por insights</span></h2>
-            <p class="subtitle">Todos os dias, bilhões de registros públicos são gerados. Quem lhes dará sentido?</p>
-
-            <div class="stat-container">
-              <div class="stat-box fragment fade-up">
-                <div class="stat-number gradient-text">328M</div>
-                <div class="stat-label">Terabytes de dados gerados diariamente no mundo</div>
-              </div>
-              <div class="stat-box fragment fade-up">
-                <div class="stat-number gradient-text-warm">3.8x</div>
-                <div class="stat-label">Maior retenção de leitores em reportagens interativas</div>
-              </div>
-              <div class="stat-box fragment fade-up">
-                <div class="stat-number gradient-text-emerald">82%</div>
-                <div class="stat-label">Leitores exigem fontes transparentes e verificáveis</div>
-              </div>
+            <div class="card fragment fade-up">
+              <div class="icon">📐</div>
+              <h4>Jornalismo de Dados</h4>
+              <p>Banda larga, alto poder computacional, grandes bases de dados, reportagens multimídia, equipes
+                multidisciplinares e núcleos especializados.</p>
             </div>
+          </div>
 
-            <aside class="notes">
-              Mostre a oportunidade: Redações que dominam dados conseguem furar a bolha de ruído e produzir matérias com alto impacto público e relevância comprovada.
-            </aside>
-          </section>
+          <aside class="notes">
+            Enfatize: O jornalismo de dados não é uma disciplina separada, mas uma evolução das ferramentas de
+            reportagem.
+            Ele une o faro investigativo clássico à precisão computacional.
+          </aside>
+        </section>
 
-          <!-- 1.4: Da Declaração à Evidência -->
-          <section>
-            <span class="badge">Capítulo 1 • Slide 4/7</span>
-            <h2>Da "Declaração" à <span class="gradient-text-emerald">Evidência Factual</span></h2>
-            <p class="subtitle">Como o dado muda a relação de força entre o jornalista e a fonte oficial</p>
+        <!-- 1.3: O Dilúvio de Informações -->
+        <section>
+          <span class="badge">Capítulo 1 • Slide 3/7</span>
+          <h2>Estamos nos afogando em dados, mas <span class="gradient-text-warm">famintos por insights</span></h2>
+          <p class="subtitle">Todos os dias, bilhões de registros públicos são gerados. Quem lhes dará sentido?</p>
 
-            <div class="card-grid-2">
-              <div class="card fragment fade-right">
-                <h4 style="color: var(--accent-pink);">❌ O Jornalismo Declaratório</h4>
-                <p style="margin-top: 0.5rem;">"O governo diz que reduziu as filas em 40%, mas a oposição alega que o sistema piorou."</p>
-                <p style="color: #cbd5e1; font-size: 0.78em; margin-top: 0.5rem; font-style: italic;">O leitor fica no escuro, ouvindo duas versões sem verificação independente.</p>
-              </div>
-              <div class="card fragment fade-left">
-                <h4 style="color: var(--accent-emerald);">✅ O Jornalismo de Dados</h4>
-                <p style="margin-top: 0.5rem;">"Análise de 1,2 milhão de prontuários via LAI revela que o tempo médio de espera subiu de 14 para 38 dias."</p>
-                <p style="color: #cbd5e1; font-size: 0.78em; margin-top: 0.5rem; font-style: italic;">A reportagem apresenta fatos auditáveis e confronta discursos com números reais.</p>
-              </div>
+          <div class="stat-container">
+            <div class="stat-box fragment fade-up">
+              <div class="stat-number gradient-text">328M</div>
+              <div class="stat-label">Terabytes de dados gerados diariamente no mundo</div>
             </div>
-
-            <aside class="notes">
-              O jornalismo de dados empodera o repórter. Ele não depende apenas da boa vontade do assessor de imprensa; ele audita os registros oficiais diretamente.
-            </aside>
-          </section>
-
-          <!-- 1.5: Casos Emblemáticos Globais -->
-          <section>
-            <span class="badge">Capítulo 1 • Slide 5/7</span>
-            <h2>Grandes Marcos Internacionais</h2>
-            <p class="subtitle">Investigações globais que remodelaram a história através de dados</p>
-
-            <div class="card-grid">
-              <div class="card fragment fade-up">
-                <div class="icon">💼</div>
-                <h4>Panama Papers (ICIJ)</h4>
-                <p>11,5 milhões de documentos vazados de paraísos fiscais analisados por mais de 370 jornalistas em 76 países simultaneamente.</p>
-              </div>
-              <div class="card fragment fade-up">
-                <div class="icon">🏥</div>
-                <h4>Spotlight (Boston Globe)</h4>
-                <p>Construção manual de bancos de dados cruzando transferências de padres e registros eclesiásticos para provar acobertamento sistêmico.</p>
-              </div>
-              <div class="card fragment fade-up">
-                <div class="icon">✈️</div>
-                <h4>The Migrants Files</h4>
-                <p>Consórcio europeu que unificou dados fragmentados para mensurar pela primeira vez o número de mortes de refugiados no Mediterrâneo.</p>
-              </div>
+            <div class="stat-box fragment fade-up">
+              <div class="stat-number gradient-text-warm">3.8x</div>
+              <div class="stat-label">Maior retenção de leitores em reportagens interativas</div>
             </div>
-
-            <aside class="notes">
-              O ICIJ provou que cooperação jornalística e análise de grandes volumes de dados são essenciais para investigar crimes transnacionais.
-            </aside>
-          </section>
-
-          <!-- 1.6: Casos Marcantes no Brasil -->
-          <section>
-            <span class="badge">Capítulo 1 • Slide 6/7</span>
-            <h2>O Ecossistema Brasileiro de Dados</h2>
-            <p class="subtitle">Projetos nacionais que são referência mundial em jornalismo computacional</p>
-
-            <div class="card-grid">
-              <div class="card fragment fade-up">
-                <div class="icon">🤖</div>
-                <h4>Operação Serenata de Amor</h4>
-                <p>A robô Rosie analisa reembolsos da Cota Parlamentar no Congresso e detecta despesas suspeitas automaticamente.</p>
-              </div>
-              <div class="card fragment fade-up">
-                <div class="icon">📊</div>
-                <h4>Nexo & Volt Data Lab</h4>
-                <p>Pioneirismo em infografia interativa, jornalismo explicativo e cobertura baseada em microdados públicos.</p>
-              </div>
-              <div class="card fragment fade-up">
-                <div class="icon">🔎</div>
-                <h4>G1, Intercept & Agência Pública</h4>
-                <p>Cruzamento sistemático de licitações, dados ambientais (DETER/INPE) e contratos de desmatamento na Amazônia.</p>
-              </div>
+            <div class="stat-box fragment fade-up">
+              <div class="stat-number gradient-text-emerald">82%</div>
+              <div class="stat-label">Leitores exigem fontes transparentes e verificáveis</div>
             </div>
+          </div>
 
-            <aside class="notes">
-              O Brasil possui uma das comunidades de jornalismo de dados mais ativas do mundo, muito impulsionada pela Abraji e por iniciativas de código aberto.
-            </aside>
-          </section>
+          <aside class="notes">
+            Mostre a oportunidade: Redações que dominam dados conseguem furar a bolha de ruído e produzir matérias com
+            alto impacto público e relevância comprovada.
+          </aside>
+        </section>
 
-          <!-- 1.7: Resumo do Cap. 1 -->
-          <section data-background-gradient="radial-gradient(circle at 50% 50%, #1e1b4b 0%, #0a0e1a 100%)">
-            <span class="badge badge-emerald">Capítulo 1 • Conclusão</span>
-            <h2>Lição Central do Capítulo 1</h2>
-            
-            <div class="quote-container" style="margin-top: 2rem;">
-              <div class="quote-mark">“</div>
-              <p class="quote-text">
-                O dado aponta a direção da anomalia, mas somente a apuração de rua e o contato humano conseguem revelar a história completa.
+        <!-- 1.4: Da Declaração à Evidência -->
+        <section>
+          <span class="badge">Capítulo 1 • Slide 4/7</span>
+          <h2>Da "Declaração" à <span class="gradient-text-emerald">Evidência Factual</span></h2>
+          <p class="subtitle">Como o dado muda a relação de força entre o jornalista e a fonte oficial</p>
+
+          <div class="card-grid-2">
+            <div class="card fragment fade-right">
+              <h4 style="color: var(--accent-pink);">❌ O Jornalismo Declaratório</h4>
+              <p style="margin-top: 0.5rem;">"O governo diz que reduziu as filas em 40%, mas a oposição alega que o
+                sistema piorou."</p>
+              <p style="color: #cbd5e1; font-size: 0.78em; margin-top: 0.5rem; font-style: italic;">O leitor fica no
+                escuro, ouvindo duas versões sem verificação independente.</p>
+            </div>
+            <div class="card fragment fade-left">
+              <h4 style="color: var(--accent-emerald);">✅ O Jornalismo de Dados</h4>
+              <p style="margin-top: 0.5rem;">"Análise de 1,2 milhão de prontuários via LAI revela que o tempo médio de
+                espera subiu de 14 para 38 dias."</p>
+              <p style="color: #cbd5e1; font-size: 0.78em; margin-top: 0.5rem; font-style: italic;">A reportagem
+                apresenta fatos auditáveis e confronta discursos com números reais.</p>
+            </div>
+          </div>
+
+          <aside class="notes">
+            O jornalismo de dados empodera o repórter. Ele não depende apenas da boa vontade do assessor de imprensa;
+            ele audita os registros oficiais diretamente.
+          </aside>
+        </section>
+
+        <!-- 1.5: Casos Emblemáticos Globais -->
+        <section>
+          <span class="badge">Capítulo 1 • Slide 5/7</span>
+          <h2>Grandes Marcos Internacionais</h2>
+          <p class="subtitle">Investigações globais que remodelaram a história através de dados</p>
+
+          <div class="card-grid">
+            <div class="card fragment fade-up">
+              <div class="icon">💼</div>
+              <h4>Panama Papers (ICIJ)</h4>
+              <p>11,5 milhões de documentos vazados de paraísos fiscais analisados por mais de 370 jornalistas em 76
+                países simultaneamente.</p>
+            </div>
+            <div class="card fragment fade-up">
+              <div class="icon">🏥</div>
+              <h4>Spotlight (Boston Globe)</h4>
+              <p>Construção manual de bancos de dados cruzando transferências de padres e registros eclesiásticos para
+                provar acobertamento sistêmico.</p>
+            </div>
+            <div class="card fragment fade-up">
+              <div class="icon">✈️</div>
+              <h4>The Migrants Files</h4>
+              <p>Consórcio europeu que unificou dados fragmentados para mensurar pela primeira vez o número de mortes de
+                refugiados no Mediterrâneo.</p>
+            </div>
+          </div>
+
+          <aside class="notes">
+            O ICIJ provou que cooperação jornalística e análise de grandes volumes de dados são essenciais para
+            investigar crimes transnacionais.
+          </aside>
+        </section>
+
+        <!-- 1.6: Casos Marcantes no Brasil -->
+        <section>
+          <span class="badge">Capítulo 1 • Slide 6/7</span>
+          <h2>O Ecossistema Brasileiro de Dados</h2>
+          <p class="subtitle">Projetos nacionais que são referência mundial em jornalismo computacional</p>
+
+          <div class="card-grid">
+            <div class="card fragment fade-up">
+              <div class="icon">🤖</div>
+              <h4>Operação Serenata de Amor</h4>
+              <p>A robô Rosie analisa reembolsos da Cota Parlamentar no Congresso e detecta despesas suspeitas
+                automaticamente.</p>
+            </div>
+            <div class="card fragment fade-up">
+              <div class="icon">📊</div>
+              <h4>Nexo & Volt Data Lab</h4>
+              <p>Pioneirismo em infografia interativa, jornalismo explicativo e cobertura baseada em microdados
+                públicos.</p>
+            </div>
+            <div class="card fragment fade-up">
+              <div class="icon">🔎</div>
+              <h4>G1, Intercept & Agência Pública</h4>
+              <p>Cruzamento sistemático de licitações, dados ambientais (DETER/INPE) e contratos de desmatamento na
+                Amazônia.</p>
+            </div>
+          </div>
+
+          <aside class="notes">
+            O Brasil possui uma das comunidades de jornalismo de dados mais ativas do mundo, muito impulsionada pela
+            Abraji e por iniciativas de código aberto.
+          </aside>
+        </section>
+
+        <!-- 1.7: Resumo do Cap. 1 -->
+        <section data-background-gradient="radial-gradient(circle at 50% 50%, #1e1b4b 0%, #0a0e1a 100%)">
+          <span class="badge badge-emerald">Capítulo 1 • Conclusão</span>
+          <h2>Lição Central do Capítulo 1</h2>
+
+          <div class="quote-container" style="margin-top: 2rem;">
+            <div class="quote-mark">“</div>
+            <p class="quote-text">
+              O dado aponta a direção da anomalia, mas somente a apuração de rua e o contato humano conseguem revelar a
+              história completa.
+            </p>
+            <div class="quote-author">Galeno Lima</div>
+            <div class="quote-title">Introdução ao Jornalismo de Dados • UFSC</div>
+          </div>
+
+          <p style="text-align: center; color: var(--accent-cyan); margin-top: 1.5rem; font-size: 0.85em;">
+            👉 Pressione a tecla <strong>DIREITA (➡️)</strong> para iniciar o <strong>Capítulo 2: Legislação & Fontes
+              Públicas</strong>
+          </p>
+
+          <aside class="notes">
+            Finalize o Capítulo 1 reforçando: Dados não substituem a reportagem tradicional; eles a blindam contra o
+            erro e a ampliam.
+          </aside>
+        </section>
+      </section>
+
+      <!-- ========================================================= -->
+      <!-- CAPÍTULO 2: Legislação, Acesso à Informação & Fontes      -->
+      <!-- ========================================================= -->
+      <section>
+        <!-- 2.1: Abertura Cap. 2 -->
+        <section data-background-gradient="radial-gradient(circle at 50% 30%, #312e81 0%, #0a0e1a 100%)">
+          <span class="badge">Capítulo 2/7</span>
+          <h1>Legislação, LAI & <span class="gradient-text">Fontes Públicas</span></h1>
+          <p class="subtitle">O arcabouço jurídico e as minas de dados abertos no Brasil</p>
+
+          <div class="pill-list" style="justify-content: center; margin-top: 2rem;">
+            <div class="pill">📜 Lei de Acesso (LAI)</div>
+            <div class="pill">🏛️ Portais de Transparência</div>
+            <div class="pill">📂 dados.gov.br</div>
+            <div class="pill">⚖️ Recursos e Jurisprudência</div>
+          </div>
+
+          <aside class="notes">
+            Neste capítulo, aprenderemos como o repórter exige e obtém dados legalmente do poder público.
+          </aside>
+        </section>
+
+        <!-- 2.2: A Lei de Acesso à Informação -->
+        <section>
+          <span class="badge">Capítulo 2 • Slide 2/7</span>
+          <h2>A Lei de Acesso à Informação <span class="gradient-text">(LAI - 12.527/11)</span></h2>
+          <p class="subtitle">Um dos instrumentos democráticos mais poderosos à disposição do repórter</p>
+
+          <div class="card-grid">
+            <div class="card fragment fade-up">
+              <div class="icon">📢</div>
+              <h4>Publicidade é a Regra</h4>
+              <p>O sigilo é a exceção. Qualquer cidadão tem o direito de solicitar dados sem precisar justificar o
+                motivo do pedido.</p>
+            </div>
+            <div class="card fragment fade-up">
+              <div class="icon">⏱️</div>
+              <h4>Prazos Rígidos</h4>
+              <p>O órgão público tem até 20 dias (prorrogáveis por mais 10 mediante justificativa formal) para
+                responder.</p>
+            </div>
+            <div class="card fragment fade-up">
+              <div class="icon">📊</div>
+              <h4>Formato Aberto</h4>
+              <p>O cidadão pode e deve solicitar dados brutos, abertos e legíveis por máquina (CSV, XLS, JSON) e não
+                apenas PDFs digitalizados.</p>
+            </div>
+          </div>
+
+          <aside class="notes">
+            Lembrete importante: A LAI vale para Executivo, Legislativo, Judiciário, Ministério Público e Tribunais de
+            Contas em níveis Federal, Estadual e Municipal.
+          </aside>
+        </section>
+
+        <!-- 2.3: Como Fazer Pedidos Eficazes -->
+        <section>
+          <span class="badge">Capítulo 2 • Slide 3/7</span>
+          <h2>Como Construir um Pedido de LAI <span class="gradient-text-emerald">Irrecusável</span></h2>
+          <p class="subtitle">Evitando negativas genéricas ("trabalho desproporcional" ou "informação sigilosa")</p>
+
+          <div class="card-grid-2">
+            <div class="card fragment">
+              <h4 style="color: var(--accent-cyan);">🎯 Seja Cirúrgico na Delimitação</h4>
+              <p>Especifique o recorte temporal exato (ex: "janeiro de 2022 a dezembro de 2025"), as colunas desejadas e
+                o formato (ex: ".csv").</p>
+            </div>
+            <div class="card fragment">
+              <h4 style="color: var(--accent-purple);">🛡️ Antecipe as Escusas do Órgão</h4>
+              <p>Peça explicitamente a anonimização de dados pessoais caso haja temor de violação da LGPD, solicitando
+                apenas os campos públicos.</p>
+            </div>
+            <div class="card fragment">
+              <h4 style="color: var(--accent-amber);">📑 Solicite o Dicionário de Dados</h4>
+              <p>Peça a documentação descritiva das siglas, códigos e abreviações para não interpretar erroneamente os
+                registros.</p>
+            </div>
+            <div class="card fragment">
+              <h4 style="color: var(--accent-emerald);">⚖️ Use a Escala Recursal</h4>
+              <p>Se o pedido for negado indevidamente, recorra em 1ª instância, 2ª instância e até a CGU (no caso do
+                Executivo Federal).</p>
+            </div>
+          </div>
+
+          <aside class="notes">
+            Dica prática: Peça apenas o que o órgão já coleta em seus sistemas para evitar a alegação de "necessidade de
+            trabalho adicional de compilação".
+          </aside>
+        </section>
+
+        <!-- 2.4: Portais da Transparência -->
+        <section>
+          <span class="badge">Capítulo 2 • Slide 4/7</span>
+          <h2>Transparência Ativa: Onde os Dados Já Estão</h2>
+          <p class="subtitle">Antes de abrir um pedido de LAI, verifique se a informação já foi publicada</p>
+
+          <div class="card-grid">
+            <div class="card fragment fade-up">
+              <div class="icon">🏛️</div>
+              <h4>Portal da Transparência Federal</h4>
+              <p>Despesas, servidores públicos, viagens, transferências obrigatórias e cartões corporativos do governo
+                federal.</p>
+            </div>
+            <div class="card fragment fade-up">
+              <div class="icon">📋</div>
+              <h4>Tribunais de Contas (TCU / TCE-SC)</h4>
+              <p>Auditorias, contratos de obras públicas, folhas de pagamento e relatórios de conformidade contábil.</p>
+            </div>
+            <div class="card fragment fade-up">
+              <div class="icon">⚖️</div>
+              <h4>Diários Oficiais Eletrônicos (DOU / DOE)</h4>
+              <p>Atos administrativos, nomeações, dispensas de licitação e rescisões contratuais publicadas diariamente.
               </p>
-              <div class="quote-author">Galeno Lima</div>
-              <div class="quote-title">Introdução ao Jornalismo de Dados • UFSC</div>
             </div>
-            
-            <p style="text-align: center; color: var(--accent-cyan); margin-top: 1.5rem; font-size: 0.85em;">
-              👉 Pressione a tecla <strong>DIREITA (➡️)</strong> para iniciar o <strong>Capítulo 2: Legislação & Fontes Públicas</strong>
-            </p>
+          </div>
 
-            <aside class="notes">
-              Finalize o Capítulo 1 reforçando: Dados não substituem a reportagem tradicional; eles a blindam contra o erro e a ampliam.
-            </aside>
-          </section>
+          <aside class="notes">
+            A transparência ativa é obrigatória por lei. Os órgãos devem manter portais atualizados na internet.
+          </aside>
         </section>
 
-        <!-- ========================================================= -->
-        <!-- CAPÍTULO 2: Legislação, Acesso à Informação & Fontes      -->
-        <!-- ========================================================= -->
+        <!-- 2.5: Grandes Repositórios Públicos -->
         <section>
-          <!-- 2.1: Abertura Cap. 2 -->
-          <section data-background-gradient="radial-gradient(circle at 50% 30%, #312e81 0%, #0a0e1a 100%)">
-            <span class="badge">Capítulo 2/7</span>
-            <h1>Legislação, LAI & <span class="gradient-text">Fontes Públicas</span></h1>
-            <p class="subtitle">O arcabouço jurídico e as minas de dados abertos no Brasil</p>
+          <span class="badge">Capítulo 2 • Slide 5/7</span>
+          <h2>Principais Fontes de Dados no Brasil</h2>
 
-            <div class="pill-list" style="justify-content: center; margin-top: 2rem;">
-              <div class="pill">📜 Lei de Acesso (LAI)</div>
-              <div class="pill">🏛️ Portais de Transparência</div>
-              <div class="pill">📂 dados.gov.br</div>
-              <div class="pill">⚖️ Recursos e Jurisprudência</div>
-            </div>
+          <div class="pill-list" style="margin-top: 1.5rem;">
+            <div class="pill fragment"><strong style="color: var(--accent-cyan);">IBGE:</strong> Censo Demográfico, PNAD
+              Contínua, PIB Municipal</div>
+            <div class="pill fragment"><strong style="color: var(--accent-emerald);">DataSUS:</strong> Nascimentos
+              (SINASC), Mortalidade (SIM), Internações (SIH)</div>
+            <div class="pill fragment"><strong style="color: var(--accent-amber);">INEP:</strong> Censo Escolar,
+              Microdados do ENEM e ENADE</div>
+            <div class="pill fragment"><strong style="color: var(--accent-purple);">TSE:</strong> Bens de candidatos,
+              prestação de contas de campanha e votação por seção</div>
+            <div class="pill fragment"><strong style="color: var(--accent-pink);">Receita Federal:</strong> Base aberta
+              de CNPJs e quadro societário (QSA)</div>
+            <div class="pill fragment"><strong style="color: #38bdf8;">Base dos Dados:</strong> Repositório centralizado
+              e limpo de dados públicos brasileiros</div>
+          </div>
 
-            <aside class="notes">
-              Neste capítulo, aprenderemos como o repórter exige e obtém dados legalmente do poder público.
-            </aside>
-          </section>
-
-          <!-- 2.2: A Lei de Acesso à Informação -->
-          <section>
-            <span class="badge">Capítulo 2 • Slide 2/7</span>
-            <h2>A Lei de Acesso à Informação <span class="gradient-text">(LAI - 12.527/11)</span></h2>
-            <p class="subtitle">Um dos instrumentos democráticos mais poderosos à disposição do repórter</p>
-
-            <div class="card-grid">
-              <div class="card fragment fade-up">
-                <div class="icon">📢</div>
-                <h4>Publicidade é a Regra</h4>
-                <p>O sigilo é a exceção. Qualquer cidadão tem o direito de solicitar dados sem precisar justificar o motivo do pedido.</p>
-              </div>
-              <div class="card fragment fade-up">
-                <div class="icon">⏱️</div>
-                <h4>Prazos Rígidos</h4>
-                <p>O órgão público tem até 20 dias (prorrogáveis por mais 10 mediante justificativa formal) para responder.</p>
-              </div>
-              <div class="card fragment fade-up">
-                <div class="icon">📊</div>
-                <h4>Formato Aberto</h4>
-                <p>O cidadão pode e deve solicitar dados brutos, abertos e legíveis por máquina (CSV, XLS, JSON) e não apenas PDFs digitalizados.</p>
-              </div>
-            </div>
-
-            <aside class="notes">
-              Lembrete importante: A LAI vale para Executivo, Legislativo, Judiciário, Ministério Público e Tribunais de Contas em níveis Federal, Estadual e Municipal.
-            </aside>
-          </section>
-
-          <!-- 2.3: Como Fazer Pedidos Eficazes -->
-          <section>
-            <span class="badge">Capítulo 2 • Slide 3/7</span>
-            <h2>Como Construir um Pedido de LAI <span class="gradient-text-emerald">Irrecusável</span></h2>
-            <p class="subtitle">Evitando negativas genéricas ("trabalho desproporcional" ou "informação sigilosa")</p>
-
-            <div class="card-grid-2">
-              <div class="card fragment">
-                <h4 style="color: var(--accent-cyan);">🎯 Seja Cirúrgico na Delimitação</h4>
-                <p>Especifique o recorte temporal exato (ex: "janeiro de 2022 a dezembro de 2025"), as colunas desejadas e o formato (ex: ".csv").</p>
-              </div>
-              <div class="card fragment">
-                <h4 style="color: var(--accent-purple);">🛡️ Antecipe as Escusas do Órgão</h4>
-                <p>Peça explicitamente a anonimização de dados pessoais caso haja temor de violação da LGPD, solicitando apenas os campos públicos.</p>
-              </div>
-              <div class="card fragment">
-                <h4 style="color: var(--accent-amber);">📑 Solicite o Dicionário de Dados</h4>
-                <p>Peça a documentação descritiva das siglas, códigos e abreviações para não interpretar erroneamente os registros.</p>
-              </div>
-              <div class="card fragment">
-                <h4 style="color: var(--accent-emerald);">⚖️ Use a Escala Recursal</h4>
-                <p>Se o pedido for negado indevidamente, recorra em 1ª instância, 2ª instância e até a CGU (no caso do Executivo Federal).</p>
-              </div>
-            </div>
-
-            <aside class="notes">
-              Dica prática: Peça apenas o que o órgão já coleta em seus sistemas para evitar a alegação de "necessidade de trabalho adicional de compilação".
-            </aside>
-          </section>
-
-          <!-- 2.4: Portais da Transparência -->
-          <section>
-            <span class="badge">Capítulo 2 • Slide 4/7</span>
-            <h2>Transparência Ativa: Onde os Dados Já Estão</h2>
-            <p class="subtitle">Antes de abrir um pedido de LAI, verifique se a informação já foi publicada</p>
-
-            <div class="card-grid">
-              <div class="card fragment fade-up">
-                <div class="icon">🏛️</div>
-                <h4>Portal da Transparência Federal</h4>
-                <p>Despesas, servidores públicos, viagens, transferências obrigatórias e cartões corporativos do governo federal.</p>
-              </div>
-              <div class="card fragment fade-up">
-                <div class="icon">📋</div>
-                <h4>Tribunais de Contas (TCU / TCE-SC)</h4>
-                <p>Auditorias, contratos de obras públicas, folhas de pagamento e relatórios de conformidade contábil.</p>
-              </div>
-              <div class="card fragment fade-up">
-                <div class="icon">⚖️</div>
-                <h4>Diários Oficiais Eletrônicos (DOU / DOE)</h4>
-                <p>Atos administrativos, nomeações, dispensas de licitação e rescisões contratuais publicadas diariamente.</p>
-              </div>
-            </div>
-
-            <aside class="notes">
-              A transparência ativa é obrigatória por lei. Os órgãos devem manter portais atualizados na internet.
-            </aside>
-          </section>
-
-          <!-- 2.5: Grandes Repositórios Públicos -->
-          <section>
-            <span class="badge">Capítulo 2 • Slide 5/7</span>
-            <h2>Principais Fontes de Dados no Brasil</h2>
-            
-            <div class="pill-list" style="margin-top: 1.5rem;">
-              <div class="pill fragment"><strong style="color: var(--accent-cyan);">IBGE:</strong> Censo Demográfico, PNAD Contínua, PIB Municipal</div>
-              <div class="pill fragment"><strong style="color: var(--accent-emerald);">DataSUS:</strong> Nascimentos (SINASC), Mortalidade (SIM), Internações (SIH)</div>
-              <div class="pill fragment"><strong style="color: var(--accent-amber);">INEP:</strong> Censo Escolar, Microdados do ENEM e ENADE</div>
-              <div class="pill fragment"><strong style="color: var(--accent-purple);">TSE:</strong> Bens de candidatos, prestação de contas de campanha e votação por seção</div>
-              <div class="pill fragment"><strong style="color: var(--accent-pink);">Receita Federal:</strong> Base aberta de CNPJs e quadro societário (QSA)</div>
-              <div class="pill fragment"><strong style="color: #38bdf8;">Base dos Dados:</strong> Repositório centralizado e limpo de dados públicos brasileiros</div>
-            </div>
-
-            <aside class="notes">
-              Aponte o projeto "Base dos Dados" como uma das maiores facilidades para o jornalista iniciante no Brasil hoje.
-            </aside>
-          </section>
-
-          <!-- 2.6: Os 5 Níveis de Dados Abertos -->
-          <section>
-            <span class="badge">Capítulo 2 • Slide 6/7</span>
-            <h2>A Escala dos Dados Abertos (Tim Berners-Lee)</h2>
-            <p class="subtitle">Qualidade e facilidade de reutilização da informação pública</p>
-
-            <div class="card-grid-2">
-              <div class="card fragment">
-                <h4 style="color: #f87171;">★ PDF / Imagem Digitalizada</h4>
-                <p>Dado trancado. O texto é uma imagem e exige OCR para ser processado.</p>
-              </div>
-              <div class="card fragment">
-                <h4 style="color: #fbbf24;">★★ Tabela em Excel (.xls proprietário)</h4>
-                <p>Estruturado, mas depende de software proprietário fechado.</p>
-              </div>
-              <div class="card fragment">
-                <h4 style="color: #34d399;">★★★ Formato Aberto Não-Proprietário (.csv)</h4>
-                <p>Padrão ouro do jornalismo. Leve, legível em qualquer linguagem ou editor.</p>
-              </div>
-              <div class="card fragment">
-                <h4 style="color: #60a5fa;">★★★★ / ★★★★★ APIs & Linked Data</h4>
-                <p>Identificadores universais (URIs) e relacionamento com outros bancos em tempo real.</p>
-              </div>
-            </div>
-
-            <aside class="notes">
-              Explique: Muitos órgãos cumprem a lei "na forma", publicando PDFs digitalizados tortos para dificultar a apuração. O repórter de dados deve saber como quebrar essas barreiras.
-            </aside>
-          </section>
-
-          <!-- 2.7: Check-list Cap. 2 -->
-          <section data-background-gradient="radial-gradient(circle at 50% 50%, #312e81 0%, #0a0e1a 100%)">
-            <span class="badge badge-emerald">Capítulo 2 • Conclusão</span>
-            <h2>Checklist do Repórter de Dados</h2>
-            
-            <div class="card-grid-2" style="margin-top: 1.5rem;">
-              <div class="card">
-                <h4>✅ 1. Verifique a Data de Atualização</h4>
-                <p>Quando a base foi extraída pela última vez? Há defasagem temporal?</p>
-              </div>
-              <div class="card">
-                <h4>✅ 2. Exija o Dicionário de Variáveis</h4>
-                <p>Você sabe exatamente o que significa cada coluna e código numérico?</p>
-              </div>
-              <div class="card">
-                <h4>✅ 3. Cheque os Critérios de Amostragem</h4>
-                <p>A base é o universo total ou apenas uma amostra restrita de casos?</p>
-              </div>
-              <div class="card">
-                <h4>✅ 4. Guarde o Arquivo Original</h4>
-                <p>Faça backup com timestamp e hash do arquivo baixado do site oficial.</p>
-              </div>
-            </div>
-
-            <p style="text-align: center; color: var(--accent-cyan); margin-top: 1.2rem; font-size: 0.85em;">
-              👉 Pressione a tecla <strong>DIREITA (➡️)</strong> para iniciar o <strong>Capítulo 3: Coleta & Raspagem de Dados</strong>
-            </p>
-
-            <aside class="notes">
-              Apresente o checklist como a regra de segurança do repórter antes de começar a manipular os números.
-            </aside>
-          </section>
+          <aside class="notes">
+            Aponte o projeto "Base dos Dados" como uma das maiores facilidades para o jornalista iniciante no Brasil
+            hoje.
+          </aside>
         </section>
 
-        <!-- ========================================================= -->
-        <!-- CAPÍTULO 3: Coleta, Raspagem & Estruturação de Dados      -->
-        <!-- ========================================================= -->
+        <!-- 2.6: Os 5 Níveis de Dados Abertos -->
         <section>
-          <!-- 3.1: Abertura Cap. 3 -->
-          <section data-background-gradient="radial-gradient(circle at 50% 30%, #064e3b 0%, #0a0e1a 100%)">
-            <span class="badge badge-emerald">Capítulo 3/7</span>
-            <h1>Coleta, Raspagem & <span class="gradient-text-emerald">Extração de Dados</span></h1>
-            <p class="subtitle">Como capturar, desbloquear e estruturar informações espalhadas na web</p>
+          <span class="badge">Capítulo 2 • Slide 6/7</span>
+          <h2>A Escala dos Dados Abertos (Tim Berners-Lee)</h2>
+          <p class="subtitle">Qualidade e facilidade de reutilização da informação pública</p>
 
-            <div class="pill-list" style="justify-content: center; margin-top: 2rem;">
-              <div class="pill">🕷️ Web Scraping</div>
-              <div class="pill">📄 Tabula & OCR</div>
-              <div class="pill">🔌 APIs REST</div>
-              <div class="pill">🐍 Python Requests</div>
+          <div class="card-grid-2">
+            <div class="card fragment">
+              <h4 style="color: #f87171;">★ PDF / Imagem Digitalizada</h4>
+              <p>Dado trancado. O texto é uma imagem e exige OCR para ser processado.</p>
             </div>
-
-            <aside class="notes">
-              Neste capítulo, aprenderemos as técnicas para quando o dado está visível em um site, mas não há botão de download em CSV.
-            </aside>
-          </section>
-
-          <!-- 3.2: O Desafio dos PDFs -->
-          <section>
-            <span class="badge">Capítulo 3 • Slide 2/7</span>
-            <h2>O Purgatório dos PDFs: <span class="gradient-text-warm">Como Libertar Tabelas</span></h2>
-            <p class="subtitle">O PDF foi criado para impressão no papel, não para análise de dados</p>
-
-            <div class="card-grid">
-              <div class="card fragment fade-up">
-                <div class="icon">📑</div>
-                <h4>Tabula (Software Gratuito)</h4>
-                <p>Interface gráfica simples: selecione a tabela com o mouse sobre o PDF e exporte direto para CSV/Excel em segundos.</p>
-              </div>
-              <div class="card fragment fade-up">
-                <div class="icon">🐍</div>
-                <h4>pdfplumber / PyPDF (Python)</h4>
-                <p>Bibliotecas programáveis para extrair milhares de páginas de relatórios contábeis e diários oficiais em lote.</p>
-              </div>
-              <div class="card fragment fade-up">
-                <div class="icon">👁️</div>
-                <h4>Tesseract OCR</h4>
-                <p>Reconhecimento Óptico de Caracteres para quando o PDF é apenas uma foto escaneada de documento impresso.</p>
-              </div>
+            <div class="card fragment">
+              <h4 style="color: #fbbf24;">★★ Tabela em Excel (.xls proprietário)</h4>
+              <p>Estruturado, mas depende de software proprietário fechado.</p>
             </div>
-
-            <aside class="notes">
-              O Tabula é a primeira ferramenta que todo estudante de jornalismo deve ter instalada no computador.
-            </aside>
-          </section>
-
-          <!-- 3.3: O que é Web Scraping -->
-          <section>
-            <span class="badge">Capítulo 3 • Slide 3/7</span>
-            <h2>O que é <span class="gradient-text">Web Scraping</span> (Raspagem de Dados)?</h2>
-            <p class="subtitle">Escrever um script que navega em páginas da web e coleta dados automaticamente</p>
-
-            <div class="card-grid-2">
-              <div class="card fragment">
-                <h4 style="color: var(--accent-cyan);">1. Requisição HTTP</h4>
-                <p>O script solicita o código HTML da página do mesmo modo que o navegador Chrome faz.</p>
-              </div>
-              <div class="card fragment">
-                <h4 style="color: var(--accent-purple);">2. Árvore do DOM (HTML)</h4>
-                <p>O robô percorre a estrutura de tags (tabelas, listas, links) identificando onde estão as informações.</p>
-              </div>
-              <div class="card fragment">
-                <h4 style="color: var(--accent-amber);">3. Seletores CSS / XPath</h4>
-                <p>O script localiza elementos específicos (ex: <code>&lt;span class="valor-contrato"&gt;</code>).</p>
-              </div>
-              <div class="card fragment">
-                <h4 style="color: var(--accent-emerald);">4. Gravação Estruturada</h4>
-                <p>As informações de milhares de páginas são gravadas em uma tabela limpa e unificada.</p>
-              </div>
+            <div class="card fragment">
+              <h4 style="color: #34d399;">★★★ Formato Aberto Não-Proprietário (.csv)</h4>
+              <p>Padrão ouro do jornalismo. Leve, legível em qualquer linguagem ou editor.</p>
             </div>
+            <div class="card fragment">
+              <h4 style="color: #60a5fa;">★★★★ / ★★★★★ APIs & Linked Data</h4>
+              <p>Identificadores universais (URIs) e relacionamento com outros bancos em tempo real.</p>
+            </div>
+          </div>
 
-            <aside class="notes">
-              Exemplo prático: Em vez de clicar em 5.000 páginas de processos uma a uma, o robô faz isso em 3 minutos.
-            </aside>
-          </section>
+          <aside class="notes">
+            Explique: Muitos órgãos cumprem a lei "na forma", publicando PDFs digitalizados tortos para dificultar a
+            apuração. O repórter de dados deve saber como quebrar essas barreiras.
+          </aside>
+        </section>
 
-          <!-- 3.4: Exemplo de Código Python Scraping -->
-          <section>
-            <span class="badge">Capítulo 3 • Slide 4/7</span>
-            <h2>Código Prático de Raspagem em Python</h2>
-            <p class="subtitle">Coletando contratos públicos com poucas linhas de código</p>
+        <!-- 2.7: Check-list Cap. 2 -->
+        <section data-background-gradient="radial-gradient(circle at 50% 50%, #312e81 0%, #0a0e1a 100%)">
+          <span class="badge badge-emerald">Capítulo 2 • Conclusão</span>
+          <h2>Checklist do Repórter de Dados</h2>
 
-            <pre><code class="language-python" data-trim data-line-numbers="1-3|5-7|9-13|15-17">
+          <div class="card-grid-2" style="margin-top: 1.5rem;">
+            <div class="card">
+              <h4>✅ 1. Verifique a Data de Atualização</h4>
+              <p>Quando a base foi extraída pela última vez? Há defasagem temporal?</p>
+            </div>
+            <div class="card">
+              <h4>✅ 2. Exija o Dicionário de Variáveis</h4>
+              <p>Você sabe exatamente o que significa cada coluna e código numérico?</p>
+            </div>
+            <div class="card">
+              <h4>✅ 3. Cheque os Critérios de Amostragem</h4>
+              <p>A base é o universo total ou apenas uma amostra restrita de casos?</p>
+            </div>
+            <div class="card">
+              <h4>✅ 4. Guarde o Arquivo Original</h4>
+              <p>Faça backup com timestamp e hash do arquivo baixado do site oficial.</p>
+            </div>
+          </div>
+
+          <p style="text-align: center; color: var(--accent-cyan); margin-top: 1.2rem; font-size: 0.85em;">
+            👉 Pressione a tecla <strong>DIREITA (➡️)</strong> para iniciar o <strong>Capítulo 3: Coleta & Raspagem de
+              Dados</strong>
+          </p>
+
+          <aside class="notes">
+            Apresente o checklist como a regra de segurança do repórter antes de começar a manipular os números.
+          </aside>
+        </section>
+      </section>
+
+      <!-- ========================================================= -->
+      <!-- CAPÍTULO 3: Coleta, Raspagem & Estruturação de Dados      -->
+      <!-- ========================================================= -->
+      <section>
+        <!-- 3.1: Abertura Cap. 3 -->
+        <section data-background-gradient="radial-gradient(circle at 50% 30%, #064e3b 0%, #0a0e1a 100%)">
+          <span class="badge badge-emerald">Capítulo 3/7</span>
+          <h1>Coleta, Raspagem & <span class="gradient-text-emerald">Extração de Dados</span></h1>
+          <p class="subtitle">Como capturar, desbloquear e estruturar informações espalhadas na web</p>
+
+          <div class="pill-list" style="justify-content: center; margin-top: 2rem;">
+            <div class="pill">🕷️ Web Scraping</div>
+            <div class="pill">📄 Tabula & OCR</div>
+            <div class="pill">🔌 APIs REST</div>
+            <div class="pill">🐍 Python Requests</div>
+          </div>
+
+          <aside class="notes">
+            Neste capítulo, aprenderemos as técnicas para quando o dado está visível em um site, mas não há botão de
+            download em CSV.
+          </aside>
+        </section>
+
+        <!-- 3.2: O Desafio dos PDFs -->
+        <section>
+          <span class="badge">Capítulo 3 • Slide 2/7</span>
+          <h2>O Purgatório dos PDFs: <span class="gradient-text-warm">Como Libertar Tabelas</span></h2>
+          <p class="subtitle">O PDF foi criado para impressão no papel, não para análise de dados</p>
+
+          <div class="card-grid">
+            <div class="card fragment fade-up">
+              <div class="icon">📑</div>
+              <h4>Tabula (Software Gratuito)</h4>
+              <p>Interface gráfica simples: selecione a tabela com o mouse sobre o PDF e exporte direto para CSV/Excel
+                em segundos.</p>
+            </div>
+            <div class="card fragment fade-up">
+              <div class="icon">🐍</div>
+              <h4>pdfplumber / PyPDF (Python)</h4>
+              <p>Bibliotecas programáveis para extrair milhares de páginas de relatórios contábeis e diários oficiais em
+                lote.</p>
+            </div>
+            <div class="card fragment fade-up">
+              <div class="icon">👁️</div>
+              <h4>Tesseract OCR</h4>
+              <p>Reconhecimento Óptico de Caracteres para quando o PDF é apenas uma foto escaneada de documento
+                impresso.</p>
+            </div>
+          </div>
+
+          <aside class="notes">
+            O Tabula é a primeira ferramenta que todo estudante de jornalismo deve ter instalada no computador.
+          </aside>
+        </section>
+
+        <!-- 3.3: O que é Web Scraping -->
+        <section>
+          <span class="badge">Capítulo 3 • Slide 3/7</span>
+          <h2>O que é <span class="gradient-text">Web Scraping</span> (Raspagem de Dados)?</h2>
+          <p class="subtitle">Escrever um script que navega em páginas da web e coleta dados automaticamente</p>
+
+          <div class="card-grid-2">
+            <div class="card fragment">
+              <h4 style="color: var(--accent-cyan);">1. Requisição HTTP</h4>
+              <p>O script solicita o código HTML da página do mesmo modo que o navegador Chrome faz.</p>
+            </div>
+            <div class="card fragment">
+              <h4 style="color: var(--accent-purple);">2. Árvore do DOM (HTML)</h4>
+              <p>O robô percorre a estrutura de tags (tabelas, listas, links) identificando onde estão as informações.
+              </p>
+            </div>
+            <div class="card fragment">
+              <h4 style="color: var(--accent-amber);">3. Seletores CSS / XPath</h4>
+              <p>O script localiza elementos específicos (ex: <code>&lt;span class="valor-contrato"&gt;</code>).</p>
+            </div>
+            <div class="card fragment">
+              <h4 style="color: var(--accent-emerald);">4. Gravação Estruturada</h4>
+              <p>As informações de milhares de páginas são gravadas em uma tabela limpa e unificada.</p>
+            </div>
+          </div>
+
+          <aside class="notes">
+            Exemplo prático: Em vez de clicar em 5.000 páginas de processos uma a uma, o robô faz isso em 3 minutos.
+          </aside>
+        </section>
+
+        <!-- 3.4: Exemplo de Código Python Scraping -->
+        <section>
+          <span class="badge">Capítulo 3 • Slide 4/7</span>
+          <h2>Código Prático de Raspagem em Python</h2>
+          <p class="subtitle">Coletando contratos públicos com poucas linhas de código</p>
+
+          <pre><code class="language-python" data-trim data-line-numbers="1-3|5-7|9-13|15-17">
 import requests
 from bs4 import BeautifulSoup
 import pandas as pd
@@ -512,179 +572,192 @@ df = pd.DataFrame(contratos, columns=["Data", "Empresa", "Objeto", "Valor"])
 df.to_csv("contratos_prefeitura_2026.csv", index=False)
             </code></pre>
 
-            <aside class="notes">
-              Mostre como Python é legível e acessível para comunicadores. Não é necessário ser engenheiro de software para raspar dados.
-            </aside>
-          </section>
-
-          <!-- 3.5: Consumo de APIs -->
-          <section>
-            <span class="badge">Capítulo 3 • Slide 5/7</span>
-            <h2>O Poder das <span class="gradient-text-emerald">APIs REST</span></h2>
-            <p class="subtitle">Quando o próprio órgão público oferece uma porta de entrada direta para dados</p>
-
-            <div class="card-grid">
-              <div class="card fragment fade-up">
-                <div class="icon">🏛️</div>
-                <h4>API da Câmara dos Deputados</h4>
-                <p>Gastos parlamentares, presença em plenário, discursos e tramitação de projetos em tempo real.</p>
-              </div>
-              <div class="card fragment fade-up">
-                <div class="icon">📈</div>
-                <h4>API do IBGE (SIDRA)</h4>
-                <p>Indicadores socioeconômicos, inflação (IPCA), desemprego e projeções populacionais por cidade.</p>
-              </div>
-              <div class="card fragment fade-up">
-                <div class="icon">🌐</div>
-                <h4>API do Banco Central (SGS)</h4>
-                <p>Taxa Selic, cotação histórica de moedas, endividamento e fluxo de reservas cambiais.</p>
-              </div>
-            </div>
-
-            <aside class="notes">
-              APIs são muito mais estáveis do que raspar HTML, pois não quebram se o layout visual do site mudar.
-            </aside>
-          </section>
-
-          <!-- 3.6: Ética na Raspagem -->
-          <section>
-            <span class="badge">Capítulo 3 • Slide 6/7</span>
-            <h2>Ética & Boas Práticas do Web Scraping</h2>
-            <p class="subtitle">Como investigar sem derrubar servidores públicos ou violar leis</p>
-
-            <div class="card-grid-2">
-              <div class="card fragment">
-                <h4 style="color: var(--accent-cyan);">⏱️ Adicione Pausas (Rate Limiting)</h4>
-                <p>Nunca faça dezenas de requisições por segundo. Coloque <code>time.sleep(1)</code> para respeitar a capacidade do servidor.</p>
-              </div>
-              <div class="card fragment">
-                <h4 style="color: var(--accent-purple);">🤖 Identifique seu Script (User-Agent)</h4>
-                <p>Coloque seu contato no cabeçalho da requisição para que a equipe de TI saiba que se trata de apuração de imprensa.</p>
-              </div>
-              <div class="card fragment">
-                <h4 style="color: var(--accent-amber);">🌙 Raspe Fora do Horário de Pico</h4>
-                <p>Prefira rodar scripts volumosos durante a noite ou aos finais de semana para não atrapalhar o cidadão comum.</p>
-              </div>
-              <div class="card fragment">
-                <h4 style="color: var(--accent-emerald);">💾 Guarde Cópias Fidedignas</h4>
-                <p>Salve a resposta HTML bruta original com data e hora como prova documental para sua reportagem.</p>
-              </div>
-            </div>
-
-            <aside class="notes">
-              O repórter deve ser um usuário exemplar da internet. Respeito aos servidores públicos é imperativo ético.
-            </aside>
-          </section>
-
-          <!-- 3.7: Conclusão Cap. 3 -->
-          <section data-background-gradient="radial-gradient(circle at 50% 50%, #064e3b 0%, #0a0e1a 100%)">
-            <span class="badge badge-emerald">Capítulo 3 • Conclusão</span>
-            <h2>Resumo da Coleta de Dados</h2>
-            <p class="subtitle">Agora que temos a base em mãos, começa o maior desafio: o tratamento</p>
-
-            <div class="card" style="margin-top: 1.5rem;">
-              <h4>💡 Regra de Ouro do Jornalista de Dados:</h4>
-              <p style="font-size: 0.95em;">"Dados brutos obtidos na web quase nunca estão prontos para publicação. Eles vêm cheios de ruídos, fraudes e erros de digitação."</p>
-            </div>
-
-            <p style="text-align: center; color: var(--accent-cyan); margin-top: 1.8rem; font-size: 0.85em;">
-              👉 Pressione a tecla <strong>DIREITA (➡️)</strong> para iniciar o <strong>Capítulo 4: Limpeza & Auditoria de Dados</strong>
-            </p>
-
-            <aside class="notes">
-              Prepare o público para o Capítulo 4, onde ocorre a parte mais técnica e rigorosa da reportagem.
-            </aside>
-          </section>
+          <aside class="notes">
+            Mostre como Python é legível e acessível para comunicadores. Não é necessário ser engenheiro de software
+            para raspar dados.
+          </aside>
         </section>
 
-        <!-- ========================================================= -->
-        <!-- CAPÍTULO 4: Limpeza, Tratamento & Auditoria de Dados       -->
-        <!-- ========================================================= -->
+        <!-- 3.5: Consumo de APIs -->
         <section>
-          <!-- 4.1: Abertura Cap. 4 -->
-          <section data-background-gradient="radial-gradient(circle at 50% 30%, #701a75 0%, #0a0e1a 100%)">
-            <span class="badge" style="color: #f472b6; border-color: rgba(244, 114, 182, 0.4);">Capítulo 4/7</span>
-            <h1>Limpeza, Tratamento & <span class="gradient-text-warm">Auditoria de Dados</span></h1>
-            <p class="subtitle">Onde 80% do trabalho investigativo acontece: da sujeira à verdade auditável</p>
+          <span class="badge">Capítulo 3 • Slide 5/7</span>
+          <h2>O Poder das <span class="gradient-text-emerald">APIs REST</span></h2>
+          <p class="subtitle">Quando o próprio órgão público oferece uma porta de entrada direta para dados</p>
 
-            <div class="pill-list" style="justify-content: center; margin-top: 2rem;">
-              <div class="pill">🧹 OpenRefine</div>
-              <div class="pill">🐼 Pandas & Python</div>
-              <div class="pill">🔗 Cruzamento (Joins)</div>
-              <div class="pill">🎯 Detecção de Outliers</div>
+          <div class="card-grid">
+            <div class="card fragment fade-up">
+              <div class="icon">🏛️</div>
+              <h4>API da Câmara dos Deputados</h4>
+              <p>Gastos parlamentares, presença em plenário, discursos e tramitação de projetos em tempo real.</p>
             </div>
-
-            <aside class="notes">
-              Limpeza de dados é jornalismo investigativo puro. É onde encontramos discrepâncias e desvios ocultos.
-            </aside>
-          </section>
-
-          <!-- 4.2: Armadilhas em Dados Reais -->
-          <section>
-            <span class="badge">Capítulo 4 • Slide 2/7</span>
-            <h2>As Maiores Armadilhas em Bases Públicas</h2>
-            <p class="subtitle">O que pode arruinar uma manchete se o repórter não verificar</p>
-
-            <div class="card-grid">
-              <div class="card fragment fade-up">
-                <div class="icon">⚠️</div>
-                <h4>Erros de Digitação Manual</h4>
-                <p>"Florianopolis", "Floripa", "Florianópolis-SC". Se não padronizar, o agrupamento vai separar a mesma cidade em 3 linhas distintas.</p>
-              </div>
-              <div class="card fragment fade-up">
-                <div class="icon">👻</div>
-                <h4>Valores Nulos & Marcadores Falsos</h4>
-                <p>Campos preenchidos com "9999", "N/A" ou "00/00/0000" que distorcem médias e cálculos se interpretados como números reais.</p>
-              </div>
-              <div class="card fragment fade-up">
-                <div class="icon">🔁</div>
-                <h4>Registros Duplicados</h4>
-                <p>O mesmo contrato ou pagamento lançado duas vezes por falhas de integração no sistema da prefeitura.</p>
-              </div>
+            <div class="card fragment fade-up">
+              <div class="icon">📈</div>
+              <h4>API do IBGE (SIDRA)</h4>
+              <p>Indicadores socioeconômicos, inflação (IPCA), desemprego e projeções populacionais por cidade.</p>
             </div>
-
-            <aside class="notes">
-              Nunca confie na pureza de um banco de dados governamental antes de rodar checagens de integridade.
-            </aside>
-          </section>
-
-          <!-- 4.3: OpenRefine -->
-          <section>
-            <span class="badge">Capítulo 4 • Slide 3/7</span>
-            <h2>OpenRefine: O Canivete Suíço da Limpeza</h2>
-            <p class="subtitle">A ferramenta visual mais eficiente para higienização e agrupamento de dados</p>
-
-            <div class="card-grid-2">
-              <div class="card fragment">
-                <h4 style="color: var(--accent-cyan);">🧩 Agrupamento por Similaridade (Clustering)</h4>
-                <p>Algoritmos fonéticos (Metaphone, Levenshtein) encontram nomes digitados de formas diferentes e unificam com um clique.</p>
-              </div>
-              <div class="card fragment">
-                <h4 style="color: var(--accent-purple);">🔄 Transformações em Lote</h4>
-                <p>Conversão instantânea de formatos de data (ex: DD/MM/AAAA para AAAA-MM-DD), remoção de espaços em branco e acentos.</p>
-              </div>
-              <div class="card fragment">
-                <h4 style="color: var(--accent-amber);">📜 Histórico Completo de Auditoria</h4>
-                <p>Cada alteração fica gravada em um log JSON reproduzível, permitindo desfazer qualquer passo e anexar a metodologia à matéria.</p>
-              </div>
-              <div class="card fragment">
-                <h4 style="color: var(--accent-emerald);">🌐 Reconciliação com Wikidata</h4>
-                <p>Cruze bases locais com o banco de dados global da Wikimedia para identificar políticos e empresas automaticamente.</p>
-              </div>
+            <div class="card fragment fade-up">
+              <div class="icon">🌐</div>
+              <h4>API do Banco Central (SGS)</h4>
+              <p>Taxa Selic, cotação histórica de moedas, endividamento e fluxo de reservas cambiais.</p>
             </div>
+          </div>
 
-            <aside class="notes">
-              O OpenRefine funciona offline no navegador, garantindo sigilo absoluto caso o repórter esteja lidando com vazamentos confidenciais.
-            </aside>
-          </section>
+          <aside class="notes">
+            APIs são muito mais estáveis do que raspar HTML, pois não quebram se o layout visual do site mudar.
+          </aside>
+        </section>
 
-          <!-- 4.4: Pandas & Python para Limpeza -->
-          <section>
-            <span class="badge">Capítulo 4 • Slide 4/7</span>
-            <h2>Tratamento Avançado com Python & Pandas</h2>
-            <p class="subtitle">Automatizando a limpeza de milhões de registros em frações de segundo</p>
+        <!-- 3.6: Ética na Raspagem -->
+        <section>
+          <span class="badge">Capítulo 3 • Slide 6/7</span>
+          <h2>Ética & Boas Práticas do Web Scraping</h2>
+          <p class="subtitle">Como investigar sem derrubar servidores públicos ou violar leis</p>
 
-            <pre><code class="language-python" data-trim data-line-numbers="1-2|4-6|8-11|13-14">
+          <div class="card-grid-2">
+            <div class="card fragment">
+              <h4 style="color: var(--accent-cyan);">⏱️ Adicione Pausas (Rate Limiting)</h4>
+              <p>Nunca faça dezenas de requisições por segundo. Coloque <code>time.sleep(1)</code> para respeitar a
+                capacidade do servidor.</p>
+            </div>
+            <div class="card fragment">
+              <h4 style="color: var(--accent-purple);">🤖 Identifique seu Script (User-Agent)</h4>
+              <p>Coloque seu contato no cabeçalho da requisição para que a equipe de TI saiba que se trata de apuração
+                de imprensa.</p>
+            </div>
+            <div class="card fragment">
+              <h4 style="color: var(--accent-amber);">🌙 Raspe Fora do Horário de Pico</h4>
+              <p>Prefira rodar scripts volumosos durante a noite ou aos finais de semana para não atrapalhar o cidadão
+                comum.</p>
+            </div>
+            <div class="card fragment">
+              <h4 style="color: var(--accent-emerald);">💾 Guarde Cópias Fidedignas</h4>
+              <p>Salve a resposta HTML bruta original com data e hora como prova documental para sua reportagem.</p>
+            </div>
+          </div>
+
+          <aside class="notes">
+            O repórter deve ser um usuário exemplar da internet. Respeito aos servidores públicos é imperativo ético.
+          </aside>
+        </section>
+
+        <!-- 3.7: Conclusão Cap. 3 -->
+        <section data-background-gradient="radial-gradient(circle at 50% 50%, #064e3b 0%, #0a0e1a 100%)">
+          <span class="badge badge-emerald">Capítulo 3 • Conclusão</span>
+          <h2>Resumo da Coleta de Dados</h2>
+          <p class="subtitle">Agora que temos a base em mãos, começa o maior desafio: o tratamento</p>
+
+          <div class="card" style="margin-top: 1.5rem;">
+            <h4>💡 Regra de Ouro do Jornalista de Dados:</h4>
+            <p style="font-size: 0.95em;">"Dados brutos obtidos na web quase nunca estão prontos para publicação. Eles
+              vêm cheios de ruídos, fraudes e erros de digitação."</p>
+          </div>
+
+          <p style="text-align: center; color: var(--accent-cyan); margin-top: 1.8rem; font-size: 0.85em;">
+            👉 Pressione a tecla <strong>DIREITA (➡️)</strong> para iniciar o <strong>Capítulo 4: Limpeza & Auditoria de
+              Dados</strong>
+          </p>
+
+          <aside class="notes">
+            Prepare o público para o Capítulo 4, onde ocorre a parte mais técnica e rigorosa da reportagem.
+          </aside>
+        </section>
+      </section>
+
+      <!-- ========================================================= -->
+      <!-- CAPÍTULO 4: Limpeza, Tratamento & Auditoria de Dados       -->
+      <!-- ========================================================= -->
+      <section>
+        <!-- 4.1: Abertura Cap. 4 -->
+        <section data-background-gradient="radial-gradient(circle at 50% 30%, #701a75 0%, #0a0e1a 100%)">
+          <span class="badge" style="color: #f472b6; border-color: rgba(244, 114, 182, 0.4);">Capítulo 4/7</span>
+          <h1>Limpeza, Tratamento & <span class="gradient-text-warm">Auditoria de Dados</span></h1>
+          <p class="subtitle">Onde 80% do trabalho investigativo acontece: da sujeira à verdade auditável</p>
+
+          <div class="pill-list" style="justify-content: center; margin-top: 2rem;">
+            <div class="pill">🧹 OpenRefine</div>
+            <div class="pill">🐼 Pandas & Python</div>
+            <div class="pill">🔗 Cruzamento (Joins)</div>
+            <div class="pill">🎯 Detecção de Outliers</div>
+          </div>
+
+          <aside class="notes">
+            Limpeza de dados é jornalismo investigativo puro. É onde encontramos discrepâncias e desvios ocultos.
+          </aside>
+        </section>
+
+        <!-- 4.2: Armadilhas em Dados Reais -->
+        <section>
+          <span class="badge">Capítulo 4 • Slide 2/7</span>
+          <h2>As Maiores Armadilhas em Bases Públicas</h2>
+          <p class="subtitle">O que pode arruinar uma manchete se o repórter não verificar</p>
+
+          <div class="card-grid">
+            <div class="card fragment fade-up">
+              <div class="icon">⚠️</div>
+              <h4>Erros de Digitação Manual</h4>
+              <p>"Florianopolis", "Floripa", "Florianópolis-SC". Se não padronizar, o agrupamento vai separar a mesma
+                cidade em 3 linhas distintas.</p>
+            </div>
+            <div class="card fragment fade-up">
+              <div class="icon">👻</div>
+              <h4>Valores Nulos & Marcadores Falsos</h4>
+              <p>Campos preenchidos com "9999", "N/A" ou "00/00/0000" que distorcem médias e cálculos se interpretados
+                como números reais.</p>
+            </div>
+            <div class="card fragment fade-up">
+              <div class="icon">🔁</div>
+              <h4>Registros Duplicados</h4>
+              <p>O mesmo contrato ou pagamento lançado duas vezes por falhas de integração no sistema da prefeitura.</p>
+            </div>
+          </div>
+
+          <aside class="notes">
+            Nunca confie na pureza de um banco de dados governamental antes de rodar checagens de integridade.
+          </aside>
+        </section>
+
+        <!-- 4.3: OpenRefine -->
+        <section>
+          <span class="badge">Capítulo 4 • Slide 3/7</span>
+          <h2>OpenRefine: O Canivete Suíço da Limpeza</h2>
+          <p class="subtitle">A ferramenta visual mais eficiente para higienização e agrupamento de dados</p>
+
+          <div class="card-grid-2">
+            <div class="card fragment">
+              <h4 style="color: var(--accent-cyan);">🧩 Agrupamento por Similaridade (Clustering)</h4>
+              <p>Algoritmos fonéticos (Metaphone, Levenshtein) encontram nomes digitados de formas diferentes e unificam
+                com um clique.</p>
+            </div>
+            <div class="card fragment">
+              <h4 style="color: var(--accent-purple);">🔄 Transformações em Lote</h4>
+              <p>Conversão instantânea de formatos de data (ex: DD/MM/AAAA para AAAA-MM-DD), remoção de espaços em
+                branco e acentos.</p>
+            </div>
+            <div class="card fragment">
+              <h4 style="color: var(--accent-amber);">📜 Histórico Completo de Auditoria</h4>
+              <p>Cada alteração fica gravada em um log JSON reproduzível, permitindo desfazer qualquer passo e anexar a
+                metodologia à matéria.</p>
+            </div>
+            <div class="card fragment">
+              <h4 style="color: var(--accent-emerald);">🌐 Reconciliação com Wikidata</h4>
+              <p>Cruze bases locais com o banco de dados global da Wikimedia para identificar políticos e empresas
+                automaticamente.</p>
+            </div>
+          </div>
+
+          <aside class="notes">
+            O OpenRefine funciona offline no navegador, garantindo sigilo absoluto caso o repórter esteja lidando com
+            vazamentos confidenciais.
+          </aside>
+        </section>
+
+        <!-- 4.4: Pandas & Python para Limpeza -->
+        <section>
+          <span class="badge">Capítulo 4 • Slide 4/7</span>
+          <h2>Tratamento Avançado com Python & Pandas</h2>
+          <p class="subtitle">Automatizando a limpeza de milhões de registros em frações de segundo</p>
+
+          <pre><code class="language-python" data-trim data-line-numbers="1-2|4-6|8-11|13-14">
 import pandas as pd
 
 # Carrega a base bruta de pagamentos
@@ -702,650 +775,719 @@ df = df.drop_duplicates(subset=['num_empenho', 'data_pagamento', 'valor'])
 print(f"Total auditado: R$ {df['valor'].sum():,.2f}")
             </code></pre>
 
-            <aside class="notes">
-              Mostre como é simples limpar colunas de valores monetários que vêm cheias de caracteres especiais no Brasil.
-            </aside>
-          </section>
-
-          <!-- 4.5: Cruzamento de Bases (Joins) -->
-          <section>
-            <span class="badge">Capítulo 4 • Slide 5/7</span>
-            <h2>Cruzamento de Bases: Onde Surgem os Furos</h2>
-            <p class="subtitle">Conectando bases que as autoridades nunca imaginaram ver juntas</p>
-
-            <div class="card-grid">
-              <div class="card fragment fade-up">
-                <div class="icon">🏢</div>
-                <h4>Licitações + Quadro Societário</h4>
-                <p>Cruzamento via <strong>CNPJ</strong> para descobrir empresas vencedoras pertencentes a parentes de servidores públicos.</p>
-              </div>
-              <div class="card fragment fade-up">
-                <div class="icon">🗳️</div>
-                <h4>Doações Eleitorais + Contratos</h4>
-                <p>Cruzamento de CPFs de doadores de campanha com sócios de empresas que ganharam contratos sem licitação meses depois.</p>
-              </div>
-              <div class="card fragment fade-up">
-                <div class="icon">📍</div>
-                <h4>Endereços + Receita Federal</h4>
-                <p>Identificação de dezenas de empresas concorrentes registradas exatamente no mesmo endereço ou sala comercial.</p>
-              </div>
-            </div>
-
-            <aside class="notes">
-              O "Join" de bancos de dados é a operação mais frutífera do jornalismo investigativo moderno.
-            </aside>
-          </section>
-
-          <!-- 4.6: Outliers & Anomalias -->
-          <section>
-            <span class="badge">Capítulo 4 • Slide 6/7</span>
-            <h2>Caçando Outliers (Valores Fora da Curva)</h2>
-            <p class="subtitle">Como identificar desvios estatísticos que apontam para suspeitas reais</p>
-
-            <div class="card-grid-2">
-              <div class="card fragment">
-                <h4 style="color: var(--accent-cyan);">📈 Dispersão de Preços Unitários</h4>
-                <p>Um hospital compra caixas de luvas por R$ 25, enquanto outro compra por R$ 380 do mesmo fornecedor na mesma semana.</p>
-              </div>
-              <div class="card fragment">
-                <h4 style="color: var(--accent-purple);">⏱️ Concentração Temporal Anômala</h4>
-                <p>Dezenas de notas fiscais emitidas no mesmo minuto na virada do exercício fiscal em 31 de dezembro.</p>
-              </div>
-              <div class="card fragment">
-                <h4 style="color: var(--accent-amber);">🎯 Lei de Benford</h4>
-                <p>Análise da frequência do primeiro dígito em despesas contábeis para detectar números forjados artificialmente.</p>
-              </div>
-              <div class="card fragment">
-                <h4 style="color: var(--accent-emerald);">🗺️ Incoerência Geográfica</h4>
-                <p>Uma empresa de transporte escolar em Santa Catarina prestando serviços para um município no interior do Amazonas.</p>
-              </div>
-            </div>
-
-            <aside class="notes">
-              A Lei de Benford e os desvios-padrão são ferramentas estatísticas consagradas em auditorias forenses.
-            </aside>
-          </section>
-
-          <!-- 4.7: Conclusão Cap. 4 -->
-          <section data-background-gradient="radial-gradient(circle at 50% 50%, #701a75 0%, #0a0e1a 100%)">
-            <span class="badge badge-emerald">Capítulo 4 • Conclusão</span>
-            <h2>Auditoria & Reprodutibilidade</h2>
-            
-            <div class="card" style="margin-top: 1.5rem;">
-              <h4>🔒 Regra de Proteção Jurídica:</h4>
-              <p style="font-size: 0.95em;">"Se a sua apuração não puder ser reproduzida exatamente por outro repórter rodando o mesmo script nos mesmos dados brutos, a matéria não está pronta para ser publicada."</p>
-            </div>
-
-            <p style="text-align: center; color: var(--accent-cyan); margin-top: 1.8rem; font-size: 0.85em;">
-              👉 Pressione a tecla <strong>DIREITA (➡️)</strong> para iniciar o <strong>Capítulo 5: Análise Estatística & BI</strong>
-            </p>
-
-            <aside class="notes">
-              Enfatize o valor da reprodutibilidade para a credibilidade do veículo e do jornalista.
-            </aside>
-          </section>
+          <aside class="notes">
+            Mostre como é simples limpar colunas de valores monetários que vêm cheias de caracteres especiais no Brasil.
+          </aside>
         </section>
 
-        <!-- ========================================================= -->
-        <!-- CAPÍTULO 5: Análise Estatística, Investigação & BI         -->
-        <!-- ========================================================= -->
+        <!-- 4.5: Cruzamento de Bases (Joins) -->
         <section>
-          <!-- 5.1: Abertura Cap. 5 -->
-          <section data-background-gradient="radial-gradient(circle at 50% 30%, #831843 0%, #0a0e1a 100%)">
-            <span class="badge" style="color: #f43f5e; border-color: rgba(244, 63, 94, 0.4);">Capítulo 5/7</span>
-            <h1>Análise Estatística, <span class="gradient-text-warm">Investigação & BI</span></h1>
-            <p class="subtitle">Fazendo as perguntas certas aos dados e extraindo inteligência editorial</p>
+          <span class="badge">Capítulo 4 • Slide 5/7</span>
+          <h2>Cruzamento de Bases: Onde Surgem os Furos</h2>
+          <p class="subtitle">Conectando bases que as autoridades nunca imaginaram ver juntas</p>
 
-            <div class="pill-list" style="justify-content: center; margin-top: 2rem;">
-              <div class="pill">📊 Média vs Mediana</div>
-              <div class="pill">📉 Taxas por 100k</div>
-              <div class="pill">💼 Power BI / Metabase</div>
-              <div class="pill">🎧 Social Listening</div>
+          <div class="card-grid">
+            <div class="card fragment fade-up">
+              <div class="icon">🏢</div>
+              <h4>Licitações + Quadro Societário</h4>
+              <p>Cruzamento via <strong>CNPJ</strong> para descobrir empresas vencedoras pertencentes a parentes de
+                servidores públicos.</p>
             </div>
-
-            <aside class="notes">
-              Neste capítulo, aprenderemos como interpretar os números sem cair em armadilhas conceituais ou criar manchetes falsas.
-            </aside>
-          </section>
-
-          <!-- 5.2: Estatística Básica para Repórteres -->
-          <section>
-            <span class="badge">Capítulo 5 • Slide 2/7</span>
-            <h2>Estatística Essencial para Jornalistas</h2>
-            <p class="subtitle">Conceitos fundamentais que todo comunicador precisa dominar</p>
-
-            <div class="card-grid">
-              <div class="card fragment fade-up">
-                <div class="icon">⚖️</div>
-                <h4>Média vs. Mediana</h4>
-                <p>Se 9 pessoas ganham R$ 2.000 e 1 pessoa ganha R$ 1.000.000, a média é R$ 101.800 (ilusória). A <strong>mediana</strong> é R$ 2.000 (realista).</p>
-              </div>
-              <div class="card fragment fade-up">
-                <div class="icon">👥</div>
-                <h4>Taxas por 100 mil habitantes</h4>
-                <p>Comparar números absolutos de homicídios entre São Paulo e Florianópolis é distorcido. Sempre normalize pela população.</p>
-              </div>
-              <div class="card fragment fade-up">
-                <div class="icon">📈</div>
-                <h4>% vs. Pontos Percentuais</h4>
-                <p>Se a taxa de juros sobe de 10% para 12%, ela subiu <strong>2 pontos percentuais</strong>, mas aumentou <strong>20%</strong> no valor.</p>
-              </div>
+            <div class="card fragment fade-up">
+              <div class="icon">🗳️</div>
+              <h4>Doações Eleitorais + Contratos</h4>
+              <p>Cruzamento de CPFs de doadores de campanha com sócios de empresas que ganharam contratos sem licitação
+                meses depois.</p>
             </div>
-
-            <aside class="notes">
-              Explique com clareza a diferença entre média e mediana. Esse é o erro mais comum na imprensa diária.
-            </aside>
-          </section>
-
-          <!-- 5.3: Correlação vs Causalidade -->
-          <section>
-            <span class="badge">Capítulo 5 • Slide 3/7</span>
-            <h2>Correlação Não Implica Causalidade</h2>
-            <p class="subtitle">O maior gerador de desinformação involuntária no jornalismo</p>
-
-            <div class="card-grid-2">
-              <div class="card fragment">
-                <h4 style="color: #f87171;">❌ A Falácia da Correlação Espúria</h4>
-                <p>O consumo de sorvete e as mortes por afogamento aumentam juntos no verão. O sorvete causa afogamento? Não, o calor causa ambos.</p>
-              </div>
-              <div class="card fragment">
-                <h4 style="color: #34d399;">✅ A Postura do Jornalista Investigativo</h4>
-                <p>Identificar se existe uma variável oculta (fator de confusão) e consultar estatísticos e especialistas antes de cravar uma relação de causa e efeito.</p>
-              </div>
+            <div class="card fragment fade-up">
+              <div class="icon">📍</div>
+              <h4>Endereços + Receita Federal</h4>
+              <p>Identificação de dezenas de empresas concorrentes registradas exatamente no mesmo endereço ou sala
+                comercial.</p>
             </div>
+          </div>
 
-            <aside class="notes">
-              Mostre a responsabilidade de não criar pânico moral ou desinformação científica com correlações fracas.
-            </aside>
-          </section>
+          <aside class="notes">
+            O "Join" de bancos de dados é a operação mais frutífera do jornalismo investigativo moderno.
+          </aside>
+        </section>
 
-          <!-- 5.4: Business Intelligence no Jornalismo -->
-          <section>
-            <span class="badge">Capítulo 5 • Slide 4/7</span>
-            <h2>Business Intelligence (BI) na Redação</h2>
-            <p class="subtitle">Utilizando ferramentas corporativas para monitorar o poder público continuamente</p>
+        <!-- 4.6: Outliers & Anomalias -->
+        <section>
+          <span class="badge">Capítulo 4 • Slide 6/7</span>
+          <h2>Caçando Outliers (Valores Fora da Curva)</h2>
+          <p class="subtitle">Como identificar desvios estatísticos que apontam para suspeitas reais</p>
 
-            <div class="card-grid">
-              <div class="card fragment fade-up">
-                <div class="icon">📊</div>
-                <h4>Dashboards Analíticos</h4>
-                <p>Painéis em Power BI, Looker Studio e Metabase conectados a bases que atualizam matérias automaticamente.</p>
-              </div>
-              <div class="card fragment fade-up">
-                <div class="icon">🚨</div>
-                <h4>Alertas Automatizados</h4>
-                <p>Notificações automáticas no Slack/Telegram da redação quando uma licitação acima de R$ 5 milhões é publicada.</p>
-              </div>
-              <div class="card fragment fade-up">
-                <div class="icon">🔍</div>
-                <h4>Filtros Multidimensionais</h4>
-                <p>Navegação intuitiva por partido, estado, fornecedor e ano sem necessidade de rodar código a cada pergunta.</p>
-              </div>
+          <div class="card-grid-2">
+            <div class="card fragment">
+              <h4 style="color: var(--accent-cyan);">📈 Dispersão de Preços Unitários</h4>
+              <p>Um hospital compra caixas de luvas por R$ 25, enquanto outro compra por R$ 380 do mesmo fornecedor na
+                mesma semana.</p>
             </div>
-
-            <aside class="notes">
-              O BI transforma a apuração pontual em uma central de inteligência contínua na redação.
-            </aside>
-          </section>
-
-          <!-- 5.5: Social Listening -->
-          <section>
-            <span class="badge">Capítulo 5 • Slide 5/7</span>
-            <h2>Social Listening & Monitoramento de Redes</h2>
-            <p class="subtitle">Entendendo o ecossistema digital, narrativas e fluxos de opinião pública</p>
-
-            <div class="card-grid-2">
-              <div class="card fragment">
-                <h4 style="color: var(--accent-cyan);">🗣️ Análise de Sentimento & Tendências</h4>
-                <p>Mapeamento de picos de conversação, palavras-chave e reações populares em torno de crises e projetos de lei.</p>
-              </div>
-              <div class="card fragment">
-                <h4 style="color: var(--accent-purple);">🕸️ Mapeamento de Redes & Grafos</h4>
-                <p>Identificação de clusters de perfis inautênticos (bots), contas coordenadas e nós de disseminação de desinformação.</p>
-              </div>
-              <div class="card fragment">
-                <h4 style="color: var(--accent-amber);">🎯 Monitoramento de Anúncios Políticos</h4>
-                <p>Biblioteca de Anúncios da Meta e Google para rastrear gastos eleitorais e microsegmentação de eleitores.</p>
-              </div>
-              <div class="card fragment">
-                <h4 style="color: var(--accent-emerald);">🛡️ Ética & Amostragem</h4>
-                <p>Compreender que as redes sociais não representam o total da população brasileira, mas nichos específicos engajados.</p>
-              </div>
+            <div class="card fragment">
+              <h4 style="color: var(--accent-purple);">⏱️ Concentração Temporal Anômala</h4>
+              <p>Dezenas de notas fiscais emitidas no mesmo minuto na virada do exercício fiscal em 31 de dezembro.</p>
             </div>
-
-            <aside class="notes">
-              Social listening é fundamental para cobrir eleições, desinformação e reputação de figuras públicas.
-            </aside>
-          </section>
-
-          <!-- 5.6: Da Análise à Entrevista -->
-          <section>
-            <span class="badge">Capítulo 5 • Slide 6/7</span>
-            <h2>O Fechamento: Da Planilha ao Confronto Ético</h2>
-            <p class="subtitle">O que fazer após encontrar a anomalia estatística?</p>
-
-            <div class="card-grid">
-              <div class="card fragment fade-up">
-                <div class="icon">📞</div>
-                <h4>1. O Outro Lado Rigoroso</h4>
-                <p>Apresente a tabela exata e os números ao investigado com prazo razoável para resposta antes da publicação.</p>
-              </div>
-              <div class="card fragment fade-up">
-                <div class="icon">👨‍🔬</div>
-                <h4>2. Peer-Review com Especialistas</h4>
-                <p>Peça a um pesquisador ou auditor independente para checar sua metodologia e cálculos matemáticos.</p>
-              </div>
-              <div class="card fragment fade-up">
-                <div class="icon">👤</div>
-                <h4>3. O Personagem Humano</h4>
-                <p>Encontre a pessoa real que sofre as consequências do desvio orçamentário para abrir a sua reportagem.</p>
-              </div>
+            <div class="card fragment">
+              <h4 style="color: var(--accent-amber);">🎯 Lei de Benford</h4>
+              <p>Análise da frequência do primeiro dígito em despesas contábeis para detectar números forjados
+                artificialmente.</p>
             </div>
+            <div class="card fragment">
+              <h4 style="color: var(--accent-emerald);">🗺️ Incoerência Geográfica</h4>
+              <p>Uma empresa de transporte escolar em Santa Catarina prestando serviços para um município no interior do
+                Amazonas.</p>
+            </div>
+          </div>
 
-            <aside class="notes">
-              Uma matéria de dados sem o personagem humano é um relatório técnico; com o personagem, é uma grande reportagem.
-            </aside>
-          </section>
+          <aside class="notes">
+            A Lei de Benford e os desvios-padrão são ferramentas estatísticas consagradas em auditorias forenses.
+          </aside>
+        </section>
 
-          <!-- 5.7: Conclusão Cap. 5 -->
-          <section data-background-gradient="radial-gradient(circle at 50% 50%, #831843 0%, #0a0e1a 100%)">
-            <span class="badge badge-emerald">Capítulo 5 • Conclusão</span>
-            <h2>Resumo da Análise de Dados</h2>
-            
-            <div class="quote-container" style="margin-top: 1.5rem;">
-              <div class="quote-mark">“</div>
-              <p class="quote-text">
-                Torture os dados por tempo suficiente e eles confessarão qualquer coisa. O papel do jornalista é buscar a verdade, não confirmar seus próprios preconceitos.
+        <!-- 4.7: Conclusão Cap. 4 -->
+        <section data-background-gradient="radial-gradient(circle at 50% 50%, #701a75 0%, #0a0e1a 100%)">
+          <span class="badge badge-emerald">Capítulo 4 • Conclusão</span>
+          <h2>Auditoria & Reprodutibilidade</h2>
+
+          <div class="card" style="margin-top: 1.5rem;">
+            <h4>🔒 Regra de Proteção Jurídica:</h4>
+            <p style="font-size: 0.95em;">"Se a sua apuração não puder ser reproduzida exatamente por outro repórter
+              rodando o mesmo script nos mesmos dados brutos, a matéria não está pronta para ser publicada."</p>
+          </div>
+
+          <p style="text-align: center; color: var(--accent-cyan); margin-top: 1.8rem; font-size: 0.85em;">
+            👉 Pressione a tecla <strong>DIREITA (➡️)</strong> para iniciar o <strong>Capítulo 5: Análise Estatística &
+              BI</strong>
+          </p>
+
+          <aside class="notes">
+            Enfatize o valor da reprodutibilidade para a credibilidade do veículo e do jornalista.
+          </aside>
+        </section>
+      </section>
+
+      <!-- ========================================================= -->
+      <!-- CAPÍTULO 5: Análise Estatística, Investigação & BI         -->
+      <!-- ========================================================= -->
+      <section>
+        <!-- 5.1: Abertura Cap. 5 -->
+        <section data-background-gradient="radial-gradient(circle at 50% 30%, #831843 0%, #0a0e1a 100%)">
+          <span class="badge" style="color: #f43f5e; border-color: rgba(244, 63, 94, 0.4);">Capítulo 5/7</span>
+          <h1>Análise Estatística, <span class="gradient-text-warm">Investigação & BI</span></h1>
+          <p class="subtitle">Fazendo as perguntas certas aos dados e extraindo inteligência editorial</p>
+
+          <div class="pill-list" style="justify-content: center; margin-top: 2rem;">
+            <div class="pill">📊 Média vs Mediana</div>
+            <div class="pill">📉 Taxas por 100k</div>
+            <div class="pill">💼 Power BI / Metabase</div>
+            <div class="pill">🎧 Social Listening</div>
+          </div>
+
+          <aside class="notes">
+            Neste capítulo, aprenderemos como interpretar os números sem cair em armadilhas conceituais ou criar
+            manchetes falsas.
+          </aside>
+        </section>
+
+        <!-- 5.2: Estatística Básica para Repórteres -->
+        <section>
+          <span class="badge">Capítulo 5 • Slide 2/7</span>
+          <h2>Estatística Essencial para Jornalistas</h2>
+          <p class="subtitle">Conceitos fundamentais que todo comunicador precisa dominar</p>
+
+          <div class="card-grid">
+            <div class="card fragment fade-up">
+              <div class="icon">⚖️</div>
+              <h4>Média vs. Mediana</h4>
+              <p>Se 9 pessoas ganham R$ 2.000 e 1 pessoa ganha R$ 1.000.000, a média é R$ 101.800 (ilusória). A
+                <strong>mediana</strong> é R$ 2.000 (realista).
               </p>
-              <div class="quote-author">Ronald Coase (Adaptado ao Jornalismo)</div>
             </div>
-
-            <p style="text-align: center; color: var(--accent-cyan); margin-top: 1.5rem; font-size: 0.85em;">
-              👉 Pressione a tecla <strong>DIREITA (➡️)</strong> para iniciar o <strong>Capítulo 6: Visualização & Storytelling</strong>
-            </p>
-
-            <aside class="notes">
-              Enfatize a honestidade intelectual do repórter ao analisar dados.
-            </aside>
-          </section>
-        </section>
-
-        <!-- ========================================================= -->
-        <!-- CAPÍTULO 6: Visualização de Dados & Storytelling Visual   -->
-        <!-- ========================================================= -->
-        <section>
-          <!-- 6.1: Abertura Cap. 6 -->
-          <section data-background-gradient="radial-gradient(circle at 50% 30%, #14532d 0%, #0a0e1a 100%)">
-            <span class="badge badge-emerald">Capítulo 6/7</span>
-            <h1>Visualização de Dados & <span class="gradient-text-emerald">Storytelling Visual</span></h1>
-            <p class="subtitle">Como transformar descobertas numéricas em narrativas visuais claras e inesquecíveis</p>
-
-            <div class="pill-list" style="justify-content: center; margin-top: 2rem;">
-              <div class="pill">📈 Escolha de Gráficos</div>
-              <div class="pill">🗺️ Jornalismo Geoespacial</div>
-              <div class="pill">📜 Scrollytelling</div>
-              <div class="pill">♿ Acessibilidade Visual</div>
+            <div class="card fragment fade-up">
+              <div class="icon">👥</div>
+              <h4>Taxas por 100 mil habitantes</h4>
+              <p>Comparar números absolutos de homicídios entre São Paulo e Florianópolis é distorcido. Sempre normalize
+                pela população.</p>
             </div>
-
-            <aside class="notes">
-              A visualização é a ponte entre a complexidade do banco de dados e a compreensão imediata do público.
-            </aside>
-          </section>
-
-          <!-- 6.2: Escolhendo o Gráfico Correto -->
-          <section>
-            <span class="badge">Capítulo 6 • Slide 2/7</span>
-            <h2>Escolhendo o Gráfico Correto</h2>
-            <p class="subtitle">A forma visual deve sempre seguir a função informativa dos dados</p>
-
-            <div class="card-grid">
-              <div class="card fragment fade-up">
-                <div class="icon">📊</div>
-                <h4>Gráfico de Barras</h4>
-                <p>Ideal para <strong>comparações discretas</strong> entre categorias ou rankings. Sempre inicie o eixo numérico em zero.</p>
-              </div>
-              <div class="card fragment fade-up">
-                <div class="icon">📈</div>
-                <h4>Gráfico de Linhas</h4>
-                <p>Perfeito para <strong>evolução no tempo</strong> (séries temporais, tendências contínuas ao longo de meses/anos).</p>
-              </div>
-              <div class="card fragment fade-up">
-                <div class="icon">🫧</div>
-                <h4>Dispersão & Treemap</h4>
-                <p>Dispersão para <strong>correlações</strong> entre duas variáveis; Treemap para <strong>proporções hierárquicas</strong> de orçamento.</p>
-              </div>
-            </div>
-
-            <aside class="notes">
-              Alerta importante: Evite gráficos de pizza com mais de 3 fatias e nunca use gráficos em 3D.
-            </aside>
-          </section>
-
-          <!-- 6.3: Gráfico Interativo Live Chart.js -->
-          <section>
-            <span class="badge badge-emerald">Capítulo 6 • Slide 3/7</span>
-            <h2>Gráficos Interativos Dinâmicos</h2>
-            <p class="subtitle">Demonstração de visualização viva integrada diretamente na apresentação</p>
-            
-            <div class="chart-wrapper">
-              <canvas id="dataChart"></canvas>
-            </div>
-            <p style="font-size: 0.7em; color: var(--text-muted); margin-top: 0.6rem; text-align: center;">
-              Fonte: Global Investigative Journalism Network (GIJN) & Benchmarks Editoriais
-            </p>
-
-            <aside class="notes">
-              Mostre aos estudantes que no Reveal.js os gráficos são elementos HTML/JS interativos ao vivo (passe o mouse para ver tooltips).
-            </aside>
-          </section>
-
-          <!-- 6.4: Jornalismo Geoespacial & Mapas -->
-          <section>
-            <span class="badge">Capítulo 6 • Slide 4/7</span>
-            <h2>Jornalismo Geoespacial & Mapas</h2>
-            <p class="subtitle">Quando a localização geográfica é o coração da investigação</p>
-
-            <div class="card-grid-2">
-              <div class="card fragment">
-                <h4 style="color: var(--accent-cyan);">🗺️ QGIS & Análise Espacial</h4>
-                <p>Cruzamento de polígonos de terras indígenas, desmatamento (DETER/INPE) e embargos ambientais do IBAMA.</p>
-              </div>
-              <div class="card fragment">
-                <h4 style="color: var(--accent-purple);">🌐 Mapas Interativos Web (Datawrapper / Mapbox)</h4>
-                <p>Mapas coropléticos que permitem ao leitor digitar seu CEP e verificar o investimento em saúde no seu próprio bairro.</p>
-              </div>
-              <div class="card fragment">
-                <h4 style="color: var(--accent-amber);">⚠️ A Armadilha dos Mapas</h4>
-                <p>"Terra não vota": mapas por área territorial distorcem a realidade porque municípios gigantes na Amazônia têm poucos habitantes.</p>
-              </div>
-              <div class="card fragment">
-                <h4 style="color: var(--accent-emerald);">🎯 Cartogramas</h4>
-                <p>Redimensione as regiões geográficas pelo tamanho da população para refletir o peso humano real.</p>
-              </div>
-            </div>
-
-            <aside class="notes">
-              Sempre pergunte: "Esta matéria realmente precisa de um mapa ou uma tabela ordenada seria mais clara?".
-            </aside>
-          </section>
-
-          <!-- 6.5: Scrollytelling e Narrativas Digitais -->
-          <section>
-            <span class="badge">Capítulo 6 • Slide 5/7</span>
-            <h2>Scrollytelling: A Arte de Narrar com a Rolagem</h2>
-            <p class="subtitle">Conduzindo o leitor passo a passo por gráficos complexos</p>
-
-            <div class="card-grid">
-              <div class="card fragment fade-up">
-                <div class="icon">🖱️</div>
-                <h4>Rolagem como Controle</h4>
-                <p>À medida que o leitor rola o texto, o gráfico ao fundo se transforma, destaca pontos e dá zoom em detalhes.</p>
-              </div>
-              <div class="card fragment fade-up">
-                <div class="icon">✨</div>
-                <h4>The Pudding & NYT</h4>
-                <p>Casos clássicos de jornalismo visual que transformam dados densos em experiências imersivas premiadas.</p>
-              </div>
-              <div class="card fragment fade-up">
-                <div class="icon">📱</div>
-                <h4>Mobile-First</h4>
-                <p>Mais de 70% dos seus leitores acessarão pelo smartphone. O design deve ser vertical, leve e responsivo.</p>
-              </div>
-            </div>
-
-            <aside class="notes">
-              O scrollytelling evita que o leitor se sinta sobrecarregado com um gráfico cheio de dados de uma só vez.
-            </aside>
-          </section>
-
-          <!-- 6.6: Acessibilidade e Inclusão -->
-          <section>
-            <span class="badge">Capítulo 6 • Slide 6/7</span>
-            <h2>Design Inclusivo & Acessibilidade</h2>
-            <p class="subtitle">Garantindo que todos os públicos possam compreender suas reportagens</p>
-
-            <div class="card-grid-2">
-              <div class="card fragment">
-                <h4 style="color: var(--accent-cyan);">👁️ Paletas para Daltonismo</h4>
-                <p>Nunca dependa apenas de verde/vermelho para indicar positivo/negativo. Use paletas testadas como Viridis ou ColorBrewer.</p>
-              </div>
-              <div class="card fragment">
-                <h4 style="color: var(--accent-purple);">🔊 Textos Alternativos (Alt Text)</h4>
-                <p>Descreva o insight central do gráfico no atributo <code>alt</code> para permitir a leitura por pessoas com deficiência visual.</p>
-              </div>
-              <div class="card fragment">
-                <h4 style="color: var(--accent-amber);">🏷️ Rotulagem Direta</h4>
-                <p>Coloque rótulos diretamente nas linhas em vez de forçar o leitor a olhar uma legenda distante repetidamente.</p>
-              </div>
-              <div class="card fragment">
-                <h4 style="color: var(--accent-emerald);">📥 Acesso à Tabela Bruta</h4>
-                <p>Sempre disponibilize um botão para baixar a tabela original usada na construção daquele gráfico.</p>
-              </div>
-            </div>
-
-            <aside class="notes">
-              Acessibilidade não é apenas bondade; é compromisso ético e legal do jornalismo democrático.
-            </aside>
-          </section>
-
-          <!-- 6.7: Conclusão Cap. 6 -->
-          <section data-background-gradient="radial-gradient(circle at 50% 50%, #14532d 0%, #0a0e1a 100%)">
-            <span class="badge badge-emerald">Capítulo 6 • Conclusão</span>
-            <h2>Síntese do Storytelling Visual</h2>
-            
-            <div class="card" style="margin-top: 1.5rem;">
-              <h4>🎨 Princípio de Alberto Cairo:</h4>
-              <p style="font-size: 0.95em;">"Um bom gráfico de dados não é aquele que é apenas bonito, mas aquele que torna visível a estrutura invisível da verdade."</p>
-            </div>
-
-            <p style="text-align: center; color: var(--accent-cyan); margin-top: 1.8rem; font-size: 0.85em;">
-              👉 Pressione a tecla <strong>DIREITA (➡️)</strong> para iniciar o <strong>Capítulo 7: Ética, Futuro com IA & Carreira</strong>
-            </p>
-
-            <aside class="notes">
-              Finalize o capítulo 6 citando Alberto Cairo, uma das maiores referências mundiais em infografia e jornalismo visual.
-            </aside>
-          </section>
-        </section>
-
-        <!-- ========================================================= -->
-        <!-- CAPÍTULO 7: Ética, Futuro com IA & Próximos Passos        -->
-        <!-- ========================================================= -->
-        <section>
-          <!-- 7.1: Abertura Cap. 7 -->
-          <section data-background-gradient="radial-gradient(circle at 50% 30%, #1e1b4b 0%, #0a0e1a 100%)">
-            <span class="badge">Capítulo 7/7</span>
-            <h1>Ética, Futuro com IA & <span class="gradient-text">Carreira</span></h1>
-            <p class="subtitle">O horizonte profissional e as fronteiras éticas da nova geração de jornalistas</p>
-
-            <div class="pill-list" style="justify-content: center; margin-top: 2rem;">
-              <div class="pill">🛡️ LGPD & Privacidade</div>
-              <div class="pill">🤖 Inteligência Artificial</div>
-              <div class="pill">💼 Mercado de Trabalho</div>
-              <div class="pill">🚀 Comunidades de Dados</div>
-            </div>
-
-            <aside class="notes">
-              No nosso último capítulo, discutiremos a ética, o impacto da IA generativa e os caminhos profissionais para os alunos da UFSC.
-            </aside>
-          </section>
-
-          <!-- 7.2: LGPD e Privacidade -->
-          <section>
-            <span class="badge">Capítulo 7 • Slide 2/7</span>
-            <h2>LGPD & Proteção de Dados Pessoais</h2>
-            <p class="subtitle">O equilíbrio entre o interesse público e o direito à privacidade</p>
-
-            <div class="card-grid">
-              <div class="card fragment fade-up">
-                <div class="icon">⚖️</div>
-                <h4>Exceção Jornalística na LGPD</h4>
-                <p>O artigo 4º da LGPD resguarda a atividade jornalística, mas exige proporcionalidade e estrito interesse público.</p>
-              </div>
-              <div class="card fragment fade-up">
-                <div class="icon">🛡️</div>
-                <h4>Anonimização de Vulneráveis</h4>
-                <p>Dados de menores de idade, vítimas de violência e prontuários médicos sensíveis nunca devem ser expostos sem anonimização.</p>
-              </div>
-              <div class="card fragment fade-up">
-                <div class="icon">🔒</div>
-                <h4>Segurança da Informação</h4>
-                <p>Armazenamento de vazamentos em drives criptografados (VeraCrypt) para proteger a identidade de fontes confidenciais.</p>
-              </div>
-            </div>
-
-            <aside class="notes">
-              Ter acesso a um banco de dados vazado não dá ao repórter o direito de expor a intimidade de cidadãos comuns sem relevância pública.
-            </aside>
-          </section>
-
-          <!-- 7.3: Inteligência Artificial no Jornalismo -->
-          <section>
-            <span class="badge">Capítulo 7 • Slide 3/7</span>
-            <h2>Inteligência Artificial & LLMs na Apuração</h2>
-            <p class="subtitle">Como usar IA generativa como assistente de apuração com responsabilidade</p>
-
-            <div class="card-grid-2">
-              <div class="card fragment">
-                <h4 style="color: var(--accent-cyan);">🤖 Onde a IA Acelera o Trabalho:</h4>
-                <ul style="font-size: 0.8em; margin-top: 0.5rem; color: #cbd5e1; padding-left: 1.2rem;">
-                  <li>Auxílio na escrita de scripts Python e expressões regulares (Regex).</li>
-                  <li>Resumo e extração de entidades em PDFs judiciais com centenas de páginas.</li>
-                  <li>Transcrição automática de entrevistas e áudios de audiências públicas.</li>
-                </ul>
-              </div>
-              <div class="card fragment">
-                <h4 style="color: var(--accent-pink);">⚠️ Riscos Críticos e Limitações:</h4>
-                <ul style="font-size: 0.8em; margin-top: 0.5rem; color: #cbd5e1; padding-left: 1.2rem;">
-                  <li><strong>Alucinações:</strong> Modelos inventam dados e citações inexistentes.</li>
-                  <li><strong>Viés Algorítmico:</strong> Reprodução de preconceitos históricos nos dados de treino.</li>
-                  <li><strong>Privacidade:</strong> Nunca envie dados confidenciais de fontes para ferramentas abertas na nuvem.</li>
-                </ul>
-              </div>
-            </div>
-
-            <aside class="notes">
-              A regra de ouro da IA na redação: A IA propõe, mas o jornalista humano verifica e assina a responsabilidade editorial.
-            </aside>
-          </section>
-
-          <!-- 7.4: Oportunidades no Mercado -->
-          <section>
-            <span class="badge">Capítulo 7 • Slide 4/7</span>
-            <h2>Onde Estão as Oportunidades de Carreira?</h2>
-            <p class="subtitle">O perfil híbrido de jornalista de dados é um dos mais valorizados no mercado</p>
-
-            <div class="card-grid">
-              <div class="card fragment fade-up">
-                <div class="icon">📰</div>
-                <h4>Redações e Agências</h4>
-                <p>Núcleos de investigação, infografia interativa, fact-checking (Aos Fatos, Lupa) e coberturas eleitorais.</p>
-              </div>
-              <div class="card fragment fade-up">
-                <div class="icon">🏛️</div>
-                <h4>ONGs & Transparência</h4>
-                <p>Organizações de controle social (Transparência Brasil, Fiquem Sabendo, Open Knowledge Brasil, Imazon).</p>
-              </div>
-              <div class="card fragment fade-up">
-                <div class="icon">💼</div>
-                <h4>BI & Inteligência de Mercado</h4>
-                <p>Empresas de análise de dados, consultorias de risco político e social listening estratégico.</p>
-              </div>
-            </div>
-
-            <aside class="notes">
-              Mostre aos alunos que as habilidades aprendidas aqui abrem portas muito além das redações de jornais impressos tradicionais.
-            </aside>
-          </section>
-
-          <!-- 7.5: Onde Continuar Aprendendo -->
-          <section>
-            <span class="badge">Capítulo 7 • Slide 5/7</span>
-            <h2>Onde Continuar Estudando & Comunidades</h2>
-            <p class="subtitle">Recursos gratuitos e redes de apoio para acelerar seu aprendizado</p>
-
-            <div class="pill-list" style="margin-top: 1.5rem;">
-              <div class="pill fragment"><strong style="color: var(--accent-cyan);">Abraji:</strong> Congresso Anual e Cursos de Investigação (abraji.org.br)</div>
-              <div class="pill fragment"><strong style="color: var(--accent-emerald);">Escola de Dados:</strong> Tutoriais e guias em português (escoladedados.org)</div>
-              <div class="pill fragment"><strong style="color: var(--accent-amber);">Fiquem Sabendo:</strong> Newsletter "Don't LAI to Me" especializada em LAI</div>
-              <div class="pill fragment"><strong style="color: var(--accent-purple);">GIJN:</strong> Rede Global de Jornalismo Investigativo (gijn.org)</div>
-              <div class="pill fragment"><strong style="color: var(--accent-pink);">Data Journalism Handbook:</strong> O manual definitivo gratuito online</div>
-              <div class="pill fragment"><strong style="color: #38bdf8);">Python Brasil / PyLadies:</strong> Comunidades abertas e acolhedoras para iniciantes</div>
-            </div>
-
-            <aside class="notes">
-              Incentive os estudantes a se associarem à Abraji e a participarem do Coda.Br (maior conferência de jornalismo de dados da América Latina).
-            </aside>
-          </section>
-
-          <!-- 7.6: Mensagem aos Estudantes da UFSC -->
-          <section data-background-gradient="radial-gradient(circle at 50% 50%, #2e1065 0%, #0a0e1a 100%)">
-            <span class="badge badge-emerald">Capítulo 7 • Slide 6/7</span>
-            <div class="quote-container" style="margin-top: 2rem;">
-              <div class="quote-mark">“</div>
-              <p class="quote-text">
-                O jornalismo feito com rigor, dados abertos e paixão pela verdade é o mais poderoso antídoto contra a escuridão e o autoritarismo. Nunca deixem de questionar os números do poder.
+            <div class="card fragment fade-up">
+              <div class="icon">📈</div>
+              <h4>% vs. Pontos Percentuais</h4>
+              <p>Se a taxa de juros sobe de 10% para 12%, ela subiu <strong>2 pontos percentuais</strong>, mas aumentou
+                <strong>20%</strong> no valor.
               </p>
-              <div class="quote-author">Galeno Lima, Jornalista (UFSC)</div>
-              <div class="quote-title">Aos futuros jornalistas formados pela Universidade Federal de Santa Catarina</div>
             </div>
+          </div>
 
-            <aside class="notes">
-              Entregue esta mensagem final com entusiasmo e carinho pela formação na UFSC.
-            </aside>
-          </section>
-
-          <!-- 7.7: Conclusão, Contatos & Q&A -->
-          <section data-background-gradient="radial-gradient(circle at 50% 40%, #1e1b4b 0%, #0a0e1a 100%)">
-            <span class="badge badge-emerald">✨ Muito Obrigado!</span>
-            <h1>Perguntas & <span class="gradient-text">Debate Aberto</span></h1>
-            <p class="subtitle">Apresentação disponível publicamente para todos os alunos</p>
-
-            <div class="card-grid-2" style="margin-top: 1.8rem;">
-              <div class="card">
-                <h4>📬 Contatos & Redes</h4>
-                <p style="margin-bottom: 0.4rem;"><strong>Website:</strong> <a href="https://onelag.github.io/datajournalism/" style="color: var(--accent-cyan);">onelag.github.io/datajournalism</a></p>
-                <p style="margin-bottom: 0.4rem;"><strong>Plataforma:</strong> <a href="https://onelag.com" target="_blank" rel="noopener noreferrer" style="color: var(--accent-cyan);">onelag.com</a></p>
-                <p style="margin-bottom: 0.4rem;"><strong>GitHub:</strong> <span style="color: var(--accent-cyan);">@OneLag</span></p>
-                <p><strong>Email:</strong> <span style="color: var(--accent-cyan);">contact@galenolima.dev</span></p>
-              </div>
-
-              <div class="card">
-                <h4>🎯 Navegação da Apresentação</h4>
-                <p style="margin-bottom: 0.3rem;"><kbd>⬅️</kbd> <kbd>➡️</kbd> — Mudar de Capítulo (Horizontal)</p>
-                <p style="margin-bottom: 0.3rem;"><kbd>⬆️</kbd> <kbd>⬇️</kbd> — Navegar nos Slides (Vertical)</p>
-                <p style="margin-bottom: 0.3rem;"><kbd>S</kbd> — Abrir Modo Apresentador com Notas</p>
-                <p style="margin-bottom: 0.3rem;"><kbd>O</kbd> ou <kbd>ESC</kbd> — Visão Geral em Grade</p>
-                <p><kbd>F</kbd> — Alternar Tela Cheia</p>
-              </div>
-            </div>
-
-            <aside class="notes">
-              Agradeça aos professores, à coordenação do curso de Jornalismo da UFSC e aos estudantes. Abra para a sessão de perguntas.
-            </aside>
-          </section>
+          <aside class="notes">
+            Explique com clareza a diferença entre média e mediana. Esse é o erro mais comum na imprensa diária.
+          </aside>
         </section>
 
-      </div>
+        <!-- 5.3: Correlação vs Causalidade -->
+        <section>
+          <span class="badge">Capítulo 5 • Slide 3/7</span>
+          <h2>Correlação Não Implica Causalidade</h2>
+          <p class="subtitle">O maior gerador de desinformação involuntária no jornalismo</p>
+
+          <div class="card-grid-2">
+            <div class="card fragment">
+              <h4 style="color: #f87171;">❌ A Falácia da Correlação Espúria</h4>
+              <p>O consumo de sorvete e as mortes por afogamento aumentam juntos no verão. O sorvete causa afogamento?
+                Não, o calor causa ambos.</p>
+            </div>
+            <div class="card fragment">
+              <h4 style="color: #34d399;">✅ A Postura do Jornalista Investigativo</h4>
+              <p>Identificar se existe uma variável oculta (fator de confusão) e consultar estatísticos e especialistas
+                antes de cravar uma relação de causa e efeito.</p>
+            </div>
+          </div>
+
+          <aside class="notes">
+            Mostre a responsabilidade de não criar pânico moral ou desinformação científica com correlações fracas.
+          </aside>
+        </section>
+
+        <!-- 5.4: Business Intelligence no Jornalismo -->
+        <section>
+          <span class="badge">Capítulo 5 • Slide 4/7</span>
+          <h2>Business Intelligence (BI) na Redação</h2>
+          <p class="subtitle">Utilizando ferramentas corporativas para monitorar o poder público continuamente</p>
+
+          <div class="card-grid">
+            <div class="card fragment fade-up">
+              <div class="icon">📊</div>
+              <h4>Dashboards Analíticos</h4>
+              <p>Painéis em Power BI, Looker Studio e Metabase conectados a bases que atualizam matérias
+                automaticamente.</p>
+            </div>
+            <div class="card fragment fade-up">
+              <div class="icon">🚨</div>
+              <h4>Alertas Automatizados</h4>
+              <p>Notificações automáticas no Slack/Telegram da redação quando uma licitação acima de R$ 5 milhões é
+                publicada.</p>
+            </div>
+            <div class="card fragment fade-up">
+              <div class="icon">🔍</div>
+              <h4>Filtros Multidimensionais</h4>
+              <p>Navegação intuitiva por partido, estado, fornecedor e ano sem necessidade de rodar código a cada
+                pergunta.</p>
+            </div>
+          </div>
+
+          <aside class="notes">
+            O BI transforma a apuração pontual em uma central de inteligência contínua na redação.
+          </aside>
+        </section>
+
+        <!-- 5.5: Social Listening -->
+        <section>
+          <span class="badge">Capítulo 5 • Slide 5/7</span>
+          <h2>Social Listening & Monitoramento de Redes</h2>
+          <p class="subtitle">Entendendo o ecossistema digital, narrativas e fluxos de opinião pública</p>
+
+          <div class="card-grid-2">
+            <div class="card fragment">
+              <h4 style="color: var(--accent-cyan);">🗣️ Análise de Sentimento & Tendências</h4>
+              <p>Mapeamento de picos de conversação, palavras-chave e reações populares em torno de crises e projetos de
+                lei.</p>
+            </div>
+            <div class="card fragment">
+              <h4 style="color: var(--accent-purple);">🕸️ Mapeamento de Redes & Grafos</h4>
+              <p>Identificação de clusters de perfis inautênticos (bots), contas coordenadas e nós de disseminação de
+                desinformação.</p>
+            </div>
+            <div class="card fragment">
+              <h4 style="color: var(--accent-amber);">🎯 Monitoramento de Anúncios Políticos</h4>
+              <p>Biblioteca de Anúncios da Meta e Google para rastrear gastos eleitorais e microsegmentação de
+                eleitores.</p>
+            </div>
+            <div class="card fragment">
+              <h4 style="color: var(--accent-emerald);">🛡️ Ética & Amostragem</h4>
+              <p>Compreender que as redes sociais não representam o total da população brasileira, mas nichos
+                específicos engajados.</p>
+            </div>
+          </div>
+
+          <aside class="notes">
+            Social listening é fundamental para cobrir eleições, desinformação e reputação de figuras públicas.
+          </aside>
+        </section>
+
+        <!-- 5.6: Da Análise à Entrevista -->
+        <section>
+          <span class="badge">Capítulo 5 • Slide 6/7</span>
+          <h2>O Fechamento: Da Planilha ao Confronto Ético</h2>
+          <p class="subtitle">O que fazer após encontrar a anomalia estatística?</p>
+
+          <div class="card-grid">
+            <div class="card fragment fade-up">
+              <div class="icon">📞</div>
+              <h4>1. O Outro Lado Rigoroso</h4>
+              <p>Apresente a tabela exata e os números ao investigado com prazo razoável para resposta antes da
+                publicação.</p>
+            </div>
+            <div class="card fragment fade-up">
+              <div class="icon">👨‍🔬</div>
+              <h4>2. Peer-Review com Especialistas</h4>
+              <p>Peça a um pesquisador ou auditor independente para checar sua metodologia e cálculos matemáticos.</p>
+            </div>
+            <div class="card fragment fade-up">
+              <div class="icon">👤</div>
+              <h4>3. O Personagem Humano</h4>
+              <p>Encontre a pessoa real que sofre as consequências do desvio orçamentário para abrir a sua reportagem.
+              </p>
+            </div>
+          </div>
+
+          <aside class="notes">
+            Uma matéria de dados sem o personagem humano é um relatório técnico; com o personagem, é uma grande
+            reportagem.
+          </aside>
+        </section>
+
+        <!-- 5.7: Conclusão Cap. 5 -->
+        <section data-background-gradient="radial-gradient(circle at 50% 50%, #831843 0%, #0a0e1a 100%)">
+          <span class="badge badge-emerald">Capítulo 5 • Conclusão</span>
+          <h2>Resumo da Análise de Dados</h2>
+
+          <div class="quote-container" style="margin-top: 1.5rem;">
+            <div class="quote-mark">“</div>
+            <p class="quote-text">
+              Torture os dados por tempo suficiente e eles confessarão qualquer coisa. O papel do jornalista é buscar a
+              verdade, não confirmar seus próprios preconceitos.
+            </p>
+            <div class="quote-author">Ronald Coase (Adaptado ao Jornalismo)</div>
+          </div>
+
+          <p style="text-align: center; color: var(--accent-cyan); margin-top: 1.5rem; font-size: 0.85em;">
+            👉 Pressione a tecla <strong>DIREITA (➡️)</strong> para iniciar o <strong>Capítulo 6: Visualização &
+              Storytelling</strong>
+          </p>
+
+          <aside class="notes">
+            Enfatize a honestidade intelectual do repórter ao analisar dados.
+          </aside>
+        </section>
+      </section>
+
+      <!-- ========================================================= -->
+      <!-- CAPÍTULO 6: Visualização de Dados & Storytelling Visual   -->
+      <!-- ========================================================= -->
+      <section>
+        <!-- 6.1: Abertura Cap. 6 -->
+        <section data-background-gradient="radial-gradient(circle at 50% 30%, #14532d 0%, #0a0e1a 100%)">
+          <span class="badge badge-emerald">Capítulo 6/7</span>
+          <h1>Visualização de Dados & <span class="gradient-text-emerald">Storytelling Visual</span></h1>
+          <p class="subtitle">Como transformar descobertas numéricas em narrativas visuais claras e inesquecíveis</p>
+
+          <div class="pill-list" style="justify-content: center; margin-top: 2rem;">
+            <div class="pill">📈 Escolha de Gráficos</div>
+            <div class="pill">🗺️ Jornalismo Geoespacial</div>
+            <div class="pill">📜 Scrollytelling</div>
+            <div class="pill">♿ Acessibilidade Visual</div>
+          </div>
+
+          <aside class="notes">
+            A visualização é a ponte entre a complexidade do banco de dados e a compreensão imediata do público.
+          </aside>
+        </section>
+
+        <!-- 6.2: Escolhendo o Gráfico Correto -->
+        <section>
+          <span class="badge">Capítulo 6 • Slide 2/7</span>
+          <h2>Escolhendo o Gráfico Correto</h2>
+          <p class="subtitle">A forma visual deve sempre seguir a função informativa dos dados</p>
+
+          <div class="card-grid">
+            <div class="card fragment fade-up">
+              <div class="icon">📊</div>
+              <h4>Gráfico de Barras</h4>
+              <p>Ideal para <strong>comparações discretas</strong> entre categorias ou rankings. Sempre inicie o eixo
+                numérico em zero.</p>
+            </div>
+            <div class="card fragment fade-up">
+              <div class="icon">📈</div>
+              <h4>Gráfico de Linhas</h4>
+              <p>Perfeito para <strong>evolução no tempo</strong> (séries temporais, tendências contínuas ao longo de
+                meses/anos).</p>
+            </div>
+            <div class="card fragment fade-up">
+              <div class="icon">🫧</div>
+              <h4>Dispersão & Treemap</h4>
+              <p>Dispersão para <strong>correlações</strong> entre duas variáveis; Treemap para <strong>proporções
+                  hierárquicas</strong> de orçamento.</p>
+            </div>
+          </div>
+
+          <aside class="notes">
+            Alerta importante: Evite gráficos de pizza com mais de 3 fatias e nunca use gráficos em 3D.
+          </aside>
+        </section>
+
+        <!-- 6.3: Gráfico Interativo Live Chart.js -->
+        <section>
+          <span class="badge badge-emerald">Capítulo 6 • Slide 3/7</span>
+          <h2>Gráficos Interativos Dinâmicos</h2>
+          <p class="subtitle">Demonstração de visualização viva integrada diretamente na apresentação</p>
+
+          <div class="chart-wrapper">
+            <canvas id="dataChart"></canvas>
+          </div>
+          <p style="font-size: 0.7em; color: var(--text-muted); margin-top: 0.6rem; text-align: center;">
+            Fonte: Global Investigative Journalism Network (GIJN) & Benchmarks Editoriais
+          </p>
+
+          <aside class="notes">
+            Mostre aos estudantes que no Reveal.js os gráficos são elementos HTML/JS interativos ao vivo (passe o mouse
+            para ver tooltips).
+          </aside>
+        </section>
+
+        <!-- 6.4: Jornalismo Geoespacial & Mapas -->
+        <section>
+          <span class="badge">Capítulo 6 • Slide 4/7</span>
+          <h2>Jornalismo Geoespacial & Mapas</h2>
+          <p class="subtitle">Quando a localização geográfica é o coração da investigação</p>
+
+          <div class="card-grid-2">
+            <div class="card fragment">
+              <h4 style="color: var(--accent-cyan);">🗺️ QGIS & Análise Espacial</h4>
+              <p>Cruzamento de polígonos de terras indígenas, desmatamento (DETER/INPE) e embargos ambientais do IBAMA.
+              </p>
+            </div>
+            <div class="card fragment">
+              <h4 style="color: var(--accent-purple);">🌐 Mapas Interativos Web (Datawrapper / Mapbox)</h4>
+              <p>Mapas coropléticos que permitem ao leitor digitar seu CEP e verificar o investimento em saúde no seu
+                próprio bairro.</p>
+            </div>
+            <div class="card fragment">
+              <h4 style="color: var(--accent-amber);">⚠️ A Armadilha dos Mapas</h4>
+              <p>"Terra não vota": mapas por área territorial distorcem a realidade porque municípios gigantes na
+                Amazônia têm poucos habitantes.</p>
+            </div>
+            <div class="card fragment">
+              <h4 style="color: var(--accent-emerald);">🎯 Cartogramas</h4>
+              <p>Redimensione as regiões geográficas pelo tamanho da população para refletir o peso humano real.</p>
+            </div>
+          </div>
+
+          <aside class="notes">
+            Sempre pergunte: "Esta matéria realmente precisa de um mapa ou uma tabela ordenada seria mais clara?".
+          </aside>
+        </section>
+
+        <!-- 6.5: Scrollytelling e Narrativas Digitais -->
+        <section>
+          <span class="badge">Capítulo 6 • Slide 5/7</span>
+          <h2>Scrollytelling: A Arte de Narrar com a Rolagem</h2>
+          <p class="subtitle">Conduzindo o leitor passo a passo por gráficos complexos</p>
+
+          <div class="card-grid">
+            <div class="card fragment fade-up">
+              <div class="icon">🖱️</div>
+              <h4>Rolagem como Controle</h4>
+              <p>À medida que o leitor rola o texto, o gráfico ao fundo se transforma, destaca pontos e dá zoom em
+                detalhes.</p>
+            </div>
+            <div class="card fragment fade-up">
+              <div class="icon">✨</div>
+              <h4>The Pudding & NYT</h4>
+              <p>Casos clássicos de jornalismo visual que transformam dados densos em experiências imersivas premiadas.
+              </p>
+            </div>
+            <div class="card fragment fade-up">
+              <div class="icon">📱</div>
+              <h4>Mobile-First</h4>
+              <p>Mais de 70% dos seus leitores acessarão pelo smartphone. O design deve ser vertical, leve e responsivo.
+              </p>
+            </div>
+          </div>
+
+          <aside class="notes">
+            O scrollytelling evita que o leitor se sinta sobrecarregado com um gráfico cheio de dados de uma só vez.
+          </aside>
+        </section>
+
+        <!-- 6.6: Acessibilidade e Inclusão -->
+        <section>
+          <span class="badge">Capítulo 6 • Slide 6/7</span>
+          <h2>Design Inclusivo & Acessibilidade</h2>
+          <p class="subtitle">Garantindo que todos os públicos possam compreender suas reportagens</p>
+
+          <div class="card-grid-2">
+            <div class="card fragment">
+              <h4 style="color: var(--accent-cyan);">👁️ Paletas para Daltonismo</h4>
+              <p>Nunca dependa apenas de verde/vermelho para indicar positivo/negativo. Use paletas testadas como
+                Viridis ou ColorBrewer.</p>
+            </div>
+            <div class="card fragment">
+              <h4 style="color: var(--accent-purple);">🔊 Textos Alternativos (Alt Text)</h4>
+              <p>Descreva o insight central do gráfico no atributo <code>alt</code> para permitir a leitura por pessoas
+                com deficiência visual.</p>
+            </div>
+            <div class="card fragment">
+              <h4 style="color: var(--accent-amber);">🏷️ Rotulagem Direta</h4>
+              <p>Coloque rótulos diretamente nas linhas em vez de forçar o leitor a olhar uma legenda distante
+                repetidamente.</p>
+            </div>
+            <div class="card fragment">
+              <h4 style="color: var(--accent-emerald);">📥 Acesso à Tabela Bruta</h4>
+              <p>Sempre disponibilize um botão para baixar a tabela original usada na construção daquele gráfico.</p>
+            </div>
+          </div>
+
+          <aside class="notes">
+            Acessibilidade não é apenas bondade; é compromisso ético e legal do jornalismo democrático.
+          </aside>
+        </section>
+
+        <!-- 6.7: Conclusão Cap. 6 -->
+        <section data-background-gradient="radial-gradient(circle at 50% 50%, #14532d 0%, #0a0e1a 100%)">
+          <span class="badge badge-emerald">Capítulo 6 • Conclusão</span>
+          <h2>Síntese do Storytelling Visual</h2>
+
+          <div class="card" style="margin-top: 1.5rem;">
+            <h4>🎨 Princípio de Alberto Cairo:</h4>
+            <p style="font-size: 0.95em;">"Um bom gráfico de dados não é aquele que é apenas bonito, mas aquele que
+              torna visível a estrutura invisível da verdade."</p>
+          </div>
+
+          <p style="text-align: center; color: var(--accent-cyan); margin-top: 1.8rem; font-size: 0.85em;">
+            👉 Pressione a tecla <strong>DIREITA (➡️)</strong> para iniciar o <strong>Capítulo 7: Ética, Futuro com IA &
+              Carreira</strong>
+          </p>
+
+          <aside class="notes">
+            Finalize o capítulo 6 citando Alberto Cairo, uma das maiores referências mundiais em infografia e jornalismo
+            visual.
+          </aside>
+        </section>
+      </section>
+
+      <!-- ========================================================= -->
+      <!-- CAPÍTULO 7: Ética, Futuro com IA & Próximos Passos        -->
+      <!-- ========================================================= -->
+      <section>
+        <!-- 7.1: Abertura Cap. 7 -->
+        <section data-background-gradient="radial-gradient(circle at 50% 30%, #1e1b4b 0%, #0a0e1a 100%)">
+          <span class="badge">Capítulo 7/7</span>
+          <h1>Ética, Futuro com IA & <span class="gradient-text">Carreira</span></h1>
+          <p class="subtitle">O horizonte profissional e as fronteiras éticas da nova geração de jornalistas</p>
+
+          <div class="pill-list" style="justify-content: center; margin-top: 2rem;">
+            <div class="pill">🛡️ LGPD & Privacidade</div>
+            <div class="pill">🤖 Inteligência Artificial</div>
+            <div class="pill">💼 Mercado de Trabalho</div>
+            <div class="pill">🚀 Comunidades de Dados</div>
+          </div>
+
+          <aside class="notes">
+            No nosso último capítulo, discutiremos a ética, o impacto da IA generativa e os caminhos profissionais para
+            os alunos da UFSC.
+          </aside>
+        </section>
+
+        <!-- 7.2: LGPD e Privacidade -->
+        <section>
+          <span class="badge">Capítulo 7 • Slide 2/7</span>
+          <h2>LGPD & Proteção de Dados Pessoais</h2>
+          <p class="subtitle">O equilíbrio entre o interesse público e o direito à privacidade</p>
+
+          <div class="card-grid">
+            <div class="card fragment fade-up">
+              <div class="icon">⚖️</div>
+              <h4>Exceção Jornalística na LGPD</h4>
+              <p>O artigo 4º da LGPD resguarda a atividade jornalística, mas exige proporcionalidade e estrito interesse
+                público.</p>
+            </div>
+            <div class="card fragment fade-up">
+              <div class="icon">🛡️</div>
+              <h4>Anonimização de Vulneráveis</h4>
+              <p>Dados de menores de idade, vítimas de violência e prontuários médicos sensíveis nunca devem ser
+                expostos sem anonimização.</p>
+            </div>
+            <div class="card fragment fade-up">
+              <div class="icon">🔒</div>
+              <h4>Segurança da Informação</h4>
+              <p>Armazenamento de vazamentos em drives criptografados (VeraCrypt) para proteger a identidade de fontes
+                confidenciais.</p>
+            </div>
+          </div>
+
+          <aside class="notes">
+            Ter acesso a um banco de dados vazado não dá ao repórter o direito de expor a intimidade de cidadãos comuns
+            sem relevância pública.
+          </aside>
+        </section>
+
+        <!-- 7.3: Inteligência Artificial no Jornalismo -->
+        <section>
+          <span class="badge">Capítulo 7 • Slide 3/7</span>
+          <h2>Inteligência Artificial & LLMs na Apuração</h2>
+          <p class="subtitle">Como usar IA generativa como assistente de apuração com responsabilidade</p>
+
+          <div class="card-grid-2">
+            <div class="card fragment">
+              <h4 style="color: var(--accent-cyan);">🤖 Onde a IA Acelera o Trabalho:</h4>
+              <ul style="font-size: 0.8em; margin-top: 0.5rem; color: #cbd5e1; padding-left: 1.2rem;">
+                <li>Auxílio na escrita de scripts Python e expressões regulares (Regex).</li>
+                <li>Resumo e extração de entidades em PDFs judiciais com centenas de páginas.</li>
+                <li>Transcrição automática de entrevistas e áudios de audiências públicas.</li>
+              </ul>
+            </div>
+            <div class="card fragment">
+              <h4 style="color: var(--accent-pink);">⚠️ Riscos Críticos e Limitações:</h4>
+              <ul style="font-size: 0.8em; margin-top: 0.5rem; color: #cbd5e1; padding-left: 1.2rem;">
+                <li><strong>Alucinações:</strong> Modelos inventam dados e citações inexistentes.</li>
+                <li><strong>Viés Algorítmico:</strong> Reprodução de preconceitos históricos nos dados de treino.</li>
+                <li><strong>Privacidade:</strong> Nunca envie dados confidenciais de fontes para ferramentas abertas na
+                  nuvem.</li>
+              </ul>
+            </div>
+          </div>
+
+          <aside class="notes">
+            A regra de ouro da IA na redação: A IA propõe, mas o jornalista humano verifica e assina a responsabilidade
+            editorial.
+          </aside>
+        </section>
+
+        <!-- 7.4: Oportunidades no Mercado -->
+        <section>
+          <span class="badge">Capítulo 7 • Slide 4/7</span>
+          <h2>Onde Estão as Oportunidades de Carreira?</h2>
+          <p class="subtitle">O perfil híbrido de jornalista de dados é um dos mais valorizados no mercado</p>
+
+          <div class="card-grid">
+            <div class="card fragment fade-up">
+              <div class="icon">📰</div>
+              <h4>Redações e Agências</h4>
+              <p>Núcleos de investigação, infografia interativa, fact-checking (Aos Fatos, Lupa) e coberturas
+                eleitorais.</p>
+            </div>
+            <div class="card fragment fade-up">
+              <div class="icon">🏛️</div>
+              <h4>ONGs & Transparência</h4>
+              <p>Organizações de controle social (Transparência Brasil, Fiquem Sabendo, Open Knowledge Brasil, Imazon).
+              </p>
+            </div>
+            <div class="card fragment fade-up">
+              <div class="icon">💼</div>
+              <h4>BI & Inteligência de Mercado</h4>
+              <p>Empresas de análise de dados, consultorias de risco político e social listening estratégico.</p>
+            </div>
+          </div>
+
+          <aside class="notes">
+            Mostre aos alunos que as habilidades aprendidas aqui abrem portas muito além das redações de jornais
+            impressos tradicionais.
+          </aside>
+        </section>
+
+        <!-- 7.5: Onde Continuar Aprendendo -->
+        <section>
+          <span class="badge">Capítulo 7 • Slide 5/7</span>
+          <h2>Onde Continuar Estudando & Comunidades</h2>
+          <p class="subtitle">Recursos gratuitos e redes de apoio para acelerar seu aprendizado</p>
+
+          <div class="pill-list" style="margin-top: 1.5rem;">
+            <div class="pill fragment"><strong style="color: var(--accent-cyan);">Abraji:</strong> Congresso Anual e
+              Cursos de Investigação (abraji.org.br)</div>
+            <div class="pill fragment"><strong style="color: var(--accent-emerald);">Escola de Dados:</strong> Tutoriais
+              e guias em português (escoladedados.org)</div>
+            <div class="pill fragment"><strong style="color: var(--accent-amber);">Fiquem Sabendo:</strong> Newsletter
+              "Don't LAI to Me" especializada em LAI</div>
+            <div class="pill fragment"><strong style="color: var(--accent-purple);">GIJN:</strong> Rede Global de
+              Jornalismo Investigativo (gijn.org)</div>
+            <div class="pill fragment"><strong style="color: var(--accent-pink);">Data Journalism Handbook:</strong> O
+              manual definitivo gratuito online</div>
+            <div class="pill fragment"><strong style="color: #38bdf8);">Python Brasil / PyLadies:</strong> Comunidades
+              abertas e acolhedoras para iniciantes</div>
+          </div>
+
+          <aside class="notes">
+            Incentive os estudantes a se associarem à Abraji e a participarem do Coda.Br (maior conferência de
+            jornalismo de dados da América Latina).
+          </aside>
+        </section>
+
+        <!-- 7.6: Mensagem aos Estudantes da UFSC -->
+        <section data-background-gradient="radial-gradient(circle at 50% 50%, #2e1065 0%, #0a0e1a 100%)">
+          <span class="badge badge-emerald">Capítulo 7 • Slide 6/7</span>
+          <div class="quote-container" style="margin-top: 2rem;">
+            <div class="quote-mark">“</div>
+            <p class="quote-text">
+              O jornalismo feito com rigor, dados abertos e paixão pela verdade é o mais poderoso antídoto contra a
+              escuridão e o autoritarismo. Nunca deixem de questionar os números do poder.
+            </p>
+            <div class="quote-author">Galeno Lima, Jornalista (UFSC)</div>
+            <div class="quote-title">Aos futuros jornalistas formados pela Universidade Federal de Santa Catarina</div>
+          </div>
+
+          <aside class="notes">
+            Entregue esta mensagem final com entusiasmo e carinho pela formação na UFSC.
+          </aside>
+        </section>
+
+        <!-- 7.7: Conclusão, Contatos & Q&A -->
+        <section data-background-gradient="radial-gradient(circle at 50% 40%, #1e1b4b 0%, #0a0e1a 100%)">
+          <span class="badge badge-emerald">✨ Muito Obrigado!</span>
+          <h1>Perguntas & <span class="gradient-text">Debate Aberto</span></h1>
+          <p class="subtitle">Apresentação disponível publicamente para todos os alunos</p>
+
+          <div class="card-grid-2" style="margin-top: 1.8rem;">
+            <div class="card">
+              <h4>📬 Contatos & Redes</h4>
+              <p style="margin-bottom: 0.4rem;"><strong>Website:</strong> <a
+                  href="https://onelag.github.io/datajournalism/"
+                  style="color: var(--accent-cyan);">onelag.github.io/datajournalism</a></p>
+              <p style="margin-bottom: 0.4rem;"><strong>Plataforma:</strong> <a href="https://onelag.com"
+                  target="_blank" rel="noopener noreferrer" style="color: var(--accent-cyan);">onelag.com</a></p>
+              <p style="margin-bottom: 0.4rem;"><strong>GitHub:</strong> <span
+                  style="color: var(--accent-cyan);">@OneLag</span></p>
+              <p><strong>Email:</strong> <span style="color: var(--accent-cyan);">contact@galenolima.dev</span></p>
+            </div>
+
+            <div class="card">
+              <h4>🎯 Navegação da Apresentação</h4>
+              <p style="margin-bottom: 0.3rem;"><kbd>⬅️</kbd> <kbd>➡️</kbd> — Mudar de Capítulo (Horizontal)</p>
+              <p style="margin-bottom: 0.3rem;"><kbd>⬆️</kbd> <kbd>⬇️</kbd> — Navegar nos Slides (Vertical)</p>
+              <p style="margin-bottom: 0.3rem;"><kbd>S</kbd> — Abrir Modo Apresentador com Notas</p>
+              <p style="margin-bottom: 0.3rem;"><kbd>O</kbd> ou <kbd>ESC</kbd> — Visão Geral em Grade</p>
+              <p><kbd>F</kbd> — Alternar Tela Cheia</p>
+            </div>
+          </div>
+
+          <aside class="notes">
+            Agradeça aos professores, à coordenação do curso de Jornalismo da UFSC e aos estudantes. Abra para a sessão
+            de perguntas.
+          </aside>
+        </section>
+      </section>
+
     </div>
+  </div>
 
-    <!-- Keyboard Helper Hint at bottom -->
-    <div class="keyboard-hint">
-      Use <kbd>⬅️</kbd> <kbd>➡️</kbd> Capítulos | <kbd>⬆️</kbd> <kbd>⬇️</kbd> Slides | <kbd>S</kbd> Notas | <kbd>O</kbd> Visão Geral
-    </div>
+  <!-- Keyboard Helper Hint at bottom -->
+  <div class="keyboard-hint">
+    Use <kbd>⬅️</kbd> <kbd>➡️</kbd> Capítulos | <kbd>⬆️</kbd> <kbd>⬇️</kbd> Slides | <kbd>S</kbd> Notas | <kbd>O</kbd>
+    Visão Geral
+  </div>
 
-    <!-- Reveal.js & Plugins via CDN -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/reveal.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/plugin/markdown/markdown.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/plugin/highlight/highlight.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/plugin/notes/notes.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/plugin/zoom/zoom.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/plugin/search/search.min.js"></script>
+  <!-- Reveal.js & Plugins via CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/reveal.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/plugin/markdown/markdown.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/plugin/highlight/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/plugin/notes/notes.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/plugin/zoom/zoom.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/plugin/search/search.min.js"></script>
 
-    <!-- Chart.js for Interactive Charts -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <!-- Chart.js for Interactive Charts -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-    <!-- Custom Keynote Logic -->
-    <script src="js/presentation.js"></script>
-  </body>
+  <!-- Custom Keynote Logic -->
+  <script src="js/presentation.js"></script>
+</body>
+
 </html>
