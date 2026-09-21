@@ -1,51 +1,48 @@
-// Initialize Reveal.js Keynote Deck
+// Inicialização da Apresentação Keynote Reveal.js
 let chartInstance = null;
 
 Reveal.initialize({
-  // Presentation display settings
+  // Configurações visuais dos slides
   width: 1200,
   height: 700,
   margin: 0.08,
   minScale: 0.2,
   maxScale: 2.0,
 
-  // Display presentation control arrows
+  // Setas e controles de navegação
   controls: true,
   controlsTutorial: true,
   controlsLayout: 'bottom-right',
   controlsBackArrows: 'faded',
 
-  // Display a presentation progress bar
+  // Barra de progresso inferior
   progress: true,
 
-  // Display the page number of the current slide
+  // Número do slide atual / total
   slideNumber: 'c/t',
 
-  // Add the current slide number to the URL hash so that reloading the
-  // page/sharing links goes directly to that slide
+  // Adiciona o slide à URL (ex: #/2) para permitir links diretos
   hash: true,
-
-  // Push each slide change to the browser history
   history: true,
 
-  // Enable keyboard shortcuts
+  // Atalhos de teclado ativados
   keyboard: true,
 
-  // Enable the slide overview mode
+  // Modo visão geral ativado (ESC ou tecla O)
   overview: true,
 
-  // Vertical centering of slides
+  // Centralização vertical
   center: true,
 
-  // Enables touch navigation on devices with touch input
+  // Navegação por toque em dispositivos mobile/tablets
   touch: true,
 
-  // Transition style: none/fade/slide/convex/concave/zoom
+  // Estilo de transição: slide / fade
   transition: 'slide',
   transitionSpeed: 'default',
   backgroundTransition: 'fade',
 
-  // Plugins
+  // Plugins do Reveal.js
   plugins: [
     RevealMarkdown,
     RevealHighlight,
@@ -54,11 +51,11 @@ Reveal.initialize({
     RevealSearch
   ]
 }).then(() => {
-  console.log('✨ Keynote Reveal.js initialized successfully!');
+  console.log('✨ Keynote Reveal.js inicializado com sucesso!');
   initChart();
 });
 
-// Animate Chart when entering the data slide
+// Animação do gráfico quando o slide correspondente for exibido
 Reveal.on('slidechanged', (event) => {
   if (event.currentSlide && event.currentSlide.querySelector('#dataChart')) {
     initChart();
@@ -79,7 +76,7 @@ function initChart() {
       labels: ['2018', '2020', '2022', '2024', '2026 (Est.)'],
       datasets: [
         {
-          label: 'Investigative Articles with Data Visualizations (%)',
+          label: 'Reportagens Investigativas com Visualização de Dados (%)',
           data: [28, 44, 62, 81, 93],
           backgroundColor: 'rgba(56, 189, 248, 0.75)',
           borderColor: '#38bdf8',
@@ -88,7 +85,7 @@ function initChart() {
           borderSkipped: false
         },
         {
-          label: 'Reader Engagement Index (Minutes)',
+          label: 'Tempo Médio de Engajamento do Leitor (Minutos)',
           data: [1.8, 2.4, 3.9, 5.2, 6.7],
           type: 'line',
           borderColor: '#a855f7',
@@ -145,7 +142,7 @@ function initChart() {
           ticks: { 
             color: '#c084fc', 
             font: { family: 'Plus Jakarta Sans', size: 12 },
-            callback: (value) => value + 'm'
+            callback: (value) => value + ' min'
           },
           grid: { display: false }
         }
