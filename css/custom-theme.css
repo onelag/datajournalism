@@ -251,17 +251,13 @@
 }
 
 .presenter-avatar {
-  width: 60px;
-  height: 60px;
+  width: 62px;
+  height: 62px;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--accent-cyan), var(--accent-indigo));
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.4rem;
-  font-weight: 700;
-  color: white;
-  border: 2px solid rgba(255, 255, 255, 0.2);
+  object-fit: cover;
+  border: 2px solid rgba(56, 189, 248, 0.4);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+  display: block;
 }
 
 .presenter-info h4 {
