@@ -283,6 +283,66 @@
   text-decoration: underline;
 }
 
+/* Split Map Layout (John Snow Slide) */
+.split-map-container {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: 1.5rem;
+  align-items: center;
+  margin-top: 1.2rem;
+}
+
+.split-map-visual {
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: 16px;
+  padding: 0.6rem;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.split-map-visual:hover {
+  border-color: var(--accent-cyan);
+  box-shadow: 0 16px 40px rgba(56, 189, 248, 0.25);
+  transform: translateY(-2px);
+}
+
+.snow-img {
+  width: 100%;
+  max-height: 335px;
+  object-fit: contain;
+  border-radius: 10px;
+  display: block;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  background: #fdfaf3;
+}
+
+.split-map-visual:hover .snow-img {
+  filter: brightness(1.02);
+}
+
+.split-map-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.split-info-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border-card);
+  border-radius: 14px;
+  padding: 0.75rem 1rem;
+  backdrop-filter: blur(8px);
+  text-align: left;
+  transition: all 0.2s ease;
+}
+
+.split-info-card:hover {
+  border-color: rgba(99, 102, 241, 0.35);
+  background: rgba(255, 255, 255, 0.07);
+}
+
 .card {
   background: var(--bg-card);
   backdrop-filter: blur(12px);
