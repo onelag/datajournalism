@@ -1945,7 +1945,7 @@ ORDER BY desemprego_medio DESC;</code></pre>
           </div>
 
           <p style="text-align: center; color: var(--accent-cyan); margin-top: 1.5rem; font-size: 0.85em;">
-            👉 Pressione a tecla <strong>DIREITA (➡️)</strong> para iniciar o <strong>Capítulo 7: Análise Estatística, Investigação & BI</strong>
+            👉 Pressione a tecla <strong>DIREITA (➡️)</strong> para iniciar o <strong>Capítulo 7: Análise de dados: Estatística, Grafos, Marketing, BI e Social Listening</strong>
           </p>
 
           <aside class="notes">
@@ -1955,213 +1955,499 @@ ORDER BY desemprego_medio DESC;</code></pre>
       </section>
 
       <!-- ========================================================= -->
-      <!-- CAPÍTULO 7: Análise Estatística, Investigação & BI         -->
+      <!-- CAPÍTULO 7: Análise de dados: Estatística, Grafos, BI...   -->
       <!-- ========================================================= -->
       <section>
-        <!-- 7.1: Abertura Cap. 6 -->
+        <!-- 7.1: Abertura Cap. 7 -->
         <section data-background-gradient="radial-gradient(circle at 50% 30%, #831843 0%, #0a0e1a 100%)">
           <span class="badge" style="color: #f43f5e; border-color: rgba(244, 63, 94, 0.4);">Capítulo 7/8</span>
-          <h1>Análise Estatística, <span class="gradient-text-warm">Investigação & BI</span></h1>
-          <p class="subtitle">Fazendo as perguntas certas aos dados e extraindo inteligência editorial</p>
+          <h1><span class="gradient-text-warm">Análise de dados:</span> Estatística, Grafos, Marketing, BI e Social Listening</h1>
+          <p class="subtitle">Transformando números brutos em inteligência investigativa, análise de redes, personas de público e monitoramento em tempo real</p>
 
           <div class="pill-list" style="justify-content: center; margin-top: 2rem;">
-            <div class="pill">📊 Média vs Mediana</div>
-            <div class="pill">📉 Taxas por 100k</div>
-            <div class="pill">💼 Power BI / Metabase</div>
-            <div class="pill">🎧 Social Listening</div>
+            <div class="pill">📊 Estatística & Boxplot</div>
+            <div class="pill">🕸️ Grafos & Königsberg</div>
+            <div class="pill">🎯 Marketing & Personas</div>
+            <div class="pill">⚡ ETL & Dashboards/KPIs</div>
+            <div class="pill">🎧 Social Listening & Sentimento</div>
           </div>
 
           <aside class="notes">
-            Neste capítulo, aprenderemos como interpretar os números sem cair em armadilhas conceituais ou criar
-            manchetes falsas.
+            Neste capítulo, aprenderemos como interpretar dados com rigor estatístico, analisar redes relacionais através de grafos, utilizar dados no marketing editorial para definir personas, estruturar processos de ETL e KPIs em BI, e monitorar conversações digitais com social listening.
           </aside>
         </section>
 
-        <!-- 7.2: Estatística Básica para Repórteres -->
+        <!-- 7.2: Médias Podem Ser Enganosas -->
         <section>
-          <span class="badge">Capítulo 7 • Slide 2/7</span>
-          <h2>Estatística Essencial para Jornalistas</h2>
-          <p class="subtitle">Conceitos fundamentais que todo comunicador precisa dominar</p>
+          <span class="badge">Capítulo 7 • Slide 2/10</span>
+          <h2>Por que a Média Pode Ser Enganosa?</h2>
+          <p class="subtitle">A armadilha da média aritmética em distribuições assimétricas e com outliers</p>
 
-          <div class="card-grid">
+          <div class="card-grid-2">
+            <div class="card fragment fade-up">
+              <div class="icon">👶</div>
+              <h4 style="color: var(--accent-amber);">O Enigma Histórico da Mortalidade Infantil</h4>
+              <p style="font-size: 0.8em; line-height: 1.45; color: #e2e8f0; margin-bottom: 0.6rem;">
+                Nos séculos XVIII e XIX, a <strong>expectativa de vida média</strong> era de apenas <strong>30 a 35 anos</strong>.
+              </p>
+              <div style="background: rgba(0,0,0,0.3); border-left: 3px solid var(--accent-amber); padding: 0.6rem 0.8rem; border-radius: 6px; font-size: 0.76em; line-height: 1.4; color: #cbd5e1;">
+                <strong>A falácia comum:</strong> Achar que quase todos morriam de velhice aos 30 anos.<br>
+                <strong>A realidade dos dados:</strong> A altíssima mortalidade infantil (muitos bebês morrendo com menos de 1 ano) puxava a média matemática bruscamente para baixo. Quem sobrevivia à infância frequentemente vivia até os <strong>60 ou 70 anos</strong>!
+              </div>
+            </div>
+
             <div class="card fragment fade-up">
               <div class="icon">⚖️</div>
-              <h4>Média vs. Mediana</h4>
-              <p>Se 9 pessoas ganham R$ 2.000 e 1 pessoa ganha R$ 1.000.000, a média é R$ 101.800 (ilusória). A
-                <strong>mediana</strong> é R$ 2.000 (realista).
+              <h4 style="color: var(--accent-cyan);">Média vs. Mediana na Prática</h4>
+              <p style="font-size: 0.8em; line-height: 1.45; color: #e2e8f0; margin-bottom: 0.6rem;">
+                Considere uma sala com 10 pessoas: 9 ganham <strong>R$ 2.000</strong> e 1 executivo ganha <strong>R$ 1.000.000</strong>.
               </p>
-            </div>
-            <div class="card fragment fade-up">
-              <div class="icon">👥</div>
-              <h4>Taxas por 100 mil habitantes</h4>
-              <p>Comparar números absolutos de homicídios entre São Paulo e Florianópolis é distorcido. Sempre normalize
-                pela população.</p>
-            </div>
-            <div class="card fragment fade-up">
-              <div class="icon">📈</div>
-              <h4>% vs. Pontos Percentuais</h4>
-              <p>Se a taxa de juros sobe de 10% para 12%, ela subiu <strong>2 pontos percentuais</strong>, mas aumentou
-                <strong>20%</strong> no valor.
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; margin-top: 0.4rem;">
+                <div style="background: rgba(239, 68, 68, 0.15); border: 1px solid rgba(239, 68, 68, 0.35); padding: 0.5rem; border-radius: 8px; text-align: center;">
+                  <span style="font-size: 0.7em; color: #f87171; font-weight: 700; display: block;">MÉDIA (Ilusória)</span>
+                  <strong style="font-size: 1em; color: #fff;">R$ 101.800</strong>
+                  <span style="font-size: 0.65em; color: #94a3b8; display: block; margin-top: 2px;">Distorcida pelo outlier</span>
+                </div>
+                <div style="background: rgba(16, 185, 129, 0.15); border: 1px solid rgba(16, 185, 129, 0.35); padding: 0.5rem; border-radius: 8px; text-align: center;">
+                  <span style="font-size: 0.7em; color: #34d399; font-weight: 700; display: block;">MEDIANA (Realista)</span>
+                  <strong style="font-size: 1em; color: #fff;">R$ 2.000</strong>
+                  <span style="font-size: 0.65em; color: #94a3b8; display: block; margin-top: 2px;">Representa 90% do grupo</span>
+                </div>
+              </div>
+              <p style="font-size: 0.72em; color: var(--text-muted); margin-top: 0.6rem;">
+                💡 <em>Regra de ouro:</em> Em matérias sobre salários, patrimônio e gastos públicos, sempre informe a <strong>mediana</strong> ou a distribuição por faixas.
               </p>
             </div>
           </div>
 
           <aside class="notes">
-            Explique com clareza a diferença entre média e mediana. Esse é o erro mais comum na imprensa diária.
+            Explique o efeito de caudas pesadas e assimetria. A média aritmética soma tudo e divide pela quantidade, tornando-se refém de valores extremos (outliers). Já a mediana ordena os dados e pega o valor exatamente no meio (50%).
           </aside>
         </section>
 
         <!-- 7.3: Correlação vs Causalidade -->
         <section>
-          <span class="badge">Capítulo 7 • Slide 3/7</span>
-          <h2>Correlação Não Implica Causalidade</h2>
-          <p class="subtitle">O maior gerador de desinformação involuntária no jornalismo</p>
+          <span class="badge">Capítulo 7 • Slide 3/10</span>
+          <h2>Correlação Não É Causalidade</h2>
+          <p class="subtitle">O maior gerador de manchetes falsas e pânicos morais na imprensa mundial</p>
 
           <div class="card-grid-2">
-            <div class="card fragment">
-              <h4 style="color: #f87171;">❌ A Falácia da Correlação Espúria</h4>
-              <p>O consumo de sorvete e as mortes por afogamento aumentam juntos no verão. O sorvete causa afogamento?
-                Não, o calor causa ambos.</p>
+            <div class="card fragment fade-up">
+              <div class="icon">🍦</div>
+              <h4 style="color: #f87171;">❌ Correlações Espúrias (Spurious Correlations)</h4>
+              <p style="font-size: 0.8em; line-height: 1.45; color: #cbd5e1;">
+                Duas variáveis podem caminhar juntas no gráfico por pura coincidência ou porque ambas são causadas por uma terceira variável oculta (<strong>fator de confusão</strong>).
+              </p>
+              <div style="background: rgba(0,0,0,0.3); padding: 0.6rem 0.8rem; border-radius: 8px; margin-top: 0.6rem; font-size: 0.74em; line-height: 1.4; color: #e2e8f0; border-left: 3px solid #f87171;">
+                • <strong>Sorvete vs. Afogamentos:</strong> Vendas de sorvete sobem no mesmo período em que aumentam afogamentos. O sorvete causa afogamento? Não! O fator comum é o <strong>calor do verão</strong>.<br>
+                • <strong>Nicolas Cage vs. Piscinas:</strong> O número de filmes estrelados por Nicolas Cage correlaciona fortemente com mortes por afogamento em piscinas nos EUA (<a href="https://www.tylervigen.com/spurious-correlations" target="_blank" rel="noopener noreferrer" style="color: var(--accent-cyan);">Tyler Vigen</a>).
+              </div>
             </div>
-            <div class="card fragment">
-              <h4 style="color: #34d399;">✅ A Postura do Jornalista Investigativo</h4>
-              <p>Identificar se existe uma variável oculta (fator de confusão) e consultar estatísticos e especialistas
-                antes de cravar uma relação de causa e efeito.</p>
+
+            <div class="card fragment fade-up">
+              <div class="icon">🛡️</div>
+              <h4 style="color: #34d399;">✅ Checklist do Repórter Investigativo</h4>
+              <p style="font-size: 0.8em; line-height: 1.45; color: #cbd5e1; margin-bottom: 0.5rem;">
+                Antes de cravar que "A causa B" em sua manchete, faça 4 perguntas obrigatórias:
+              </p>
+              <ul style="font-size: 0.74em; line-height: 1.45; color: #cbd5e1; padding-left: 1.1rem; margin: 0;">
+                <li><strong>1. Mecanismo causal:</strong> Há uma explicação científica/biológica demonstrável que explique o elo?</li>
+                <li><strong>2. Variáveis de confusão:</strong> População, PIB, clima ou inflação estão crescendo ao mesmo tempo?</li>
+                <li><strong>3. Causalidade reversa:</strong> É X que afeta Y ou Y que afeta X?</li>
+                <li><strong>4. Checagem independente:</strong> Consulte estatísticos e epidemiologistas antes de publicar resultados de estudos isolados.</li>
+              </ul>
             </div>
           </div>
 
           <aside class="notes">
-            Mostre a responsabilidade de não criar pânico moral ou desinformação científica com correlações fracas.
+            Correlações espúrias são um perigo gigantesco no jornalismo de saúde, segurança pública e economia. Sempre desconfie de causalidades simples para problemas multifatoriais.
           </aside>
         </section>
 
-        <!-- 7.4: Business Intelligence no Jornalismo -->
+        <!-- 7.4: Boxplot & Distribuição Normal -->
         <section>
-          <span class="badge">Capítulo 7 • Slide 4/7</span>
-          <h2>Business Intelligence (BI) na Redação</h2>
-          <p class="subtitle">Utilizando ferramentas corporativas para monitorar o poder público continuamente</p>
-
-          <div class="card-grid">
-            <div class="card fragment fade-up">
-              <div class="icon">📊</div>
-              <h4>Dashboards Analíticos</h4>
-              <p>Painéis em Power BI, Looker Studio e Metabase conectados a bases que atualizam matérias
-                automaticamente.</p>
-            </div>
-            <div class="card fragment fade-up">
-              <div class="icon">🚨</div>
-              <h4>Alertas Automatizados</h4>
-              <p>Notificações automáticas no Slack/Telegram da redação quando uma licitação acima de R$ 5 milhões é
-                publicada.</p>
-            </div>
-            <div class="card fragment fade-up">
-              <div class="icon">🔍</div>
-              <h4>Filtros Multidimensionais</h4>
-              <p>Navegação intuitiva por partido, estado, fornecedor e ano sem necessidade de rodar código a cada
-                pergunta.</p>
-            </div>
-          </div>
-
-          <aside class="notes">
-            O BI transforma a apuração pontual em uma central de inteligência contínua na redação.
-          </aside>
-        </section>
-
-        <!-- 7.5: Social Listening -->
-        <section>
-          <span class="badge">Capítulo 7 • Slide 5/7</span>
-          <h2>Social Listening & Monitoramento de Redes</h2>
-          <p class="subtitle">Entendendo o ecossistema digital, narrativas e fluxos de opinião pública</p>
+          <span class="badge">Capítulo 7 • Slide 4/10</span>
+          <h2>Boxplot & Distribuição Normal</h2>
+          <p class="subtitle">As duas estruturas visuais e conceituais mais importantes da análise estatística</p>
 
           <div class="card-grid-2">
-            <div class="card fragment">
-              <h4 style="color: var(--accent-cyan);">🗣️ Análise de Sentimento & Tendências</h4>
-              <p>Mapeamento de picos de conversação, palavras-chave e reações populares em torno de crises e projetos de
-                lei.</p>
-            </div>
-            <div class="card fragment">
-              <h4 style="color: var(--accent-purple);">🕸️ Mapeamento de Redes & Grafos</h4>
-              <p>Identificação de clusters de perfis inautênticos (bots), contas coordenadas e nós de disseminação de
-                desinformação.</p>
-            </div>
-            <div class="card fragment">
-              <h4 style="color: var(--accent-amber);">🎯 Monitoramento de Anúncios Políticos</h4>
-              <p>Biblioteca de Anúncios da Meta e Google para rastrear gastos eleitorais e microsegmentação de
-                eleitores.</p>
-            </div>
-            <div class="card fragment">
-              <h4 style="color: var(--accent-emerald);">🛡️ Ética & Amostragem</h4>
-              <p>Compreender que as redes sociais não representam o total da população brasileira, mas nichos
-                específicos engajados.</p>
-            </div>
-          </div>
-
-          <aside class="notes">
-            Social listening é fundamental para cobrir eleições, desinformação e reputação de figuras públicas.
-          </aside>
-        </section>
-
-        <!-- 7.6: Da Análise à Entrevista -->
-        <section>
-          <span class="badge">Capítulo 7 • Slide 6/7</span>
-          <h2>O Fechamento: Da Planilha ao Confronto Ético</h2>
-          <p class="subtitle">O que fazer após encontrar a anomalia estatística?</p>
-
-          <div class="card-grid">
             <div class="card fragment fade-up">
-              <div class="icon">📞</div>
-              <h4>1. O Outro Lado Rigoroso</h4>
-              <p>Apresente a tabela exata e os números ao investigado com prazo razoável para resposta antes da
-                publicação.</p>
+              <div class="icon">📦</div>
+              <h4 style="color: var(--accent-cyan);">O Boxplot: O Gráfico Supremo da Estatística</h4>
+              <p style="font-size: 0.76em; line-height: 1.4; color: #cbd5e1; margin-bottom: 0.5rem;">
+                Resume milhões de linhas em <strong>5 medidas-chave</strong> e revela anomalias instantaneamente:
+              </p>
+              <!-- SVG Boxplot Diagram -->
+              <div style="background: rgba(0,0,0,0.35); border-radius: 8px; padding: 0.6rem 0.8rem; margin-bottom: 0.5rem; text-align: center;">
+                <svg viewBox="0 0 420 110" style="width: 100%; max-height: 100px; display: block; margin: 0 auto;">
+                  <!-- Whiskers line -->
+                  <line x1="50" y1="45" x2="110" y2="45" stroke="#94a3b8" stroke-width="2.5" stroke-dasharray="3,3"/>
+                  <line x1="270" y1="45" x2="350" y2="45" stroke="#94a3b8" stroke-width="2.5" stroke-dasharray="3,3"/>
+                  <!-- Min & Max caps -->
+                  <line x1="50" y1="30" x2="50" y2="60" stroke="#38bdf8" stroke-width="3"/>
+                  <text x="50" y="78" fill="#38bdf8" font-size="11" font-family="Outfit, sans-serif" font-weight="700" text-anchor="middle">Mínimo</text>
+                  <line x1="350" y1="30" x2="350" y2="60" stroke="#38bdf8" stroke-width="3"/>
+                  <text x="350" y="78" fill="#38bdf8" font-size="11" font-family="Outfit, sans-serif" font-weight="700" text-anchor="middle">Máximo</text>
+                  <!-- Box (Q1 to Q3) -->
+                  <rect x="110" y="20" width="160" height="50" rx="4" fill="rgba(99, 102, 241, 0.25)" stroke="#818cf8" stroke-width="2"/>
+                  <!-- Q1 label -->
+                  <text x="110" y="88" fill="#a5b4fc" font-size="10" font-family="Plus Jakarta Sans, sans-serif" text-anchor="middle">Q1 (25%)</text>
+                  <!-- Median line & label -->
+                  <line x1="175" y1="20" x2="175" y2="70" stroke="#34d399" stroke-width="3.5"/>
+                  <text x="175" y="14" fill="#34d399" font-size="11" font-family="Outfit, sans-serif" font-weight="700" text-anchor="middle">MEDIANA (Q2 50%)</text>
+                  <!-- Q3 label -->
+                  <text x="270" y="88" fill="#a5b4fc" font-size="10" font-family="Plus Jakarta Sans, sans-serif" text-anchor="middle">Q3 (75%)</text>
+                  <!-- Outlier points -->
+                  <circle cx="395" cy="45" r="5" fill="#f43f5e" stroke="#fff" stroke-width="1.5"/>
+                  <text x="395" y="68" fill="#f43f5e" font-size="10" font-family="Outfit, sans-serif" font-weight="700" text-anchor="middle">Outlier 🚨</text>
+                  <!-- IQR Label -->
+                  <text x="190" y="104" fill="#cbd5e1" font-size="10" font-family="Plus Jakarta Sans, sans-serif" text-anchor="middle">⬅️ IQR (50% dos dados centrais) ➡️</text>
+                </svg>
+              </div>
+              <p style="font-size: 0.72em; color: var(--text-muted); margin: 0;">
+                🎯 <strong>Ponto de investigação:</strong> Os <em>outliers</em> fora dos bigodes sinalizam supersalários, fraudes ou erros de digitação.
+              </p>
             </div>
+
             <div class="card fragment fade-up">
-              <div class="icon">👨‍🔬</div>
-              <h4>2. Peer-Review com Especialistas</h4>
-              <p>Peça a um pesquisador ou auditor independente para checar sua metodologia e cálculos matemáticos.</p>
-            </div>
-            <div class="card fragment fade-up">
-              <div class="icon">👤</div>
-              <h4>3. O Personagem Humano</h4>
-              <p>Encontre a pessoa real que sofre as consequências do desvio orçamentário para abrir a sua reportagem.
+              <div class="icon">🔔</div>
+              <h4 style="color: var(--accent-purple);">A Distribuição Normal (Curva de Gauss)</h4>
+              <p style="font-size: 0.76em; line-height: 1.4; color: #cbd5e1; margin-bottom: 0.5rem;">
+                O formato simétrico em "sino" onde <strong>Média = Mediana = Moda</strong> no centro:
+              </p>
+              <!-- SVG Normal Distribution Curve -->
+              <div style="background: rgba(0,0,0,0.35); border-radius: 8px; padding: 0.6rem 0.8rem; margin-bottom: 0.5rem; text-align: center;">
+                <svg viewBox="0 0 420 110" style="width: 100%; max-height: 100px; display: block; margin: 0 auto;">
+                  <!-- Normal curve fill regions -->
+                  <!-- 99.7% region (-3 to +3) -->
+                  <path d="M 30,85 Q 110,84 150,60 Q 210,10 270,60 Q 310,84 390,85 L 390,85 L 30,85 Z" fill="rgba(168, 85, 247, 0.1)"/>
+                  <!-- 95.4% region (-2 to +2) -->
+                  <path d="M 90,85 Q 130,80 160,55 Q 210,10 260,55 Q 290,80 330,85 L 330,85 L 90,85 Z" fill="rgba(168, 85, 247, 0.2)"/>
+                  <!-- 68.2% region (-1 to +1) -->
+                  <path d="M 150,85 Q 170,60 210,10 Q 250,60 270,85 Z" fill="rgba(56, 189, 248, 0.3)"/>
+                  <!-- Curve outline -->
+                  <path d="M 30,85 C 100,85 140,75 165,50 C 185,30 200,10 210,10 C 220,10 235,30 255,50 C 280,75 320,85 390,85" fill="none" stroke="#a855f7" stroke-width="3"/>
+                  <!-- Center Mean line -->
+                  <line x1="210" y1="10" x2="210" y2="85" stroke="#38bdf8" stroke-width="2" stroke-dasharray="2,2"/>
+                  <!-- Axis baseline -->
+                  <line x1="20" y1="85" x2="400" y2="85" stroke="#475569" stroke-width="1.5"/>
+                  <!-- Labels -->
+                  <text x="210" y="98" fill="#38bdf8" font-size="10" font-family="Outfit, sans-serif" font-weight="700" text-anchor="middle">μ (Média)</text>
+                  <text x="150" y="98" fill="#94a3b8" font-size="9" text-anchor="middle">-1σ</text>
+                  <text x="270" y="98" fill="#94a3b8" font-size="9" text-anchor="middle">+1σ</text>
+                  <text x="90" y="98" fill="#94a3b8" font-size="9" text-anchor="middle">-2σ</text>
+                  <text x="330" y="98" fill="#94a3b8" font-size="9" text-anchor="middle">+2σ</text>
+                  <text x="210" y="52" fill="#e0e7ff" font-size="11" font-weight="700" font-family="Outfit, sans-serif" text-anchor="middle">68,2% dos casos (±1σ)</text>
+                </svg>
+              </div>
+              <p style="font-size: 0.72em; color: var(--text-muted); margin: 0;">
+                📊 <strong>Regra 68-95-99.7:</strong> 68% caem a ±1σ, 95% a ±2σ e 99,7% a ±3σ. Dados além de 3 desvios são raridades estatísticas.
               </p>
             </div>
           </div>
 
           <aside class="notes">
-            Uma matéria de dados sem o personagem humano é um relatório técnico; com o personagem, é uma grande
-            reportagem.
+            Ressalte por que o boxplot é o preferido dos estatísticos: ele não esconde a variabilidade e deixa evidente a dispersão e assimetria dos dados sem fazer suposições irreais sobre normalidade.
           </aside>
         </section>
 
-        <!-- 7.7: Conclusão Cap. 6 -->
-        <section data-background-gradient="radial-gradient(circle at 50% 50%, #831843 0%, #0a0e1a 100%)">
-          <span class="badge badge-emerald">Capítulo 7 • Conclusão</span>
-          <h2>Resumo da Análise de Dados</h2>
+        <!-- 7.5: Leis Estatísticas: Pareto & Benford -->
+        <section>
+          <span class="badge">Capítulo 7 • Slide 5/10</span>
+          <h2>Princípio de Pareto & Lei de Benford</h2>
+          <p class="subtitle">Padrões matemáticos que orientam investigações e desmascaram fraudes em dados</p>
 
-          <div class="quote-container" style="margin-top: 1.5rem;">
-            <div class="quote-mark">“</div>
-            <p class="quote-text">
-              Torture os dados por tempo suficiente e eles confessarão qualquer coisa. O papel do jornalista é buscar a
-              verdade, não confirmar seus próprios preconceitos.
-            </p>
-            <div class="quote-author">Ronald Coase (Adaptado ao Jornalismo)</div>
+          <div class="card-grid-2">
+            <div class="card fragment fade-up">
+              <div class="icon">⚖️</div>
+              <h4 style="color: var(--accent-amber);">Princípio de Pareto (A Regra 80/20)</h4>
+              <p style="font-size: 0.78em; line-height: 1.45; color: #cbd5e1; margin-bottom: 0.6rem;">
+                Formulado por Vilfredo Pareto: cerca de <strong>80% das consequências decorrem de 20% das causas</strong>.
+              </p>
+              <div style="background: rgba(245, 158, 11, 0.1); border: 1px solid rgba(245, 158, 11, 0.3); border-radius: 8px; padding: 0.6rem 0.8rem; font-size: 0.75em; line-height: 1.45; color: #e2e8f0;">
+                • <strong>Em Portais de Notícias:</strong> ~80% da audiência total é gerada por ~20% dos artigos publicados.<br>
+                • <strong>Em Licitações e Orçamento:</strong> ~80% de todo o dinheiro público gasto por uma prefeitura ou ministério costuma estar concentrado em apenas ~20% dos grandes contratos.<br>
+                • <strong>Aplicação Prática:</strong> Ao auditar 50.000 notas de compras públicas, ordene por valor e foque a reportagem no topo 20% que concentra quase todo o orçamento.
+              </div>
+            </div>
+
+            <div class="card fragment fade-up">
+              <div class="icon">🔍</div>
+              <h4 style="color: #34d399;">Lei de Benford (Auditoria do 1º Dígito)</h4>
+              <p style="font-size: 0.78em; line-height: 1.45; color: #cbd5e1; margin-bottom: 0.6rem;">
+                Em dados numéricos do mundo real (gastos, receitas, declarações de bens), o <strong>primeiro dígito</strong> não é uniforme (11%), mas segue uma <strong>distribuição logarítmica</strong>:
+              </p>
+              <!-- Benford Bars -->
+              <div style="background: rgba(0,0,0,0.35); border-radius: 8px; padding: 0.5rem 0.7rem; font-size: 0.72em; color: #cbd5e1;">
+                <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 3px;">
+                  <strong style="width: 20px; color: #34d399;">1:</strong>
+                  <div style="background: linear-gradient(90deg, #34d399, #059669); width: 60%; height: 12px; border-radius: 3px;"></div>
+                  <span><strong>30,1%</strong> das vezes</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 3px;">
+                  <strong style="width: 20px; color: #38bdf8;">2:</strong>
+                  <div style="background: linear-gradient(90deg, #38bdf8, #2563eb); width: 35%; height: 12px; border-radius: 3px;"></div>
+                  <span><strong>17,6%</strong></span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 3px;">
+                  <strong style="width: 20px; color: #94a3b8;">3:</strong>
+                  <div style="background: #64748b; width: 25%; height: 12px; border-radius: 3px;"></div>
+                  <span>12,5%</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 6px;">
+                  <strong style="width: 20px; color: #94a3b8;">9:</strong>
+                  <div style="background: #475569; width: 9%; height: 12px; border-radius: 3px;"></div>
+                  <span>apenas <strong>4,6%</strong></span>
+                </div>
+              </div>
+              <p style="font-size: 0.72em; color: var(--text-muted); margin-top: 0.5rem;">
+                🚨 <strong>Caça a Fraudes:</strong> Quando humanos inventam notas fiscais frias, tendem a distribuir dígitos aleatoriamente. Desvios da curva de Benford são aceitos como indício de fraude contábil no TCU e na Receita Federal.
+              </p>
+            </div>
           </div>
 
-          <p style="text-align: center; color: var(--accent-cyan); margin-top: 1.5rem; font-size: 0.85em;">
-            👉 Pressione a tecla <strong>DIREITA (➡️)</strong> para iniciar o <strong>Capítulo 8: Ética, Futuro com IA & Próximos Passos</strong>
+          <aside class="notes">
+            Explique como o ICIJ e tribunais de contas utilizam testes de Benford em bases com milhões de registros para identificar notas fiscais falsificadas e desvios orçamentários.
+          </aside>
+        </section>
+
+        <!-- 7.6: Teoria dos Grafos & Redes -->
+        <section>
+          <span class="badge">Capítulo 7 • Slide 6/10</span>
+          <h2>Grafos: De Königsberg às Redes Sociais</h2>
+          <p class="subtitle">Mapeando conexões, influenciadores, cartéis de empresas e fluxos de desinformação</p>
+
+          <div class="card-grid-2">
+            <div class="card fragment fade-up">
+              <div class="icon">🌉</div>
+              <h4 style="color: var(--accent-cyan);">As Sete Pontes de Königsberg (Euler, 1736)</h4>
+              <p style="font-size: 0.78em; line-height: 1.4; color: #cbd5e1; margin-bottom: 0.5rem;">
+                O enigma que fundou a <strong>Teoria dos Grafos</strong> e a Topologia matemática:
+              </p>
+              <div style="background: rgba(0,0,0,0.35); border-radius: 8px; padding: 0.5rem; text-align: center; margin-bottom: 0.5rem;">
+                <svg viewBox="0 0 360 90" style="width: 100%; max-height: 85px; display: block; margin: 0 auto;">
+                  <!-- Edges / Bridges -->
+                  <path d="M 60,45 Q 180,-10 300,45" fill="none" stroke="#38bdf8" stroke-width="2"/>
+                  <path d="M 60,45 Q 180,20 300,45" fill="none" stroke="#38bdf8" stroke-width="2"/>
+                  <path d="M 60,45 Q 180,70 300,45" fill="none" stroke="#38bdf8" stroke-width="2"/>
+                  <path d="M 60,45 Q 180,100 300,45" fill="none" stroke="#38bdf8" stroke-width="2"/>
+                  
+                  <line x1="60" y1="45" x2="180" y2="45" stroke="#ec4899" stroke-width="2.5"/>
+                  <line x1="180" y1="45" x2="300" y2="45" stroke="#ec4899" stroke-width="2.5"/>
+                  <line x1="180" y1="15" x2="180" y2="75" stroke="#a855f7" stroke-width="2"/>
+
+                  <!-- Landmass Nodes -->
+                  <circle cx="60" cy="45" r="16" fill="#1e1b4b" stroke="#38bdf8" stroke-width="2.5"/>
+                  <text x="60" y="49" fill="#fff" font-size="11" font-weight="800" text-anchor="middle">A</text>
+                  <circle cx="180" cy="45" r="16" fill="#1e1b4b" stroke="#ec4899" stroke-width="2.5"/>
+                  <text x="180" y="49" fill="#fff" font-size="11" font-weight="800" text-anchor="middle">Ilha</text>
+                  <circle cx="300" cy="45" r="16" fill="#1e1b4b" stroke="#38bdf8" stroke-width="2.5"/>
+                  <text x="300" y="49" fill="#fff" font-size="11" font-weight="800" text-anchor="middle">B</text>
+                </svg>
+              </div>
+              <p style="font-size: 0.74em; line-height: 1.4; color: #e2e8f0; margin: 0;">
+                <strong>O problema:</strong> Era possível cruzar as 7 pontes de Königsberg passando por cada uma exatamente uma vez? <strong>Euler provou que não</strong>: para haver um caminho contínuo, no máximo 2 regiões poderiam ter um número ímpar de pontes conectadas.
+              </p>
+            </div>
+
+            <div class="card fragment fade-up">
+              <div class="icon">🕸️</div>
+              <h4 style="color: var(--accent-purple);">Grafos no Jornalismo & Redes Sociais</h4>
+              <p style="font-size: 0.78em; line-height: 1.45; color: #cbd5e1; margin-bottom: 0.5rem;">
+                Transformando investigações em redes de <strong>Vértices (Nós)</strong> e <strong>Arestas (Conexões)</strong>:
+              </p>
+              <ul style="font-size: 0.74em; line-height: 1.45; color: #cbd5e1; padding-left: 1.1rem; margin-bottom: 0.5rem;">
+                <li><strong>Centralidade de Grau:</strong> Quem é o nó mais conectado (o mais popular ou a empresa que ganha mais licitações).</li>
+                <li><strong>Intermediação (Betweenness):</strong> O nó "ponte" — o intermediário que articula grupos distintos (o operador financeiro ou o perfil de desinformação chave).</li>
+                <li><strong>Detecção de Clusters:</strong> Revela comunidades fechadas, grupos de WhatsApp/Telegram e fazendas de robôs no Twitter/X.</li>
+              </ul>
+              <div style="background: rgba(168, 85, 247, 0.15); border: 1px solid rgba(168, 85, 247, 0.35); padding: 0.4rem 0.6rem; border-radius: 6px; font-size: 0.7em; color: #e0e7ff;">
+                🛠️ <em>Ferramentas recomendadas:</em> <strong>Gephi</strong> (visualização gráfica de redes) e biblioteca <strong>NetworkX</strong> em Python.
+              </div>
+            </div>
+          </div>
+
+          <aside class="notes">
+            Explique a analogia de Euler: ele removeu os prédios, rios e relevo, reduzindo o problema a pontos e linhas. É essa mesma abstração matemática que permite mapear esquemas de corrupção, redes de sócios e cartéis no jornalismo investigativo moderno.
+          </aside>
+        </section>
+
+        <!-- 7.7: Marketing de Dados: Personas & Resultados -->
+        <section>
+          <span class="badge">Capítulo 7 • Slide 7/10</span>
+          <h2>Marketing de Dados: Personas & Resultados</h2>
+          <p class="subtitle">Muito além de métricas de vaidade: compreendendo audiências e otimizando o impacto editorial</p>
+
+          <div class="card-grid">
+            <div class="card fragment fade-up">
+              <div class="icon">👥</div>
+              <h4 style="color: var(--accent-cyan);">Definição de Personas & Público-Alvo</h4>
+              <p style="font-size: 0.76em; line-height: 1.45; color: #cbd5e1;">
+                Em vez de suposições ou "achismos", dados comportamentais (horários de leitura, dispositivos, tempo de permanência, temas favoritos) geram <strong>arquétipos de leitores reais</strong> via algoritmos de agrupamento (<em>clustering</em>).
+              </p>
+            </div>
+
+            <div class="card fragment fade-up">
+              <div class="icon">🎯</div>
+              <h4 style="color: var(--accent-purple);">Segmentação & Personalização</h4>
+              <p style="font-size: 0.76em; line-height: 1.45; color: #cbd5e1;">
+                Entrega do conteúdo certo para a pessoa certa: criação de newsletters temáticas especializadas, notificações push inteligentes e produtos digitais que atendem às dores específicas de cada segmento de leitores.
+              </p>
+            </div>
+
+            <div class="card fragment fade-up">
+              <div class="icon">📈</div>
+              <h4 style="color: #34d399;">Análise de Resultados & Campanhas</h4>
+              <p style="font-size: 0.76em; line-height: 1.45; color: #cbd5e1;">
+                Monitoramento do funil completo: <strong>CAC</strong> (Custo de Aquisição de Assinante), <strong>LTV</strong> (Valor do Ciclo de Vida), taxas de conversão de paywall e <strong>Testes A/B</strong> de manchetes e imagens para maximizar o alcance.
+              </p>
+            </div>
+          </div>
+
+          <aside class="notes">
+            No mercado de comunicação atual, o jornalista de dados atua não só na redação, mas na inteligência de produto e audiência, ajudando a criar veículos sustentáveis e conectados às necessidades do público.
+          </aside>
+        </section>
+
+        <!-- 7.8: Business Intelligence: ETL & KPIs -->
+        <section>
+          <span class="badge">Capítulo 7 • Slide 8/10</span>
+          <h2>Business Intelligence: ETL & KPIs</h2>
+          <p class="subtitle">Como transformar fluxos contínuos de dados brutos em inteligência visual e decisões estratégicas</p>
+
+          <div class="card-grid-2">
+            <div class="card fragment fade-up">
+              <div class="icon">⚙️</div>
+              <h4 style="color: var(--accent-cyan);">O Processo ETL: A Linha de Montagem dos Dados</h4>
+              <p style="font-size: 0.76em; line-height: 1.4; color: #cbd5e1; margin-bottom: 0.5rem;">
+                Sem um ETL estruturado, dashboards exibem dados incorretos e desatualizados:
+              </p>
+              <div style="display: flex; flex-direction: column; gap: 0.4rem; font-size: 0.74em;">
+                <div style="background: rgba(56, 189, 248, 0.1); border-left: 3px solid var(--accent-cyan); padding: 0.4rem 0.6rem; border-radius: 4px;">
+                  <strong style="color: var(--accent-cyan);">1. Extract (Extração):</strong> Coleta automatizada de APIs governamentais, bancos SQL, planilhas e raspadores.
+                </div>
+                <div style="background: rgba(168, 85, 247, 0.1); border-left: 3px solid var(--accent-purple); padding: 0.4rem 0.6rem; border-radius: 4px;">
+                  <strong style="color: var(--accent-purple);">2. Transform (Transformação):</strong> Limpeza, remoção de nulos, cálculo de taxas e junção de tabelas.
+                </div>
+                <div style="background: rgba(16, 185, 129, 0.1); border-left: 3px solid var(--accent-emerald); padding: 0.4rem 0.6rem; border-radius: 4px;">
+                  <strong style="color: #34d399;">3. Load (Carga):</strong> Armazenamento na base analítica pronta para alimentar os painéis de BI.
+                </div>
+              </div>
+            </div>
+
+            <div class="card fragment fade-up">
+              <div class="icon">🎯</div>
+              <h4 style="color: var(--accent-amber);">O que são KPIs (Key Performance Indicators)?</h4>
+              <p style="font-size: 0.76em; line-height: 1.4; color: #cbd5e1; margin-bottom: 0.5rem;">
+                <strong>Indicadores-Chave de Desempenho:</strong> Métricas quantitativas prioritárias escolhidas para acompanhar metas vitais:
+              </p>
+              <div style="background: rgba(0,0,0,0.35); border-radius: 8px; padding: 0.6rem; font-size: 0.74em; line-height: 1.45; color: #cbd5e1;">
+                • <strong>Na Redação / Produto:</strong> Tempo médio de permanência, taxa de conversão de assinantes, índice de engajamento por editoria.<br>
+                • <strong>No Monitoramento Público:</strong> % de execução do orçamento municipal de saúde por trimestre, tempo médio de resposta de pedidos da LAI.<br>
+                • <strong>Dashboards no BI:</strong> Ferramentas como <strong>Power BI, Metabase e Looker Studio</strong> conectam o pipeline ETL a alertas automáticos no Slack/Telegram.
+              </div>
+            </div>
+          </div>
+
+          <aside class="notes">
+            Explique: Business Intelligence não é apenas um painel colorido, é o processo contínuo de extrair, transformar, carregar (ETL) e exibir indicadores acionáveis (KPIs) para a tomada de decisão rápida na redação ou na empresa.
+          </aside>
+        </section>
+
+        <!-- 7.9: Social Listening & Painéis de Coleta -->
+        <section>
+          <span class="badge">Capítulo 7 • Slide 9/10</span>
+          <h2>Social Listening & Painéis de Coleta</h2>
+          <p class="subtitle">Como configurar monitoramentos em tempo real de sentimento, picos de crise e conversações digitais</p>
+
+          <div class="card-grid-2">
+            <div class="card fragment fade-up">
+              <div class="icon">🎛️</div>
+              <h4 style="color: var(--accent-cyan);">Construção de Painéis de Coleta (Queries)</h4>
+              <p style="font-size: 0.76em; line-height: 1.4; color: #cbd5e1; margin-bottom: 0.5rem;">
+                A qualidade da escuta digital depende de uma lógica booleana refinada para filtrar ruídos e capturar o sentimento real:
+              </p>
+              <div style="background: rgba(0,0,0,0.4); border: 1px solid var(--border-card); border-radius: 8px; padding: 0.6rem 0.8rem; font-family: var(--font-mono); font-size: 0.72em; line-height: 1.5; color: #e2e8f0;">
+                <span style="color: var(--accent-cyan); font-weight: 700;">// Tema Principal:</span><br>
+                ("UFSC" OR "Universidade Federal de Santa Catarina")<br>
+                <span style="color: #34d399; font-weight: 700;">// Palavras-Chave Positivas (+):</span><br>
+                AND ("excelência" OR "nota máxima" OR "patente" OR "orgulho" OR "inovação")<br>
+                <span style="color: #f87171; font-weight: 700;">// Palavras-Chave Negativas / Alertas (-):</span><br>
+                AND ("greve" OR "fraude" OR "escândalo" OR "descaso" OR "corte de verba")<br>
+                <span style="color: #f59e0b; font-weight: 700;">// Exclusão de Ruído (NOT):</span><br>
+                NOT ("vestibular 2012" OR "venda de ingressos")
+              </div>
+            </div>
+
+            <div class="card fragment fade-up">
+              <div class="icon">📊</div>
+              <h4 style="color: var(--accent-purple);">Métricas & Análise em Tempo Real</h4>
+              <p style="font-size: 0.76em; line-height: 1.4; color: #cbd5e1; margin-bottom: 0.5rem;">
+                Indicadores essenciais gerados por plataformas (Brandwatch, Stilingue, Sprinklr):
+              </p>
+              <ul style="font-size: 0.74em; line-height: 1.45; color: #cbd5e1; padding-left: 1.1rem; margin: 0 0 0.5rem 0;">
+                <li><strong>Polaridade / Sentimento:</strong> Proporção de menções Positivas, Neutras e Negativas via Processamento de Linguagem Natural (PLN).</li>
+                <li><strong>Picos de Volume (Spikes):</strong> Alertas automáticos de início de crise de reputação ou vazamento de denúncias.</li>
+                <li><strong>Share of Voice (SoV):</strong> Participação percentual de um tema ou candidato no volume total de conversações da internet.</li>
+              </ul>
+              <p style="font-size: 0.7em; color: var(--text-muted); margin: 0;">
+                🛡️ <em>Atenção crítica:</em> Redes sociais representam nichos engajados, não a totalidade demográfica da população.
+              </p>
+            </div>
+          </div>
+
+          <aside class="notes">
+            O social listening permite que jornalistas e analistas identifiquem ondas de opinião antes que elas cheguem aos canais tradicionais, além de rastrear a disseminação de narrativas coordenadas.
+          </aside>
+        </section>
+
+        <!-- 7.10: Da Análise ao Confronto Ético & Conclusão Cap. 7 -->
+        <section data-background-gradient="radial-gradient(circle at 50% 50%, #831843 0%, #0a0e1a 100%)">
+          <span class="badge badge-emerald">Capítulo 7 • Conclusão</span>
+          <h2>Da Planilha ao Confronto Ético</h2>
+          <p class="subtitle">O que fazer após encontrar a anomalia, o cluster ou a correlação suspeita?</p>
+
+          <div class="card-grid" style="margin-top: 1rem;">
+            <div class="card fragment fade-up">
+              <div class="icon">📞</div>
+              <h4>1. O Outro Lado Rigoroso</h4>
+              <p>Envie a planilha e a metodologia completa ao investigado com prazo razoável para resposta antes de publicar.</p>
+            </div>
+            <div class="card fragment fade-up">
+              <div class="icon">👨‍🔬</div>
+              <h4>2. Peer-Review Especializado</h4>
+              <p>Peça a um estatístico ou pesquisador independente para auditar seus cálculos e scripts de análise.</p>
+            </div>
+            <div class="card fragment fade-up">
+              <div class="icon">👤</div>
+              <h4>3. O Personagem Humano</h4>
+              <p>Encontre a pessoa real que sofre o impacto dos números para dar alma e relevância à sua reportagem.</p>
+            </div>
+          </div>
+
+          <div class="quote-container" style="margin-top: 1.2rem; padding: 1.2rem 2rem;">
+            <div class="quote-mark" style="top: -10px;">“</div>
+            <p class="quote-text" style="font-size: 1.1em; margin-bottom: 0.4rem;">
+              Torture os dados por tempo suficiente e eles confessarão qualquer coisa. O papel do repórter é buscar a verdade factual, não confirmar seus próprios preconceitos.
+            </p>
+            <div class="quote-author" style="font-size: 0.8em;">Ronald Coase (Adaptado ao Jornalismo)</div>
+          </div>
+
+          <p style="text-align: center; color: var(--accent-cyan); margin-top: 1rem; font-size: 0.85em;">
+            👉 Pressione a tecla <strong>DIREITA (➡️)</strong> para iniciar o <strong>Capítulo 8: Ética, Futuro com IA & Carreira</strong>
           </p>
 
           <aside class="notes">
-            Enfatize a honestidade intelectual do repórter ao analisar dados.
+            Enfatize: Uma análise matemática sólida é o esqueleto da reportagem; a checagem ética e o personagem humano são o coração.
           </aside>
         </section>
       </section>
 
       <!-- ========================================================= -->
-      <!-- CAPÍTULO 7: Ética, Futuro com IA & Próximos Passos        -->
+      <!-- CAPÍTULO 8: Ética, Futuro com IA & Carreira                -->
       <!-- ========================================================= -->
       <section>
-        <!-- 8.1: Abertura Cap. 7 -->
+        <!-- 8.1: Abertura Cap. 8 -->
         <section data-background-gradient="radial-gradient(circle at 50% 30%, #1e1b4b 0%, #0a0e1a 100%)">
           <span class="badge">Capítulo 8/8</span>
           <h1>Ética, Futuro com IA & <span class="gradient-text">Carreira</span></h1>
