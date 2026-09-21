@@ -117,6 +117,32 @@
   margin-top: 1.8rem;
 }
 
+.card-grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.2rem;
+  margin-top: 1.8rem;
+}
+
+.card-grid-4 .card {
+  padding: 1.3rem 1.1rem;
+}
+
+.card-grid-4 .card .icon {
+  font-size: 1.7rem;
+  margin-bottom: 0.5rem;
+}
+
+.card-grid-4 .card h4 {
+  font-size: 1.05em;
+  margin-bottom: 0.4rem;
+}
+
+.card-grid-4 .card p {
+  font-size: 0.78em;
+  line-height: 1.45;
+}
+
 .card {
   background: var(--bg-card);
   backdrop-filter: blur(12px);
