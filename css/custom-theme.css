@@ -327,18 +327,27 @@
 
 .reveal .controls button {
   color: var(--accent-cyan);
+  opacity: 0.85;
+  transition: all 0.2s ease;
+}
+
+.reveal .controls button.enabled {
+  opacity: 1;
+  filter: drop-shadow(0 0 6px rgba(56, 189, 248, 0.6));
 }
 
 .reveal .slide-number {
-  background-color: rgba(10, 14, 26, 0.8);
+  background-color: rgba(10, 14, 26, 0.85);
   border: 1px solid var(--border-card);
-  border-radius: 6px;
+  border-radius: 8px;
   font-family: var(--font-mono);
   font-size: 14px;
-  padding: 4px 10px;
-  color: var(--text-muted);
+  font-weight: 600;
+  padding: 5px 12px;
+  color: var(--accent-cyan);
   right: 20px;
   bottom: 20px;
+  letter-spacing: 0.05em;
 }
 
 /* Custom helper footer */

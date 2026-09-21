@@ -18,8 +18,11 @@ Reveal.initialize({
   // Barra de progresso inferior
   progress: true,
 
-  // Número do slide atual / total
-  slideNumber: 'c/t',
+  // Configuração de navegação 2D (Capítulos na Horizontal, Slides na Vertical)
+  navigationMode: 'default',
+
+  // Número do slide atual no formato: Capítulo.Slide (ex: 1.1, 1.2, 2.1)
+  slideNumber: 'h.v',
 
   // Adiciona o slide à URL (ex: #/2) para permitir links diretos
   hash: true,
