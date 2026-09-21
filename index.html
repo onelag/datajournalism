@@ -1423,22 +1423,37 @@ plt.show()
           <p class="subtitle" style="margin-bottom: 0.5rem; font-size: 0.84em;">Uma das ferramentas mais populares em redações para análise estatística e gráficos (ggplot2)</p>
 
           <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.75rem; margin-top: 0.6rem; max-width: 940px; margin-left: auto; margin-right: auto;">
-            <div class="card fragment fade-up" style="padding: 0.75rem 1rem; text-align: left;">
-              <h4 style="color: var(--accent-cyan); font-size: 0.92em; margin-bottom: 0.25rem;">📦 sidrar (IBGE / SIDRA)</h4>
-              <p style="font-size: 0.76em; line-height: 1.35; margin: 0; color: #cbd5e1;">Permite baixar tabelas completas do Censo, PNAD, IPCA e PIB diretamente para o ambiente R com uma única linha de código, sem download manual de planilhas.</p>
-            </div>
-            <div class="card fragment fade-up" style="padding: 0.75rem 1rem; text-align: left;">
-              <h4 style="color: var(--accent-emerald); font-size: 0.92em; margin-bottom: 0.25rem;">📦 geobr (Mapas do Brasil)</h4>
-              <p style="font-size: 0.76em; line-height: 1.35; margin: 0; color: #cbd5e1;">Desenvolvido pelo IPEA para baixar automaticamente shapefiles oficiais de municípios, estados, biomas e setores censitários do IBGE para mapas temáticos.</p>
-            </div>
-            <div class="card fragment fade-up" style="padding: 0.75rem 1rem; text-align: left;">
-              <h4 style="color: var(--accent-amber); font-size: 0.92em; margin-bottom: 0.25rem;">📦 ipeadatar & electionsBR</h4>
-              <p style="font-size: 0.76em; line-height: 1.35; margin: 0; color: #cbd5e1;">Acesso programático a milhares de séries macroeconômicas do IPEA e dados históricos de candidaturas e votações do TSE.</p>
-            </div>
-            <div class="card fragment fade-up" style="padding: 0.75rem 1rem; text-align: left;">
-              <h4 style="color: var(--accent-purple); font-size: 0.92em; margin-bottom: 0.25rem;">📊 Tidyverse & Quarto</h4>
-              <p style="font-size: 0.76em; line-height: 1.35; margin: 0; color: #cbd5e1;">Gramática unificada de manipulação de dados (`dplyr`), visualização de alto nível (`ggplot2`) e relatórios reprodutíveis em PDF/HTML.</p>
-            </div>
+            <a href="https://cran.r-project.org/package=sidrar" target="_blank" rel="noopener noreferrer" class="card fragment fade-up" style="text-decoration: none; color: inherit; display: flex; flex-direction: column; justify-content: space-between; text-align: left; cursor: pointer; padding: 0.75rem 1rem;">
+              <div>
+                <h4 style="color: var(--accent-cyan); font-size: 0.92em; margin-bottom: 0.25rem;">📦 sidrar (IBGE / SIDRA) <span style="font-size: 0.8em; color: var(--accent-cyan);">↗</span></h4>
+                <p style="font-size: 0.76em; line-height: 1.35; margin: 0; color: #cbd5e1;">Permite baixar tabelas completas do Censo, PNAD, IPCA e PIB diretamente para o ambiente R com uma única linha de código, sem download manual de planilhas.</p>
+              </div>
+              <div style="font-size: 0.68em; color: var(--accent-cyan); margin-top: 0.4rem; font-weight: 600;">🔗 cran.r-project.org/package=sidrar ↗</div>
+            </a>
+
+            <a href="https://ipeagit.github.io/geobr/" target="_blank" rel="noopener noreferrer" class="card fragment fade-up" style="text-decoration: none; color: inherit; display: flex; flex-direction: column; justify-content: space-between; text-align: left; cursor: pointer; padding: 0.75rem 1rem;">
+              <div>
+                <h4 style="color: var(--accent-emerald); font-size: 0.92em; margin-bottom: 0.25rem;">📦 geobr (Mapas do Brasil) <span style="font-size: 0.8em; color: var(--accent-emerald);">↗</span></h4>
+                <p style="font-size: 0.76em; line-height: 1.35; margin: 0; color: #cbd5e1;">Desenvolvido pelo IPEA para baixar automaticamente shapefiles oficiais de municípios, estados, biomas e setores censitários do IBGE para mapas temáticos.</p>
+              </div>
+              <div style="font-size: 0.68em; color: var(--accent-emerald); margin-top: 0.4rem; font-weight: 600;">🔗 ipeagit.github.io/geobr ↗</div>
+            </a>
+
+            <a href="https://github.com/ipeaGIT/ipeadatar" target="_blank" rel="noopener noreferrer" class="card fragment fade-up" style="text-decoration: none; color: inherit; display: flex; flex-direction: column; justify-content: space-between; text-align: left; cursor: pointer; padding: 0.75rem 1rem;">
+              <div>
+                <h4 style="color: var(--accent-amber); font-size: 0.92em; margin-bottom: 0.25rem;">📦 ipeadatar & electionsBR <span style="font-size: 0.8em; color: var(--accent-amber);">↗</span></h4>
+                <p style="font-size: 0.76em; line-height: 1.35; margin: 0; color: #cbd5e1;">Acesso programático a milhares de séries macroeconômicas do IPEA e dados históricos de candidaturas e votações do TSE.</p>
+              </div>
+              <div style="font-size: 0.68em; color: var(--accent-amber); margin-top: 0.4rem; font-weight: 600;">🔗 github.com/ipeaGIT/ipeadatar ↗</div>
+            </a>
+
+            <a href="https://www.tidyverse.org/" target="_blank" rel="noopener noreferrer" class="card fragment fade-up" style="text-decoration: none; color: inherit; display: flex; flex-direction: column; justify-content: space-between; text-align: left; cursor: pointer; padding: 0.75rem 1rem;">
+              <div>
+                <h4 style="color: var(--accent-purple); font-size: 0.92em; margin-bottom: 0.25rem;">📊 Tidyverse & Quarto <span style="font-size: 0.8em; color: var(--accent-purple);">↗</span></h4>
+                <p style="font-size: 0.76em; line-height: 1.35; margin: 0; color: #cbd5e1;">Gramática unificada de manipulação de dados (`dplyr`), visualização de alto nível (`ggplot2`) e relatórios reprodutíveis em PDF/HTML.</p>
+              </div>
+              <div style="font-size: 0.68em; color: var(--accent-purple); margin-top: 0.4rem; font-weight: 600;">🔗 tidyverse.org ↗</div>
+            </a>
           </div>
 
           <aside class="notes">
