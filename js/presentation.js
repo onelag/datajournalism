@@ -153,3 +153,53 @@ function initChart() {
     }
   });
 }
+
+// Tooltip flutuante global para termos com data-tooltip (não altera layout dos slides)
+(function initGlobalTooltips() {
+  const tooltip = document.createElement('div');
+  tooltip.id = 'custom-floating-tooltip';
+  document.body.appendChild(tooltip);
+
+  function positionTooltip(e) {
+    const offset = 14;
+    let x = e.clientX + offset;
+    let y = e.clientY - tooltip.offsetHeight - offset;
+
+    if (y < 12) {
+      y = e.clientY + offset;
+    }
+    if (x + tooltip.offsetWidth > window.innerWidth - 12) {
+      x = e.clientX - tooltip.offsetWidth - offset;
+    }
+
+    tooltip.style.left = `${x}px`;
+    tooltip.style.top = `${y}px`;
+  }
+
+  document.addEventListener('mouseover', (e) => {
+    const target = e.target.closest('[data-tooltip]');
+    if (target) {
+      tooltip.innerHTML = target.getAttribute('data-tooltip');
+      tooltip.style.display = 'block';
+      positionTooltip(e);
+      requestAnimationFrame(() => {
+        tooltip.style.opacity = '1';
+      });
+    }
+  });
+
+  document.addEventListener('mousemove', (e) => {
+    if (tooltip.style.display === 'block') {
+      positionTooltip(e);
+    }
+  });
+
+  document.addEventListener('mouseout', (e) => {
+    const target = e.target.closest('[data-tooltip]');
+    if (target) {
+      tooltip.style.opacity = '0';
+      tooltip.style.display = 'none';
+    }
+  });
+})();
+
