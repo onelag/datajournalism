@@ -1641,7 +1641,7 @@ ORDER BY desemprego_medio DESC;</code></pre>
         </section>
       </section>
 
-      <!-- ========================================================= -->
+            <!-- ========================================================= -->
       <!-- CAPÍTULO 6: Limpeza, Tratamento & Análise Exploratória     -->
       <!-- ========================================================= -->
       <section>
@@ -1649,203 +1649,292 @@ ORDER BY desemprego_medio DESC;</code></pre>
         <section data-background-gradient="radial-gradient(circle at 50% 30%, #701a75 0%, #0a0e1a 100%)">
           <span class="badge" style="color: #f472b6; border-color: rgba(244, 114, 182, 0.4);">Capítulo 6/8</span>
           <h1>Limpeza, Tratamento & <span class="gradient-text-warm">Análise Exploratória</span></h1>
-          <p class="subtitle">Onde 80% do trabalho investigativo acontece: da sujeira à verdade auditável</p>
+          <p class="subtitle">Onde 80% do trabalho investigativo acontece: da base bruta à verdade auditável e compreensível</p>
 
           <div class="pill-list" style="justify-content: center; margin-top: 2rem;">
-            <div class="pill">🧹 OpenRefine</div>
-            <div class="pill">🐼 Pandas & Python</div>
-            <div class="pill">🔗 Cruzamento (Joins)</div>
-            <div class="pill">🎯 Detecção de Outliers</div>
+            <div class="pill">🔒 Cópia Inalterada (Raw Data)</div>
+            <div class="pill">🥉🥈🥇 Camadas Bronze, Prata e Ouro</div>
+            <div class="pill">🧹 Higienização de Erros Comuns</div>
+            <div class="pill">📏 Métricas vs. Dimensões</div>
+            <div class="pill">🔍 Análise Exploratória (EDA)</div>
           </div>
 
           <aside class="notes">
-            Limpeza de dados é jornalismo investigativo puro. É onde encontramos discrepâncias e desvios ocultos.
+            Limpeza e exploração de dados são o verdadeiro coração do jornalismo de dados. Sem tratar nulos, encodings e tipos numéricos, qualquer conclusão estatística subsequente pode resultar em uma manchete falsa.
           </aside>
         </section>
 
-        <!-- 6.2: Armadilhas em Dados Reais -->
+        <!-- 6.2: A Regra de Ouro: Preservação dos Dados Brutos -->
         <section>
-          <span class="badge">Capítulo 6 • Slide 2/7</span>
-          <h2>As Maiores Armadilhas em Bases Públicas</h2>
-          <p class="subtitle">O que pode arruinar uma manchete se o repórter não verificar</p>
+          <span class="badge">Capítulo 6 • Slide 2/9</span>
+          <h2>A Regra de Ouro: <span class="gradient-text-cyan">A Cópia Inalterada (Raw Data)</span></h2>
+          <p class="subtitle" style="margin-bottom: 0.5rem; font-size: 0.84em;">O princípio número um da segurança forense, auditoria e reprodutibilidade jornalística</p>
 
-          <div class="card-grid">
-            <div class="card fragment fade-up">
-              <div class="icon">⚠️</div>
-              <h4>Erros de Digitação Manual</h4>
-              <p>"Florianopolis", "Floripa", "Florianópolis-SC". Se não padronizar, o agrupamento vai separar a mesma
-                cidade em 3 linhas distintas.</p>
+          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.8rem; margin-top: 0.8rem; max-width: 980px; margin-left: auto; margin-right: auto;">
+            <div class="card fragment fade-up" style="padding: 0.85rem 1rem; text-align: left;">
+              <div class="icon" style="font-size: 1.5rem; margin-bottom: 0.4rem;">🔒</div>
+              <h4 style="color: var(--accent-cyan); font-size: 0.9em; margin-bottom: 0.3rem;">Nunca Sobrescreva o Original</h4>
+              <p style="font-size: 0.76em; line-height: 1.35; margin: 0; color: #cbd5e1;">O arquivo baixado do portal, resposta de LAI ou API deve ser gravado em modo <strong>somente leitura</strong> com data e hora. Se errar um script, você pode reiniciar do zero sem perder a fonte primária.</p>
             </div>
-            <div class="card fragment fade-up">
-              <div class="icon">👻</div>
-              <h4>Valores Nulos & Marcadores Falsos</h4>
-              <p>Campos preenchidos com "9999", "N/A" ou "00/00/0000" que distorcem médias e cálculos se interpretados
-                como números reais.</p>
-            </div>
-            <div class="card fragment fade-up">
-              <div class="icon">🔁</div>
-              <h4>Registros Duplicados</h4>
-              <p>O mesmo contrato ou pagamento lançado duas vezes por falhas de integração no sistema da prefeitura.</p>
-            </div>
-          </div>
 
-          <aside class="notes">
-            Nunca confie na pureza de um banco de dados governamental antes de rodar checagens de integridade.
-          </aside>
-        </section>
+            <div class="card fragment fade-up" style="padding: 0.85rem 1rem; text-align: left;">
+              <div class="icon" style="font-size: 1.5rem; margin-bottom: 0.4rem;">⚖️</div>
+              <h4 style="color: var(--accent-emerald); font-size: 0.9em; margin-bottom: 0.3rem;">Prova Documental e Jurídica</h4>
+              <p style="font-size: 0.76em; line-height: 1.35; margin: 0; color: #cbd5e1;">Em caso de contestação ou processo contra a reportagem, a posse da base bruta idêntica à do órgão público é o seu <strong>escudo legal</strong> de que as informações não foram inventadas ou manipuladas.</p>
+            </div>
 
-        <!-- 6.3: OpenRefine -->
-        <section>
-          <span class="badge">Capítulo 6 • Slide 3/7</span>
-          <h2>OpenRefine: O Canivete Suíço da Limpeza</h2>
-          <p class="subtitle">A ferramenta visual mais eficiente para higienização e agrupamento de dados</p>
-
-          <div class="card-grid-2">
-            <div class="card fragment">
-              <h4 style="color: var(--accent-cyan);">🧩 Agrupamento por Similaridade (Clustering)</h4>
-              <p>Algoritmos fonéticos (Metaphone, Levenshtein) encontram nomes digitados de formas diferentes e unificam
-                com um clique.</p>
-            </div>
-            <div class="card fragment">
-              <h4 style="color: var(--accent-purple);">🔄 Transformações em Lote</h4>
-              <p>Conversão instantânea de formatos de data (ex: DD/MM/AAAA para AAAA-MM-DD), remoção de espaços em
-                branco e acentos.</p>
-            </div>
-            <div class="card fragment">
-              <h4 style="color: var(--accent-amber);">📜 Histórico Completo de Auditoria</h4>
-              <p>Cada alteração fica gravada em um log JSON reproduzível, permitindo desfazer qualquer passo e anexar a
-                metodologia à matéria.</p>
-            </div>
-            <div class="card fragment">
-              <h4 style="color: var(--accent-emerald);">🌐 Reconciliação com Wikidata</h4>
-              <p>Cruze bases locais com o banco de dados global da Wikimedia para identificar políticos e empresas
-                automaticamente.</p>
+            <div class="card fragment fade-up" style="padding: 0.85rem 1rem; text-align: left;">
+              <div class="icon" style="font-size: 1.5rem; margin-bottom: 0.4rem;">📁</div>
+              <h4 style="color: var(--accent-amber); font-size: 0.9em; margin-bottom: 0.3rem;">Estrutura de Pastas do Projeto</h4>
+              <p style="font-size: 0.76em; line-height: 1.35; margin: 0; color: #cbd5e1;">Separe o projeto em pastas rígidas:<br>
+              <code>/data/raw/</code> (dados brutos intocados)<br>
+              <code>/data/processed/</code> (dados tratados)<br>
+              <code>/data/final/</code> (tabelas e gráficos finais)</p>
             </div>
           </div>
 
           <aside class="notes">
-            O OpenRefine funciona offline no navegador, garantindo sigilo absoluto caso o repórter esteja lidando com
-            vazamentos confidenciais.
+            Se você alterar o arquivo original diretamente no Excel e salvar em cima, você perde o rastro da auditoria e a prova jurídica da apuração.
           </aside>
         </section>
 
-        <!-- 6.4: Pandas & Python para Limpeza -->
+        <!-- 6.3: Arquitetura de Camadas: Bronze, Prata e Ouro -->
         <section>
-          <span class="badge">Capítulo 6 • Slide 4/7</span>
-          <h2>Tratamento Avançado com Python & Pandas</h2>
-          <p class="subtitle">Automatizando a limpeza de milhões de registros em frações de segundo</p>
+          <span class="badge">Capítulo 6 • Slide 3/9</span>
+          <h2>Arquitetura de Dados: <span class="gradient-text-warm">Bronze, Prata e Ouro</span></h2>
+          <p class="subtitle" style="margin-bottom: 0.5rem; font-size: 0.84em;">O padrão da engenharia de dados (Medallion Architecture) aplicado ao jornalismo investigativo</p>
 
-          <pre><code class="language-python" data-trim data-line-numbers="1-2|4-6|8-11|13-14">
-import pandas as pd
-
-# Carrega a base bruta de pagamentos
-df = pd.read_csv("pagamentos_saude.csv")
-
-# 1. Padroniza textos e remove espaços extras
-df['fornecedor'] = df['fornecedor'].str.upper().str.strip()
-
-# 2. Converte valores monetários ("R$ 1.500,00" -> 1500.00 float)
-df['valor'] = df['valor'].str.replace("R$", "").str.replace(".", "").str.replace(",", ".").astype(float)
-
-# 3. Elimina duplicidades exatas de pagamentos
-df = df.drop_duplicates(subset=['num_empenho', 'data_pagamento', 'valor'])
-
-print(f"Total auditado: R$ {df['valor'].sum():,.2f}")
-            </code></pre>
-
-          <aside class="notes">
-            Mostre como é simples limpar colunas de valores monetários que vêm cheias de caracteres especiais no Brasil.
-          </aside>
-        </section>
-
-        <!-- 6.5: Cruzamento de Bases (Joins) -->
-        <section>
-          <span class="badge">Capítulo 6 • Slide 5/7</span>
-          <h2>Cruzamento de Bases: Onde Surgem os Furos</h2>
-          <p class="subtitle">Conectando bases que as autoridades nunca imaginaram ver juntas</p>
-
-          <div class="card-grid">
-            <div class="card fragment fade-up">
-              <div class="icon">🏢</div>
-              <h4>Licitações + Quadro Societário</h4>
-              <p>Cruzamento via <strong>CNPJ</strong> para descobrir empresas vencedoras pertencentes a parentes de
-                servidores públicos.</p>
+          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.8rem; margin-top: 0.8rem; max-width: 980px; margin-left: auto; margin-right: auto;">
+            <div class="card fragment fade-up" style="padding: 0.85rem 1rem; text-align: left; border-top: 3px solid #d97706;">
+              <h4 style="color: #f59e0b; font-size: 0.92em; margin-bottom: 0.3rem;">🥉 Camada Bronze (Bruta / Raw)</h4>
+              <p style="font-size: 0.76em; line-height: 1.35; margin: 0; color: #cbd5e1;"><strong>Como está:</strong> Dados no formato exato em que saíram da fonte (CSV corrompido, JSON bruto de API, planilha com cabeçalhos bagunçados).<br><br>
+              <strong>Finalidade:</strong> Snapshot histórico imutável e backup para auditoria.</p>
             </div>
-            <div class="card fragment fade-up">
-              <div class="icon">🗳️</div>
-              <h4>Doações Eleitorais + Contratos</h4>
-              <p>Cruzamento de CPFs de doadores de campanha com sócios de empresas que ganharam contratos sem licitação
-                meses depois.</p>
+
+            <div class="card fragment fade-up" style="padding: 0.85rem 1rem; text-align: left; border-top: 3px solid #94a3b8;">
+              <h4 style="color: #e2e8f0; font-size: 0.92em; margin-bottom: 0.3rem;">🥈 Camada Prata (Tratada / Cleaned)</h4>
+              <p style="font-size: 0.76em; line-height: 1.35; margin: 0; color: #cbd5e1;"><strong>Como está:</strong> Dados higienizados: tipos corrigidos (datas em ISO, números com ponto), UTF-8 padronizado, nulos tratados e duplicidades removidas.<br><br>
+              <strong>Finalidade:</strong> Base limpa e segura para consultas e exploração.</p>
             </div>
-            <div class="card fragment fade-up">
-              <div class="icon">📍</div>
-              <h4>Endereços + Receita Federal</h4>
-              <p>Identificação de dezenas de empresas concorrentes registradas exatamente no mesmo endereço ou sala
-                comercial.</p>
+
+            <div class="card fragment fade-up" style="padding: 0.85rem 1rem; text-align: left; border-top: 3px solid #eab308;">
+              <h4 style="color: #fde047; font-size: 0.92em; margin-bottom: 0.3rem;">🥇 Camada Ouro (Especializada / Marts)</h4>
+              <p style="font-size: 0.76em; line-height: 1.35; margin: 0; color: #cbd5e1;"><strong>Como está:</strong> Tabelas agregadas com cruzamentos (<em>joins</em>) entre bases (ex: despesas + CNPJ + doadores), métricas calculadas e prontas.<br><br>
+              <strong>Finalidade:</strong> Alimentar matérias, gráficos e dashboards finais.</p>
             </div>
           </div>
 
           <aside class="notes">
-            O "Join" de bancos de dados é a operação mais frutífera do jornalismo investigativo moderno.
+            Adotar a arquitetura Bronze-Prata-Ouro impede que o jornalista misture dados não tratados com números finais que irão para a manchete.
           </aside>
         </section>
 
-        <!-- 6.6: Outliers & Anomalias -->
+        <!-- 6.4: Problemas Comuns de Limpeza: Nulos, Encodings e Duplicidades -->
         <section>
-          <span class="badge">Capítulo 6 • Slide 6/7</span>
-          <h2>Caçando Outliers (Valores Fora da Curva)</h2>
-          <p class="subtitle">Como identificar desvios estatísticos que apontam para suspeitas reais</p>
+          <span class="badge">Capítulo 6 • Slide 4/9</span>
+          <h2>Armadilhas Clássicas: <span class="gradient-text">Nulos, Encodings & Duplicatas</span></h2>
+          <p class="subtitle" style="margin-bottom: 0.5rem; font-size: 0.84em;">Erros silenciosos que distorcem cálculos e quebram filtros em bancos governamentais</p>
 
-          <div class="card-grid-2">
-            <div class="card fragment">
-              <h4 style="color: var(--accent-cyan);">📈 Dispersão de Preços Unitários</h4>
-              <p>Um hospital compra caixas de luvas por R$ 25, enquanto outro compra por R$ 380 do mesmo fornecedor na
-                mesma semana.</p>
+          <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.75rem; margin-top: 0.6rem; max-width: 940px; margin-left: auto; margin-right: auto;">
+            <div class="card fragment fade-up" style="padding: 0.75rem 1rem; text-align: left;">
+              <h4 style="color: var(--accent-cyan); font-size: 0.92em; margin-bottom: 0.25rem;">👻 Nulos vs. Espaços em Branco</h4>
+              <p style="font-size: 0.76em; line-height: 1.35; margin: 0; color: #cbd5e1;"><code>NULL</code> (inexistente), <code>""</code> (vazio) e <code>"   "</code> (espaço invisível). No SQL/Pandas, espaços não são nulos e quebram filtros de busca. Cuidado também com marcadores falsos como <code>"9999"</code>, <code>"-1"</code> ou <code>"NÃO INFORMADO"</code>.</p>
             </div>
-            <div class="card fragment">
-              <h4 style="color: var(--accent-purple);">⏱️ Concentração Temporal Anômala</h4>
-              <p>Dezenas de notas fiscais emitidas no mesmo minuto na virada do exercício fiscal em 31 de dezembro.</p>
+
+            <div class="card fragment fade-up" style="padding: 0.75rem 1rem; text-align: left;">
+              <h4 style="color: var(--accent-purple); font-size: 0.92em; margin-bottom: 0.25rem;">🔤 Character Encoding (UTF-8 vs Latin-1)</h4>
+              <p style="font-size: 0.76em; line-height: 1.35; margin: 0; color: #cbd5e1;">O famoso <em>Mojibake</em>: <code>SÃ£o Paulo</code> em vez de <code>São Paulo</code>. Acontece quando um arquivo salvo em <code>Latin-1 (ISO-8859-1)</code> ou <code>Windows-1252</code> é aberto como <code>UTF-8</code> sem declarar o encoding correto.</p>
             </div>
-            <div class="card fragment">
-              <h4 style="color: var(--accent-amber);">🎯 Lei de Benford</h4>
-              <p>Análise da frequência do primeiro dígito em despesas contábeis para detectar números forjados
-                artificialmente.</p>
+
+            <div class="card fragment fade-up" style="padding: 0.75rem 1rem; text-align: left;">
+              <h4 style="color: var(--accent-amber); font-size: 0.92em; margin-bottom: 0.25rem;">🔁 Duplicidades Exatas vs. Parciais</h4>
+              <p style="font-size: 0.76em; line-height: 1.35; margin: 0; color: #cbd5e1;">Linhas 100% duplicadas por falha no download vs. registros com mesmo código de empenho, mas parcelas diferentes. Sempre defina a <strong>chave composta</strong> (subconjunto de colunas) antes de deletar registros.</p>
             </div>
-            <div class="card fragment">
-              <h4 style="color: var(--accent-emerald);">🗺️ Incoerência Geográfica</h4>
-              <p>Uma empresa de transporte escolar em Santa Catarina prestando serviços para um município no interior do
-                Amazonas.</p>
+
+            <div class="card fragment fade-up" style="padding: 0.75rem 1rem; text-align: left;">
+              <h4 style="color: var(--accent-emerald); font-size: 0.92em; margin-bottom: 0.25rem;">🧽 Espaços nas Extremidades (Trim / Strip)</h4>
+              <p style="font-size: 0.76em; line-height: 1.35; margin: 0; color: #cbd5e1;"><code>"Hospital Municipal "</code> é diferente de <code>"Hospital Municipal"</code> para o computador. Espaços no início ou fim impedem cruzamentos (<em>joins</em>) e criam categorias duplicadas em gráficos.</p>
             </div>
           </div>
 
           <aside class="notes">
-            A Lei de Benford e os desvios-padrão são ferramentas estatísticas consagradas em auditorias forenses.
+            Sempre execute uma rotina de strip/trim e padronização de maiúsculas/minúsculas antes de tentar relacionar duas tabelas.
           </aside>
         </section>
 
-        <!-- 6.7: Conclusão Cap. 5 -->
+        <!-- 6.5: Padrão Numérico & Datas: Brasil vs. Mundo -->
+        <section>
+          <span class="badge">Capítulo 6 • Slide 5/9</span>
+          <h2>Padrão Numérico & Datas: <span class="gradient-text-cyan">Brasil vs. Padrão Internacional</span></h2>
+          <p class="subtitle" style="margin-bottom: 0.5rem; font-size: 0.84em;">Como tratar separadores decimais e datas para evitar erros fatais de cálculo</p>
+
+          <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.8rem; margin-top: 0.6rem; max-width: 950px; margin-left: auto; margin-right: auto;">
+            <div class="card fragment fade-up" style="padding: 0.8rem 1.1rem; text-align: left;">
+              <h4 style="color: var(--accent-amber); font-size: 0.92em; margin-bottom: 0.3rem;">🔢 Ponto vs. Vírgula (Decimal & Milhar)</h4>
+              <p style="font-size: 0.76em; line-height: 1.35; color: #cbd5e1; margin-bottom: 0.5rem;">
+                • <strong>Padrão Brasileiro:</strong> <code>R$ 1.500.000,50</code> (ponto separa milhar, vírgula separa decimal).<br>
+                • <strong>Padrão Python / SQL / Internacional:</strong> <code>1500000.50</code> (ponto separa decimal).
+              </p>
+              <div style="background: rgba(15, 23, 42, 0.85); padding: 0.5rem 0.7rem; border-radius: 6px; font-size: 0.68em; color: #38bdf8;">
+                <code># Tratamento seguro em Python / Pandas:<br>df['valor'] = df['valor'].str.replace('.', '', regex=False).str.replace(',', '.', regex=False).astype(float)</code>
+              </div>
+            </div>
+
+            <div class="card fragment fade-up" style="padding: 0.8rem 1.1rem; text-align: left;">
+              <h4 style="color: var(--accent-emerald); font-size: 0.92em; margin-bottom: 0.3rem;">📅 Padronização de Datas (ISO 8601)</h4>
+              <p style="font-size: 0.76em; line-height: 1.35; color: #cbd5e1; margin-bottom: 0.5rem;">
+                • <strong>Ambiguidade:</strong> <code>05/04/2024</code> é 5 de abril (Brasil) ou 4 de maio (EUA)?<br>
+                • <strong>Padrão Internacional ISO 8601:</strong> <code>AAAA-MM-DD</code> (ex: <code>2024-04-05</code>).
+              </p>
+              <div style="background: rgba(15, 23, 42, 0.85); padding: 0.5rem 0.7rem; border-radius: 6px; font-size: 0.68em; color: #34d399;">
+                <code># Conversão com indicação explícita do formato BR:<br>df['data'] = pd.to_datetime(df['data'], format='%d/%m/%Y')</code>
+              </div>
+            </div>
+          </div>
+
+          <aside class="notes">
+            Se você não converter a vírgula para ponto e apenas remover a vírgula, um valor de R$ 10,50 vira R$ 1050,00 ou vira NaN.
+          </aside>
+        </section>
+
+        <!-- 6.6: Métricas vs. Dimensões -->
+        <section>
+          <span class="badge">Capítulo 6 • Slide 6/9</span>
+          <h2>Métricas vs. Dimensões: <span class="gradient-text-emerald">A Anatomia dos Dados</span></h2>
+          <p class="subtitle" style="margin-bottom: 0.5rem; font-size: 0.84em;">Entender a diferença entre atributos qualitativos e quantitativos é a base de qualquer apuração</p>
+
+          <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.85rem; margin-top: 0.7rem; max-width: 950px; margin-left: auto; margin-right: auto;">
+            <div class="card fragment fade-up" style="padding: 0.85rem 1.1rem; text-align: left; border-left: 4px solid var(--accent-cyan);">
+              <h4 style="color: var(--accent-cyan); font-size: 0.95em; margin-bottom: 0.35rem;">🏷️ Dimensões (Atributos Qualitativos)</h4>
+              <p style="font-size: 0.78em; line-height: 1.4; color: #cbd5e1; margin-bottom: 0.5rem;">
+                Respondem: <strong>Quem? Onde? Quando? Qual categoria?</strong>
+              </p>
+              <ul style="margin: 0; padding-left: 1.1rem; font-size: 0.75em; color: #94a3b8; line-height: 1.4;">
+                <li><strong>Exemplos:</strong> Estado (UF), Partido, Nome do Deputado, Mês/Ano, CNPJ, Sexo, Faixa Etária.</li>
+                <li><strong>Função nos Dados:</strong> Servem para <strong>filtrar, segmentar e agrupar</strong> (<code>GROUP BY</code> no SQL ou categorias no eixo X de gráficos).</li>
+              </ul>
+            </div>
+
+            <div class="card fragment fade-up" style="padding: 0.85rem 1.1rem; text-align: left; border-left: 4px solid var(--accent-emerald);">
+              <h4 style="color: var(--accent-emerald); font-size: 0.95em; margin-bottom: 0.35rem;">📈 Métricas (Medidas Quantitativas)</h4>
+              <p style="font-size: 0.78em; line-height: 1.4; color: #cbd5e1; margin-bottom: 0.5rem;">
+                Respondem: <strong>Quanto? Quantos? Qual volume?</strong>
+              </p>
+              <ul style="margin: 0; padding-left: 1.1rem; font-size: 0.75em; color: #94a3b8; line-height: 1.4;">
+                <li><strong>Exemplos:</strong> Valor Pago (R$), Total de Votos, População, Taxa Selic, Quantidade de Leitos.</li>
+                <li><strong>Função nos Dados:</strong> Valores numéricos que sofrem <strong>cálculos e agregações</strong> (<code>SUM</code>, <code>AVG</code>, <code>MEDIAN</code>, <code>COUNT</code>, <code>MIN</code>, <code>MAX</code>).</li>
+              </ul>
+            </div>
+          </div>
+
+          <aside class="notes">
+            Regra prática: Se você pode somar ou calcular a média matemática, é métrica. Se você usa para fatiar, agrupar ou classificar, é dimensão.
+          </aside>
+        </section>
+
+        <!-- 6.7: Análise Exploratória de Dados (EDA) -->
+        <section>
+          <span class="badge">Capítulo 6 • Slide 7/9</span>
+          <h2>Análise Exploratória: <span class="gradient-text">A Entrevista com a Base (EDA)</span></h2>
+          <p class="subtitle" style="margin-bottom: 0.5rem; font-size: 0.84em;">O processo investigativo de interrogar a tabela para descobrir hipóteses, limites e anomalias</p>
+
+          <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.65rem; margin-top: 0.7rem; max-width: 980px; margin-left: auto; margin-right: auto;">
+            <div class="card fragment fade-up" style="padding: 0.75rem 0.85rem; text-align: left;">
+              <div style="font-size: 1.3rem; margin-bottom: 0.3rem;">1️⃣</div>
+              <h4 style="color: var(--accent-cyan); font-size: 0.85em; margin-bottom: 0.25rem;">Estrutura & Nulos</h4>
+              <p style="font-size: 0.72em; line-height: 1.3; margin: 0; color: #cbd5e1;">Quantas linhas e colunas? Quais colunas estão vazias? O que é dado obrigatório e o que é opcional?</p>
+            </div>
+
+            <div class="card fragment fade-up" style="padding: 0.75rem 0.85rem; text-align: left;">
+              <div style="font-size: 1.3rem; margin-bottom: 0.3rem;">2️⃣</div>
+              <h4 style="color: var(--accent-emerald); font-size: 0.85em; margin-bottom: 0.25rem;">Sumário Estatístico</h4>
+              <p style="font-size: 0.72em; line-height: 1.3; margin: 0; color: #cbd5e1;">Qual o Mínimo, Máximo e Média? A <strong>Mediana</strong> é muito diferente da média? (Alerta de assimetria grave!).</p>
+            </div>
+
+            <div class="card fragment fade-up" style="padding: 0.75rem 0.85rem; text-align: left;">
+              <div style="font-size: 1.3rem; margin-bottom: 0.3rem;">3️⃣</div>
+              <h4 style="color: var(--accent-amber); font-size: 0.85em; margin-bottom: 0.25rem;">Frequências & Tops</h4>
+              <p style="font-size: 0.72em; line-height: 1.3; margin: 0; color: #cbd5e1;">Quais os 10 maiores recebedores de recursos? Existe um único fornecedor que concentra 80% dos contratos?</p>
+            </div>
+
+            <div class="card fragment fade-up" style="padding: 0.75rem 0.85rem; text-align: left;">
+              <div style="font-size: 1.3rem; margin-bottom: 0.3rem;">4️⃣</div>
+              <h4 style="color: var(--accent-purple); font-size: 0.85em; margin-bottom: 0.25rem;">Caça a Outliers</h4>
+              <p style="font-size: 0.72em; line-height: 1.3; margin: 0; color: #cbd5e1;">Quais valores fogem 3 desvios-padrão da curva? É um erro de digitação do órgão ou um escândalo real?</p>
+            </div>
+          </div>
+
+          <aside class="notes">
+            Na EDA, o jornalista não tenta provar uma tese preconcebida, mas sim entender o que a base realmente contém antes de formular perguntas.
+          </aside>
+        </section>
+
+        <!-- 6.8: Ferramentas de Limpeza: OpenRefine & Pandas -->
+        <section>
+          <span class="badge">Capítulo 6 • Slide 8/9</span>
+          <h2>A Caixa de Ferramentas: <span class="gradient-text-warm">No-Code & Automação</span></h2>
+          <p class="subtitle" style="margin-bottom: 0.5rem; font-size: 0.84em;">Escolha a ferramenta adequada de acordo com a escala e a complexidade do trabalho</p>
+
+          <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.85rem; margin-top: 0.65rem; max-width: 950px; margin-left: auto; margin-right: auto;">
+            <div class="card fragment fade-up" style="padding: 0.85rem 1.1rem; text-align: left;">
+              <h4 style="color: var(--accent-cyan); font-size: 0.95em; margin-bottom: 0.35rem;">🧩 OpenRefine (Limpeza Visual No-Code)</h4>
+              <p style="font-size: 0.76em; line-height: 1.35; color: #cbd5e1; margin-bottom: 0.4rem;">
+                Ideal para bases médias (até centenas de milhares de linhas) com muitos erros de digitação de texto.
+              </p>
+              <ul style="margin: 0; padding-left: 1.1rem; font-size: 0.74em; color: #94a3b8; line-height: 1.35;">
+                <li><strong>Clustering Fonético:</strong> Agrupa variações como "Secretaria de Saúde", "Sec Saude" e "Sec. de Saude" com um clique (Metaphone / Levenshtein).</li>
+                <li><strong>Log Reproduzível:</strong> Grava o histórico JSON de todas as transformações.</li>
+              </ul>
+            </div>
+
+            <div class="card fragment fade-up" style="padding: 0.85rem 1.1rem; text-align: left;">
+              <h4 style="color: var(--accent-emerald); font-size: 0.95em; margin-bottom: 0.35rem;">🐼 Python (Pandas) / R (Tidyverse)</h4>
+              <p style="font-size: 0.76em; line-height: 1.35; color: #cbd5e1; margin-bottom: 0.4rem;">
+                Indispensável para pipelines automatizados, milhões de linhas e cruzamento contínuo de dados.
+              </p>
+              <ul style="margin: 0; padding-left: 1.1rem; font-size: 0.74em; color: #94a3b8; line-height: 1.35;">
+                <li><strong>Tratamento Vetorizado:</strong> Conversão instantânea de tipos e regex em segundos.</li>
+                <li><strong>Cruzamento Robusto (Joins):</strong> Conexão precisa de bases por chaves primárias (CPF, CNPJ, Código IBGE).</li>
+              </ul>
+            </div>
+          </div>
+
+          <aside class="notes">
+            O OpenRefine é excelente para exploração inicial rápida e higienização de nomes próprios; o Python/R garante automação reprodutível em larga escala.
+          </aside>
+        </section>
+
+        <!-- 6.9: Conclusão Cap. 6 -->
         <section data-background-gradient="radial-gradient(circle at 50% 50%, #701a75 0%, #0a0e1a 100%)">
           <span class="badge badge-emerald">Capítulo 6 • Conclusão</span>
-          <h2>Auditoria & Reprodutibilidade</h2>
+          <h2>Da Higienização à Narrativa Auditável</h2>
 
-          <div class="card" style="margin-top: 1.5rem;">
-            <h4>🔒 Regra de Proteção Jurídica:</h4>
-            <p style="font-size: 0.95em;">"Se a sua apuração não puder ser reproduzida exatamente por outro repórter
-              rodando o mesmo script nos mesmos dados brutos, a matéria não está pronta para ser publicada."</p>
+          <div class="pill-list" style="justify-content: center; margin-top: 1.5rem; gap: 0.8rem;">
+            <div class="pill">🔒 Cópia Original Intocada</div>
+            <div class="pill">🥉🥈🥇 Pipeline Bronze-Prata-Ouro</div>
+            <div class="pill">🧹 Tipos & Encodings Padronizados</div>
+            <div class="pill">🔍 EDA com Média e Mediana</div>
           </div>
 
-          <p style="text-align: center; color: var(--accent-cyan); margin-top: 1.8rem; font-size: 0.85em;">
+          <div class="card" style="margin-top: 1.5rem; max-width: 900px; margin-left: auto; margin-right: auto;">
+            <h4>💡 Princípio da Reprodutibilidade no Jornalismo:</h4>
+            <p style="font-size: 0.92em; line-height: 1.45;">
+              "No jornalismo de dados, o processo de limpeza e análise exploratória deve ser tão rigoroso e transparente que qualquer outro repórter, munido dos mesmos dados brutos e do mesmo código, consiga chegar exatamente às mesmas conclusões."
+            </p>
+          </div>
+
+          <p style="text-align: center; color: var(--accent-cyan); margin-top: 1.5rem; font-size: 0.85em;">
             👉 Pressione a tecla <strong>DIREITA (➡️)</strong> para iniciar o <strong>Capítulo 7: Análise Estatística, Investigação & BI</strong>
           </p>
 
           <aside class="notes">
-            Enfatize o valor da reprodutibilidade para a credibilidade do veículo e do jornalista.
+            Enfatize o valor da reprodutibilidade para a credibilidade e segurança jurídica da reportagem.
           </aside>
         </section>
       </section>
 
       <!-- ========================================================= -->
-      <!-- CAPÍTULO 6: Análise Estatística, Investigação & BI         -->
+      <!-- CAPÍTULO 7: Análise Estatística, Investigação & BI         -->
       <!-- ========================================================= -->
       <section>
         <!-- 7.1: Abertura Cap. 6 -->
