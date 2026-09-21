@@ -138,6 +138,68 @@
   text-align: left;
 }
 
+/* Clickable Brazilian Case Cards (2x2 Compact Grid) */
+.case-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.9rem;
+  margin-top: 0.8rem;
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.case-card {
+  background: var(--bg-card);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border-card);
+  border-radius: 14px;
+  padding: 0.85rem 1.1rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  text-align: left;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.case-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--accent-cyan);
+  background: var(--bg-card-hover);
+  box-shadow: 0 12px 30px rgba(56, 189, 248, 0.2);
+}
+
+.case-card h4 {
+  font-size: 0.92em;
+  font-weight: 700;
+  margin: 0 0 0.3rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.case-card p {
+  font-size: 0.74em;
+  color: #cbd5e1;
+  line-height: 1.38;
+  margin: 0;
+}
+
+.case-card .card-link-hint {
+  font-size: 0.66em;
+  color: var(--accent-cyan);
+  margin-top: 0.4rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
 .scale-card::before {
   content: '';
   position: absolute;
