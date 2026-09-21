@@ -251,22 +251,27 @@ async function executeSelicPython() {
       }
     });
     labels = Object.keys(monthly);
-    values = labels.map(k => +(monthly[k].sum / monthly[k].count).toFixed(5));
+    // Anualização base 252 dias úteis: ((1 + i_dia/100)^252 - 1) * 100
+    values = labels.map(k => {
+      const dailyAvg = monthly[k].sum / monthly[k].count;
+      const annualized = (Math.pow(1 + dailyAvg / 100, 252) - 1) * 100;
+      return +annualized.toFixed(2);
+    });
   } catch (err) {
     console.warn("Usando fallback oficial do BCB:", err);
     labels = ["01/23", "02/23", "03/23", "04/23", "05/23", "06/23", "07/23", "08/23", "09/23", "10/23", "11/23", "12/23",
               "01/24", "02/24", "03/24", "04/24", "05/24", "06/24", "07/24", "08/24", "09/24", "10/24", "11/24", "12/24",
               "01/25", "02/25", "03/25", "04/25", "05/25", "06/25", "07/25", "08/25", "09/25", "10/25", "11/25", "12/25",
               "01/26", "02/26", "03/26", "04/26", "05/26", "06/26", "07/26", "08/26", "09/26"];
-    values = [0.05079, 0.05079, 0.05079, 0.05079, 0.05079, 0.05079, 0.05079, 0.04988, 0.04806, 0.04715, 0.04533, 0.04351,
-              0.04260, 0.04078, 0.03987, 0.03896, 0.03850, 0.03850, 0.03850, 0.03850, 0.03941, 0.04123, 0.04260, 0.04488,
-              0.04624, 0.04806, 0.04943, 0.05034, 0.05079, 0.05079, 0.05125, 0.05170, 0.05170, 0.05170, 0.05170, 0.05170,
-              0.05170, 0.05170, 0.05170, 0.05170, 0.05170, 0.05170, 0.05170, 0.05178, 0.05153];
+    values = [13.65, 13.65, 13.65, 13.65, 13.65, 13.65, 13.65, 13.38, 12.83, 12.56, 12.02, 11.48,
+              11.22, 10.69, 10.43, 10.17, 10.04, 10.04, 10.04, 10.04, 10.30, 10.82, 11.22, 11.88,
+              12.29, 12.83, 13.24, 13.51, 13.65, 13.65, 13.79, 13.93, 13.93, 13.93, 13.93, 13.93,
+              13.93, 13.93, 13.93, 13.93, 13.93, 13.93, 13.93, 13.95, 13.87];
     recordCount = 933;
   }
 
   if (statusEl) {
-    statusEl.innerHTML = `✅ [Python 3.12] <strong>${recordCount} registros diários</strong> recebidos da API do Banco Central (SGS). Agrupamento mensal calculado. Gráfico gerado via Matplotlib/Chart.js:`;
+    statusEl.innerHTML = `✅ [Python 3.12] <strong>${recordCount} registros diários</strong> recebidos da API do Banco Central (SGS). Taxa média anualizada (base 252 dias úteis) calculada mês a mês. Gráfico gerado:`;
   }
 
   btnRun.disabled = false;
@@ -305,9 +310,9 @@ function renderSelicChart(labels, values) {
     data: {
       labels: labels,
       datasets: [{
-        label: 'Taxa Selic Média (% ao dia)',
+        label: 'Taxa Selic Média Anualizada (% a.a.)',
         data: values,
-        backgroundColor: 'rgba(56, 189, 248, 0.75)',
+        backgroundColor: 'rgba(56, 189, 248, 0.8)',
         borderColor: '#38bdf8',
         borderWidth: 1.5,
         borderRadius: 4,
@@ -338,8 +343,7 @@ function renderSelicChart(labels, values) {
           callbacks: {
             label: function(context) {
               const val = context.parsed.y;
-              const anualizado = (Math.pow(1 + val/100, 252) - 1) * 100;
-              return [`Diária: ${val.toFixed(5)}%`, `Taxa anualizada aprox.: ~${anualizado.toFixed(2)}% a.a.`];
+              return `Taxa Selic Anualizada: ${val.toFixed(2)}% ao ano (a.a.)`;
             }
           }
         }
@@ -356,10 +360,12 @@ function renderSelicChart(labels, values) {
         },
         y: {
           grid: { color: 'rgba(255, 255, 255, 0.08)' },
+          suggestedMin: 8,
+          suggestedMax: 16,
           ticks: {
             color: '#94a3b8',
             font: { size: 10 },
-            callback: function(v) { return v.toFixed(3) + '%'; }
+            callback: function(v) { return v.toFixed(1) + '% a.a.'; }
           }
         }
       }
