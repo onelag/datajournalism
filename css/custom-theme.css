@@ -719,13 +719,14 @@
 }
 
 /* Polígonos interativos do Mapa Coroplético (geobr / R) */
-.map-poly {
+.map-poly, .muni-poly {
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all 0.15s ease;
+  vector-effect: non-scaling-stroke;
 }
 
-.map-poly:hover {
-  filter: brightness(1.35) drop-shadow(0 0 8px rgba(255, 255, 255, 0.7));
+.map-poly:hover, .muni-poly:hover {
+  filter: brightness(1.45) drop-shadow(0 0 8px #ffffff);
   stroke: #ffffff !important;
-  stroke-width: 2px !important;
+  stroke-width: 1.6px !important;
 }

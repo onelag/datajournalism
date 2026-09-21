@@ -201,6 +201,23 @@ function initChart() {
       tooltip.style.display = 'none';
     }
   });
+
+  // Atualização dinâmica do painel do mapa municipal (Slide 5.7)
+  document.addEventListener('mouseover', (e) => {
+    const poly = e.target.closest('.muni-poly');
+    if (poly) {
+      const name = poly.getAttribute('data-name');
+      const uf = poly.getAttribute('data-uf');
+      const idhm = poly.getAttribute('data-idhm');
+      const faixa = poly.getAttribute('data-faixa');
+      const fill = poly.getAttribute('fill') || '#38bdf8';
+      
+      const infoEl = document.getElementById('activeMuniInfo');
+      if (infoEl) {
+        infoEl.innerHTML = `📍 <strong>${name} (${uf})</strong> &bull; IDHM: <span style="color: ${fill}; font-weight: 800;">${idhm}</span> <span style="font-size: 0.85em; opacity: 0.9;">(${faixa})</span>`;
+      }
+    }
+  });
 })();
 
 // =========================================================
@@ -222,7 +239,7 @@ function executeRScript() {
   resultContainer.style.display = 'block';
 
   if (statusEl) {
-    statusEl.innerHTML = '⚡ [R 4.4.0] Carregando <code>geobr</code> e <code>ggplot2</code>... Baixando malhas dos 1.191 municípios da Região Sul (PR, SC, RS)... Cruzando com Atlas do IDHM... Renderizando com <code>scale_fill_viridis_c()</code>:';
+    statusEl.innerHTML = '⚡ [R 4.4.0] Carregando <code>geobr</code> e <code>ggplot2</code>... Baixando malhas dos 1.188 municípios da Região Sul (PR, SC, RS)... Cruzando com Atlas do IDHM... Renderizando com <code>scale_fill_viridis_c()</code>:';
   }
 
   setTimeout(() => {
