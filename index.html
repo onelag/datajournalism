@@ -1223,204 +1223,240 @@
       </section>
 
       <!-- ========================================================= -->
-      <!-- CAPÍTULO 5: Coleta, Raspagem & Estruturação de Dados      -->
+      <!-- CAPÍTULO 5: Extração de Dados: APIs, Python, R & SQL      -->
       <!-- ========================================================= -->
       <section>
-        <!-- 5.1: Abertura Cap. 4 -->
+        <!-- 5.1: Abertura Cap. 5 -->
         <section data-background-gradient="radial-gradient(circle at 50% 30%, #064e3b 0%, #0a0e1a 100%)">
           <span class="badge badge-emerald">Capítulo 5/8</span>
-          <h1>Coleta, Raspagem & <span class="gradient-text-emerald">Extração de Dados</span></h1>
-          <p class="subtitle">Como capturar, desbloquear e estruturar informações espalhadas na web</p>
+          <h1>Extração de Dados: <span class="gradient-text-emerald">APIs, Programação & SQL</span></h1>
+          <p class="subtitle">Como conectar sua investigação diretamente às fontes estruturadas e automatizar coletas</p>
 
           <div class="pill-list" style="justify-content: center; margin-top: 2rem;">
-            <div class="pill">🕷️ Web Scraping</div>
-            <div class="pill">📄 Tabula & OCR</div>
-            <div class="pill">🔌 APIs REST</div>
-            <div class="pill">🐍 Python Requests</div>
+            <div class="pill">🔌 APIs Públicas (BCB, Câmara, TSE)</div>
+            <div class="pill">🛠️ Postman & Power BI</div>
+            <div class="pill">🐍 Python & Gráfico da Selic</div>
+            <div class="pill">📊 R & Pacotes do IBGE</div>
+            <div class="pill">🗄️ SQL & Base dos Dados</div>
           </div>
 
           <aside class="notes">
-            Neste capítulo, aprenderemos as técnicas para quando o dado está visível em um site, mas não há botão de
-            download em CSV.
+            Neste capítulo, aprenderemos como o repórter obtém dados diretamente de servidores governamentais usando APIs, ferramentas no-code como Postman e Power BI, scripts em Python/R e consultas SQL para grandes volumes.
           </aside>
         </section>
 
-        <!-- 5.2: O Desafio dos PDFs -->
+        <!-- 5.2: O que são APIs e Principais Fontes no Brasil -->
         <section>
-          <span class="badge">Capítulo 5 • Slide 2/7</span>
-          <h2>O Purgatório dos PDFs: <span class="gradient-text-warm">Como Libertar Tabelas</span></h2>
-          <p class="subtitle">O PDF foi criado para impressão no papel, não para análise de dados</p>
-
-          <div class="card-grid">
-            <div class="card fragment fade-up">
-              <div class="icon">📑</div>
-              <h4>Tabula (Software Gratuito)</h4>
-              <p>Interface gráfica simples: selecione a tabela com o mouse sobre o PDF e exporte direto para CSV/Excel
-                em segundos.</p>
-            </div>
-            <div class="card fragment fade-up">
-              <div class="icon">🐍</div>
-              <h4>pdfplumber / PyPDF (Python)</h4>
-              <p>Bibliotecas programáveis para extrair milhares de páginas de relatórios contábeis e diários oficiais em
-                lote.</p>
-            </div>
-            <div class="card fragment fade-up">
-              <div class="icon">👁️</div>
-              <h4>Tesseract OCR</h4>
-              <p>Reconhecimento Óptico de Caracteres para quando o PDF é apenas uma foto escaneada de documento
-                impresso.</p>
-            </div>
-          </div>
-
-          <aside class="notes">
-            O Tabula é a primeira ferramenta que todo estudante de jornalismo deve ter instalada no computador.
-          </aside>
-        </section>
-
-        <!-- 5.3: O que é Web Scraping -->
-        <section>
-          <span class="badge">Capítulo 5 • Slide 3/7</span>
-          <h2>O que é <span class="gradient-text">Web Scraping</span> (Raspagem de Dados)?</h2>
-          <p class="subtitle">Escrever um script que navega em páginas da web e coleta dados automaticamente</p>
+          <span class="badge">Capítulo 5 • Slide 2/8</span>
+          <h2>O Poder das <span class="gradient-text-emerald">APIs Públicas</span></h2>
+          <p class="subtitle">Conexões diretas que devolvem dados limpos e atualizados em JSON sem telas visuais</p>
 
           <div class="card-grid-2">
             <div class="card fragment">
-              <h4 style="color: var(--accent-cyan);">1. Requisição HTTP</h4>
-              <p>O script solicita o código HTML da página do mesmo modo que o navegador Chrome faz.</p>
+              <h4 style="color: var(--accent-cyan);">🏛️ Câmara dos Deputados & Senado</h4>
+              <p>Endpoints com gastos parlamentares (Cota CEAP), votações nominais de cada deputado, discursos em plenário e tramitação de projetos em tempo real.</p>
             </div>
             <div class="card fragment">
-              <h4 style="color: var(--accent-purple);">2. Árvore do DOM (HTML)</h4>
-              <p>O robô percorre a estrutura de tags (tabelas, listas, links) identificando onde estão as informações.
-              </p>
+              <h4 style="color: var(--accent-emerald);">🏦 Banco Central do Brasil (SGS)</h4>
+              <p>Milhares de séries temporais: taxa Selic histórica, inflação (IPCA), cotações de moedas e operações de crédito disponibilizadas em JSON.</p>
             </div>
             <div class="card fragment">
-              <h4 style="color: var(--accent-amber);">3. Seletores CSS / XPath</h4>
-              <p>O script localiza elementos específicos (ex: <code>&lt;span class="valor-contrato"&gt;</code>).</p>
+              <h4 style="color: var(--accent-amber);">🗳️ TSE (DivulgaCandContas)</h4>
+              <p>Base com patrimônio declarado de candidatos, receitas e despesas de campanhas, limites de gastos e apuração de urnas.</p>
             </div>
             <div class="card fragment">
-              <h4 style="color: var(--accent-emerald);">4. Gravação Estruturada</h4>
-              <p>As informações de milhares de páginas são gravadas em uma tabela limpa e unificada.</p>
+              <h4 style="color: var(--accent-purple);">📈 IBGE (API do SIDRA & Agregados)</h4>
+              <p>Consultas parametrizadas para extrair PIB, desemprego (PNAD), inflação e dados censitários sem precisar baixar arquivos manuais.</p>
             </div>
           </div>
 
           <aside class="notes">
-            Exemplo prático: Em vez de clicar em 5.000 páginas de processos uma a uma, o robô faz isso em 3 minutos.
+            APIs são a forma mais estável de coletar dados públicos, pois não dependem de cliques no navegador e não quebram com mudanças visuais de sites.
           </aside>
         </section>
 
-        <!-- 5.4: Exemplo de Código Python Scraping -->
+        <!-- 5.3: Como Consumir APIs: De Ferramentas Visuais a Código -->
         <section>
-          <span class="badge">Capítulo 5 • Slide 4/7</span>
-          <h2>Código Prático de Raspagem em Python</h2>
-          <p class="subtitle">Coletando contratos públicos com poucas linhas de código</p>
+          <span class="badge">Capítulo 5 • Slide 3/8</span>
+          <h2>Como Extrair de APIs: <span class="gradient-text">Ferramentas Visuais</span></h2>
+          <p class="subtitle">Não é obrigatório começar programando: explore endpoints com softwares no-code</p>
 
-          <pre><code class="language-python" data-trim data-line-numbers="1-3|5-7|9-13|15-17">
+          <div class="card-grid-2">
+            <div class="card fragment">
+              <h4 style="color: var(--accent-amber);">📮 Postman & Insomnia</h4>
+              <p>Interfaces visuais onde você cola o link da API, adiciona parâmetros de busca (ex: datas, paginação) e inspeciona a resposta em JSON formatada e legível antes de qualquer apuração.</p>
+            </div>
+            <div class="card fragment">
+              <h4 style="color: var(--accent-cyan);">📊 Power BI & Power Query</h4>
+              <p>O conector nativo "Da Web" do Power Query permite colar a URL da API, expandir o JSON em colunas com poucos cliques e criar painéis que se atualizam automaticamente.</p>
+            </div>
+          </div>
+
+          <div class="card fragment fade-up" style="margin-top: 1.2rem; background: rgba(30, 41, 59, 0.7);">
+            <p style="font-size: 0.85em; color: #cbd5e1; margin: 0;">
+              💡 <strong>Fluxo Recomendado:</strong> Teste e valide a URL da API no <strong>Postman</strong> ➔ Carregue em tabelas no <strong>Power BI</strong> ou automatize com <strong>Python / R</strong>.
+            </p>
+          </div>
+
+          <aside class="notes">
+            O Postman é o 'laboratório' do repórter para entender o que a API responde antes de integrar ao relatório.
+          </aside>
+        </section>
+
+        <!-- 5.4: Caso Prático: API do Banco Central (SGS) -->
+        <section>
+          <span class="badge">Capítulo 5 • Slide 4/8</span>
+          <h2>Caso Prático: <span class="gradient-text-warm">API do Banco Central</span></h2>
+          <p class="subtitle">Anatomia de uma requisição real para extrair a Taxa Selic</p>
+
+          <div class="card fragment fade-up" style="margin-top: 1rem; text-align: left;">
+            <h4 style="color: var(--accent-cyan); font-size: 0.95em;">🔗 Endpoint Oficial da Série 11 (Selic Diária):</h4>
+            <pre style="background: rgba(15, 23, 42, 0.85); padding: 0.8rem; border-radius: 8px; font-size: 0.72em; overflow-x: auto; color: #38bdf8;"><code>https://api.bcb.gov.br/dados/serie/bcdata.sgs.11/dados?formato=json&dataInicial=01/01/2017&dataFinal=31/12/2026</code></pre>
+          </div>
+
+          <div class="card-grid-2" style="margin-top: 1.2rem;">
+            <div class="card fragment">
+              <h4 style="color: var(--accent-emerald);">📋 Parâmetros da Requisição</h4>
+              <p><code>bcdata.sgs.11</code>: Código da série temporal da Selic.<br>
+              <code>formato=json</code>: Solicita a resposta em dados puros estruturados.</p>
+            </div>
+            <div class="card fragment">
+              <h4 style="color: var(--accent-purple);">📅 Filtros de Data</h4>
+              <p><code>dataInicial</code> e <code>dataFinal</code>: Permitem delimitar exatamente a janela histórica da apuração (ex: de 2017 a 2026).</p>
+            </div>
+          </div>
+
+          <aside class="notes">
+            Mostre como a URL carrega todos os dados necessários na própria linha de endereço através de query parameters.
+          </aside>
+        </section>
+
+        <!-- 5.5: Script Python: Da API ao Gráfico de Barras -->
+        <section>
+          <span class="badge">Capítulo 5 • Slide 5/8</span>
+          <h2>Script Python: <span class="gradient-text-emerald">Da API ao Gráfico da Selic</span></h2>
+          <p class="subtitle">Código completo para extrair os dados e gerar um gráfico de barras (2023 até hoje)</p>
+
+          <pre style="font-size: 0.62em; margin-top: 0.8rem;"><code class="language-python" data-trim data-line-numbers="1-3|5-8|10-13|15-17|19-25">
 import requests
-from bs4 import BeautifulSoup
 import pandas as pd
+import matplotlib.pyplot as plt
 
-# 1. Faz o download do Diário Oficial da Prefeitura
-url = "https://transparencia.municipio.sc.gov.br/licitacoes"
-response = requests.get(url)
-soup = BeautifulSoup(response.text, "html.parser")
+# 1. Puxa os dados da API do Banco Central (Série 11 - Selic)
+url = "https://api.bcb.gov.br/dados/serie/bcdata.sgs.11/dados?formato=json&dataInicial=01/01/2023&dataFinal=31/12/2026"
+response = requests.get(url, headers={"User-Agent": "Mozilla/5.0"})
+dados = response.json()
 
-# 2. Localiza todas as linhas de contratos na tabela
-contratos = []
-for linha in soup.select("table#contratos tbody tr"):
-    colunas = [td.text.strip() for td in linha.find_all("td")]
-    contratos.append(colunas)
+# 2. Converte para DataFrame e trata datas e valores numéricos
+df = pd.DataFrame(dados)
+df["data"] = pd.to_datetime(df["data"], format="%d/%m/%Y")
+df["valor"] = df["valor"].astype(float)
 
-# 3. Converte para tabela e salva em arquivo CSV
-df = pd.DataFrame(contratos, columns=["Data", "Empresa", "Objeto", "Valor"])
-df.to_csv("contratos_prefeitura_2026.csv", index=False)
-            </code></pre>
+# 3. Agrupa por mês para criar visualização clara
+df_mensal = df.resample("ME", on="data").mean().reset_index()
+df_mensal["mes_ano"] = df_mensal["data"].dt.strftime("%m/%y")
+
+# 4. Gera o gráfico de barras da Selic (2023 até o dado mais recente)
+plt.figure(figsize=(10, 4))
+plt.bar(df_mensal["mes_ano"], df_mensal["valor"], color="#38bdf8")
+plt.title("Evolução da Taxa Selic Diária Média Mensal - 2023 a 2026")
+plt.xticks(rotation=45)
+plt.ylabel("% ao dia")
+plt.tight_layout()
+plt.show()
+          </code></pre>
 
           <aside class="notes">
-            Mostre como Python é legível e acessível para comunicadores. Não é necessário ser engenheiro de software
-            para raspar dados.
+            Com apenas 20 linhas de Python, o repórter baixa os microdados da autoridade monetária, trata datas e gera uma visualização pronta para publicação.
           </aside>
         </section>
 
-        <!-- 5.5: Consumo de APIs -->
+        <!-- 5.6: A Linguagem R no Jornalismo de Dados -->
         <section>
-          <span class="badge">Capítulo 5 • Slide 5/7</span>
-          <h2>O Poder das <span class="gradient-text-emerald">APIs REST</span></h2>
-          <p class="subtitle">Quando o próprio órgão público oferece uma porta de entrada direta para dados</p>
-
-          <div class="card-grid">
-            <div class="card fragment fade-up">
-              <div class="icon">🏛️</div>
-              <h4>API da Câmara dos Deputados</h4>
-              <p>Gastos parlamentares, presença em plenário, discursos e tramitação de projetos em tempo real.</p>
-            </div>
-            <div class="card fragment fade-up">
-              <div class="icon">📈</div>
-              <h4>API do IBGE (SIDRA)</h4>
-              <p>Indicadores socioeconômicos, inflação (IPCA), desemprego e projeções populacionais por cidade.</p>
-            </div>
-            <div class="card fragment fade-up">
-              <div class="icon">🌐</div>
-              <h4>API do Banco Central (SGS)</h4>
-              <p>Taxa Selic, cotação histórica de moedas, endividamento e fluxo de reservas cambiais.</p>
-            </div>
-          </div>
-
-          <aside class="notes">
-            APIs são muito mais estáveis do que raspar HTML, pois não quebram se o layout visual do site mudar.
-          </aside>
-        </section>
-
-        <!-- 5.6: Ética na Raspagem -->
-        <section>
-          <span class="badge">Capítulo 5 • Slide 6/7</span>
-          <h2>Ética & Boas Práticas do Web Scraping</h2>
-          <p class="subtitle">Como investigar sem derrubar servidores públicos ou violar leis</p>
+          <span class="badge">Capítulo 5 • Slide 6/8</span>
+          <h2>A Linguagem R & <span class="gradient-text">Pacotes para o Brasil</span></h2>
+          <p class="subtitle">Uma das ferramentas mais populares em redações para análise estatística e gráficos (ggplot2)</p>
 
           <div class="card-grid-2">
             <div class="card fragment">
-              <h4 style="color: var(--accent-cyan);">⏱️ Adicione Pausas (Rate Limiting)</h4>
-              <p>Nunca faça dezenas de requisições por segundo. Coloque <code>time.sleep(1)</code> para respeitar a
-                capacidade do servidor.</p>
+              <h4 style="color: var(--accent-cyan);">📦 sidrar (IBGE / SIDRA)</h4>
+              <p>Permite baixar tabelas completas do Censo, PNAD, IPCA e PIB diretamente para o ambiente R com uma única linha de código, sem download manual de planilhas.</p>
             </div>
             <div class="card fragment">
-              <h4 style="color: var(--accent-purple);">🤖 Identifique seu Script (User-Agent)</h4>
-              <p>Coloque seu contato no cabeçalho da requisição para que a equipe de TI saiba que se trata de apuração
-                de imprensa.</p>
+              <h4 style="color: var(--accent-emerald);">📦 geobr (Mapas do Brasil)</h4>
+              <p>Desenvolvido pelo IPEA para baixar automaticamente shapefiles oficiais de municípios, estados, biomas e setores censitários do IBGE para mapas temáticos.</p>
             </div>
             <div class="card fragment">
-              <h4 style="color: var(--accent-amber);">🌙 Raspe Fora do Horário de Pico</h4>
-              <p>Prefira rodar scripts volumosos durante a noite ou aos finais de semana para não atrapalhar o cidadão
-                comum.</p>
+              <h4 style="color: var(--accent-amber);">📦 ipeadatar & electionsBR</h4>
+              <p>Acesso programático a milhares de séries macroeconômicas do IPEA e dados históricos de candidaturas e votações do TSE.</p>
             </div>
             <div class="card fragment">
-              <h4 style="color: var(--accent-emerald);">💾 Guarde Cópias Fidedignas</h4>
-              <p>Salve a resposta HTML bruta original com data e hora como prova documental para sua reportagem.</p>
+              <h4 style="color: var(--accent-purple);">📊 Tidyverse & Quarto</h4>
+              <p>Gramática unificada de manipulação de dados (`dplyr`), visualização de alto nível (`ggplot2`) e relatórios reprodutíveis em PDF/HTML.</p>
             </div>
           </div>
 
           <aside class="notes">
-            O repórter deve ser um usuário exemplar da internet. Respeito aos servidores públicos é imperativo ético.
+            O R é amplamente utilizado por jornais como BBC, Financial Times e Folha de S.Paulo devido à sua precisão estatística e à estética impecável do ggplot2.
           </aside>
         </section>
 
-        <!-- 5.7: Conclusão Cap. 4 -->
+        <!-- 5.7: SQL para Grandes Bases de Dados -->
+        <section>
+          <span class="badge">Capítulo 5 • Slide 7/8</span>
+          <h2>SQL: A Chave para <span class="gradient-text-warm">Grandes Bases de Dados</span></h2>
+          <p class="subtitle">Quando a planilha trava com milhões de linhas, o SQL entra em ação</p>
+
+          <div class="card-grid-2">
+            <div class="card fragment">
+              <h4 style="color: var(--accent-cyan);">🗄️ Por que aprender SQL?</h4>
+              <p>Bancos públicos como Censo, RAIS, SUS e Receita têm dezenas de gigabytes e centenas de milhões de linhas. O SQL (<em>Structured Query Language</em>) permite filtrar e agregar esse volume na nuvem em segundos.</p>
+            </div>
+            <div class="card fragment">
+              <h4 style="color: var(--accent-emerald);">⚡ Base dos Dados (Google BigQuery)</h4>
+              <p>A <strong>Base dos Dados</strong> disponibiliza centenas de bases brasileiras já limpas e integradas em SQL. Você pode cruzar dados do IBGE com o TSE sem precisar baixar arquivos pesados no seu computador.</p>
+            </div>
+          </div>
+
+          <div class="card fragment fade-up" style="margin-top: 1rem; text-align: left;">
+            <h4 style="color: var(--accent-amber); font-size: 0.9em;">Exemplo de Consulta SQL na Base dos Dados:</h4>
+            <pre style="background: rgba(15, 23, 42, 0.85); padding: 0.7rem; border-radius: 8px; font-size: 0.68em; color: #a5f3fc;"><code>SELECT ano, sigla_uf, AVG(taxa_desemprego) as desemprego_medio
+FROM `basedosdados.br_ibge_pnadc.microdados`
+WHERE ano >= 2023
+GROUP BY ano, sigla_uf
+ORDER BY desemprego_medio DESC;</code></pre>
+          </div>
+
+          <aside class="notes">
+            Com SQL, a pergunta que demoraria horas no computador do repórter é resolvida em 3 segundos nos servidores de Big Data.
+          </aside>
+        </section>
+
+        <!-- 5.8: Conclusão Cap. 5: Resumo da Extração -->
         <section data-background-gradient="radial-gradient(circle at 50% 50%, #064e3b 0%, #0a0e1a 100%)">
           <span class="badge badge-emerald">Capítulo 5 • Conclusão</span>
-          <h2>Resumo da Coleta de Dados</h2>
-          <p class="subtitle">Agora que temos a base em mãos, começa o maior desafio: o tratamento</p>
+          <h2>A Caixa de Ferramentas de Extração</h2>
 
-          <div class="card" style="margin-top: 1.5rem;">
-            <h4>💡 Regra de Ouro do Jornalista de Dados:</h4>
-            <p style="font-size: 0.95em;">"Dados brutos obtidos na web quase nunca estão prontos para publicação. Eles
-              vêm cheios de ruídos, fraudes e erros de digitação."</p>
+          <div class="pill-list" style="justify-content: center; margin-top: 1.5rem; gap: 0.8rem;">
+            <div class="pill">🔌 APIs: Dados Vivos</div>
+            <div class="pill">📮 Postman & Power BI: Exploração Rápida</div>
+            <div class="pill">🐍 Python & R: Análise & Automação</div>
+            <div class="pill">🗄️ SQL: Escala de Big Data</div>
           </div>
 
-          <p style="text-align: center; color: var(--accent-cyan); margin-top: 1.8rem; font-size: 0.85em;">
+          <div class="card" style="margin-top: 1.5rem; max-width: 900px; margin-left: auto; margin-right: auto;">
+            <h4>💡 Lição de Engenharia de Dados no Jornalismo:</h4>
+            <p style="font-size: 0.92em; line-height: 1.45;">
+              "Saber coletar dados por APIs e linguagens de programação liberta o repórter da dependência de relatórios prontos ou assessorias de imprensa, permitindo que a investigação comece direto na fonte primária da informação."
+            </p>
+          </div>
+
+          <p style="text-align: center; color: var(--accent-cyan); margin-top: 1.5rem; font-size: 0.85em;">
             👉 Pressione a tecla <strong>DIREITA (➡️)</strong> para iniciar o <strong>Capítulo 6: Limpeza, Tratamento & Auditoria de Dados</strong>
           </p>
 
           <aside class="notes">
-            Prepare o público para o Capítulo 5, onde ocorre a parte mais técnica e rigorosa da reportagem.
+            Com as bases extraídas, o próximo passo essencial é limpar inconsistências e auditar os números no Capítulo 6.
           </aside>
         </section>
       </section>
