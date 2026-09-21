@@ -1869,38 +1869,50 @@ ORDER BY desemprego_medio DESC;</code></pre>
           </aside>
         </section>
 
-        <!-- 6.8: Ferramentas de Limpeza: OpenRefine & Pandas -->
+        <!-- 6.8: Ferramentas de Limpeza: OpenRefine, Pandas & Regex -->
         <section>
           <span class="badge">Capítulo 6 • Slide 8/9</span>
-          <h2>A Caixa de Ferramentas: <span class="gradient-text-warm">No-Code & Automação</span></h2>
-          <p class="subtitle" style="margin-bottom: 0.5rem; font-size: 0.84em;">Escolha a ferramenta adequada de acordo com a escala e a complexidade do trabalho</p>
+          <h2>A Caixa de Ferramentas: <span class="gradient-text-warm">No-Code, Código & Regex</span></h2>
+          <p class="subtitle" style="margin-bottom: 0.5rem; font-size: 0.84em;">As três tecnologias fundamentais para higienizar, estruturar e extrair dados em redações</p>
 
-          <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.85rem; margin-top: 0.65rem; max-width: 950px; margin-left: auto; margin-right: auto;">
-            <div class="card fragment fade-up" style="padding: 0.85rem 1.1rem; text-align: left;">
-              <h4 style="color: var(--accent-cyan); font-size: 0.95em; margin-bottom: 0.35rem;">🧩 OpenRefine (Limpeza Visual No-Code)</h4>
-              <p style="font-size: 0.76em; line-height: 1.35; color: #cbd5e1; margin-bottom: 0.4rem;">
-                Ideal para bases médias (até centenas de milhares de linhas) com muitos erros de digitação de texto.
+          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem; margin-top: 0.65rem; max-width: 980px; margin-left: auto; margin-right: auto;">
+            <div class="card fragment fade-up" style="padding: 0.8rem 0.95rem; text-align: left;">
+              <h4 style="color: var(--accent-cyan); font-size: 0.9em; margin-bottom: 0.3rem;">🧩 OpenRefine (Visual No-Code)</h4>
+              <p style="font-size: 0.74em; line-height: 1.35; color: #cbd5e1; margin-bottom: 0.4rem;">
+                Ideal para exploração inicial e limpeza de bases médias com muitos erros de digitação humana.
               </p>
-              <ul style="margin: 0; padding-left: 1.1rem; font-size: 0.74em; color: #94a3b8; line-height: 1.35;">
-                <li><strong>Clustering Fonético:</strong> Agrupa variações como "Secretaria de Saúde", "Sec Saude" e "Sec. de Saude" com um clique (Metaphone / Levenshtein).</li>
-                <li><strong>Log Reproduzível:</strong> Grava o histórico JSON de todas as transformações.</li>
+              <ul style="margin: 0; padding-left: 1.1rem; font-size: 0.71em; color: #94a3b8; line-height: 1.35;">
+                <li><strong>Clustering Fonético:</strong> Agrupa variações como <em>"Sec. Saúde"</em> e <em>"Secretaria de Saude"</em> com 1 clique (Metaphone/Levenshtein).</li>
+                <li><strong>Log Reproduzível:</strong> Salva o histórico JSON de todas as transformações.</li>
               </ul>
             </div>
 
-            <div class="card fragment fade-up" style="padding: 0.85rem 1.1rem; text-align: left;">
-              <h4 style="color: var(--accent-emerald); font-size: 0.95em; margin-bottom: 0.35rem;">🐼 Python (Pandas) / R (Tidyverse)</h4>
-              <p style="font-size: 0.76em; line-height: 1.35; color: #cbd5e1; margin-bottom: 0.4rem;">
-                Indispensável para pipelines automatizados, milhões de linhas e cruzamento contínuo de dados.
+            <div class="card fragment fade-up" style="padding: 0.8rem 0.95rem; text-align: left;">
+              <h4 style="color: var(--accent-emerald); font-size: 0.9em; margin-bottom: 0.3rem;">🐼 Python & R (Automação)</h4>
+              <p style="font-size: 0.74em; line-height: 1.35; color: #cbd5e1; margin-bottom: 0.4rem;">
+                Indispensável para processamento de milhões de linhas e rotinas contínuas de checagem.
               </p>
-              <ul style="margin: 0; padding-left: 1.1rem; font-size: 0.74em; color: #94a3b8; line-height: 1.35;">
-                <li><strong>Tratamento Vetorizado:</strong> Conversão instantânea de tipos e regex em segundos.</li>
-                <li><strong>Cruzamento Robusto (Joins):</strong> Conexão precisa de bases por chaves primárias (CPF, CNPJ, Código IBGE).</li>
+              <ul style="margin: 0; padding-left: 1.1rem; font-size: 0.71em; color: #94a3b8; line-height: 1.35;">
+                <li><strong>Tratamento em Lote:</strong> Conversão instantânea de datas e decimais com Pandas/Tidyverse.</li>
+                <li><strong>Cruzamentos (Joins):</strong> Fusão de bases por CPF, CNPJ ou código do IBGE.</li>
+              </ul>
+            </div>
+
+            <div class="card fragment fade-up" style="padding: 0.8rem 0.95rem; text-align: left; border-left: 3px solid var(--accent-amber);">
+              <h4 style="color: var(--accent-amber); font-size: 0.9em; margin-bottom: 0.3rem;">🎯 Regex (Expressões Regulares)</h4>
+              <p style="font-size: 0.74em; line-height: 1.35; color: #cbd5e1; margin-bottom: 0.4rem;">
+                Linguagem de busca por <strong>padrões</strong> para extrair dados no meio de textos ou PDFs desestruturados:
+              </p>
+              <ul style="margin: 0; padding-left: 1.1rem; font-size: 0.71em; color: #94a3b8; line-height: 1.35;">
+                <li><code>\d{3}\.\d{3}\.\d{3}-\d{2}</code> ➔ Localiza <strong>CPFs</strong>.</li>
+                <li><code>\d{2}\.\d{3}\.\d{3}/\d{4}-\d{2}</code> ➔ Localiza <strong>CNPJs</strong>.</li>
+                <li><code>R\$\s?[\d\.,]+</code> ➔ Isola <strong>valores monetários</strong> em diários oficiais.</li>
               </ul>
             </div>
           </div>
 
           <aside class="notes">
-            O OpenRefine é excelente para exploração inicial rápida e higienização de nomes próprios; o Python/R garante automação reprodutível em larga escala.
+            Regex (Regular Expressions) é uma das habilidades mais valorizadas no jornalismo de dados para raspar informações estruturadas (como CPFs, CNPJs, placas de carro e valores) direto de textos corridos e processos judiciais.
           </aside>
         </section>
 
