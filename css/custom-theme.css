@@ -693,9 +693,17 @@
   font-weight: 600;
   padding: 5px 12px;
   color: var(--accent-cyan);
-  right: 20px;
-  bottom: 20px;
+  right: 144px;
+  bottom: 18px;
   letter-spacing: 0.05em;
+}
+
+@media (max-width: 820px) {
+  .reveal .slide-number {
+    top: 14px;
+    right: 14px;
+    bottom: auto;
+  }
 }
 
 /* Custom helper footer */
