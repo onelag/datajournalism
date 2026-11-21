@@ -21,8 +21,11 @@ Reveal.initialize({
   // Configuração de navegação 2D (Capítulos na Horizontal, Slides na Vertical)
   navigationMode: 'default',
 
-  // Número do slide atual no formato: Capítulo.Slide (ex: 1.1, 1.2, 2.1)
-  slideNumber: 'h.v',
+  // Número do slide atual no formato: Capítulo.Slide (0.1 = Apresentação, 1.1..1.5 = Cap. 1, etc.)
+  slideNumber: (slide) => {
+    const indices = Reveal.getIndices(slide);
+    return [indices.h, '.', (indices.v || 0) + 1];
+  },
 
   // Adiciona o slide à URL (ex: #/2) para permitir links diretos
   hash: true,
