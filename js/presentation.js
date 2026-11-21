@@ -58,8 +58,44 @@ Reveal.initialize({
   ]
 }).then(() => {
   console.log('✨ Keynote Reveal.js inicializado com sucesso!');
+  configureChapterOnlyHorizontalNav();
   initChart();
 });
+
+/**
+ * Garante que as setas laterais (teclado e controles na tela) troquem apenas de capítulo,
+ * deixando a exibição/remoção de fragmentos exclusiva das setas verticais (⬆️ / ⬇️).
+ */
+function configureChapterOnlyHorizontalNav() {
+  const goLeft = (e) => (e && e.shiftKey ? Reveal.slide(0) : Reveal.left({ skipFragments: true }));
+  const goRight = (e) =>
+    e && e.shiftKey
+      ? Reveal.slide(Reveal.getHorizontalSlides().length - 1)
+      : Reveal.right({ skipFragments: true });
+
+  Reveal.addKeyBinding({ keyCode: 37, key: '←', description: 'Capítulo anterior' }, goLeft);
+  Reveal.addKeyBinding({ keyCode: 39, key: '→', description: 'Próximo capítulo' }, goRight);
+
+  const bindControl = (selector, action) => {
+    document.querySelectorAll(selector).forEach((btn) => {
+      ['touchstart', 'click'].forEach((evt) => {
+        btn.addEventListener(
+          evt,
+          (e) => {
+            e.preventDefault();
+            e.stopImmediatePropagation();
+            Reveal.onUserInput(e);
+            action();
+          },
+          true
+        );
+      });
+    });
+  };
+
+  bindControl('.reveal .controls .navigate-left', () => Reveal.left({ skipFragments: true }));
+  bindControl('.reveal .controls .navigate-right', () => Reveal.right({ skipFragments: true }));
+}
 
 // Animação do gráfico quando o slide correspondente for exibido
 Reveal.on('slidechanged', (event) => {
