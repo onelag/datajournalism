@@ -23,8 +23,8 @@ Reveal.initialize({
 
   // Número do slide atual no formato: Capítulo.Slide (0.1 = Apresentação, 1.1..1.5 = Cap. 1, etc.)
   slideNumber: (slide) => {
-    const indices = Reveal.getIndices(slide);
-    return [indices.h, '.', (indices.v || 0) + 1];
+    const indices = Reveal.getIndices(slide) || {};
+    return [indices.h ?? 0, '.', (indices.v ?? 0) + 1];
   },
 
   // Adiciona o slide à URL (ex: #/2) para permitir links diretos
