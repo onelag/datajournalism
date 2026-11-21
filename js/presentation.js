@@ -84,7 +84,6 @@ function configureChapterOnlyHorizontalNav() {
           (e) => {
             e.preventDefault();
             e.stopImmediatePropagation();
-            Reveal.onUserInput(e);
             action();
           },
           true
